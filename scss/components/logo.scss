@@ -1,0 +1,7 @@
+.logo{
+    color: var(--txt_color_second, #FFF);
+    font-size: 32px;
+    & span{
+        color: var(--color_second, #E11E18);
+    }
+}
