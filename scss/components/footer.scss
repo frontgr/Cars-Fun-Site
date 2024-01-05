@@ -5,20 +5,20 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        &__logos{
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            &-logo{
-                padding-left: 30px;
-                border-left: 1px solid #FFFFFF;
-            }
+    }
+    &__logos{
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        &-logo{
+            padding-left: 30px;
+            border-left: 1px solid #FFFFFF;
         }
-        &-company{
-            color: var(--txt_color_second, #FFF);
-            font-family: 'Montserrat';
-            font-size: 20px;
-            font-weight: 700;
-        }
+    }
+    &__company{
+        color: var(--txt_color_second, #FFF);
+        font-family: 'Montserrat';
+        font-size: 20px;
+        font-weight: 700;
     }
 }
