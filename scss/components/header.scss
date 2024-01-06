@@ -1,5 +1,7 @@
 .header{
-    background: url('../images/header_background.webp'), lightgray 50% / cover no-repeat;
+    background: url('../images/header_background.webp'), #03070a 50%;
+    background-repeat: no-repeat;
+    background-position: center;
     &__nav{
         display: flex;
         justify-content: space-between;

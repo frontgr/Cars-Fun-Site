@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 .header {
-  background: url("../images/header_background.webp"), lightgray 50%/cover no-repeat;
+  background: url("../images/header_background.webp"), #03070a 50%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .header__nav {
   display: flex;
