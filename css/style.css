@@ -188,27 +188,27 @@
 .second-page .main__photos img {
   border-radius: 5px;
 }
-.second-page .main__photos img:nth-child(6n + 1) {
+.second-page .main__photos img:nth-child(6n+1) {
   width: 883px;
   height: 411px;
 }
-.second-page .main__photos img:nth-child(6n + 2) {
+.second-page .main__photos img:nth-child(6n+2) {
   width: 687px;
   height: 411px;
 }
-.second-page .main__photos img:nth-child(6n + 3) {
+.second-page .main__photos img:nth-child(6n+3) {
   width: 1598px;
   height: 570px;
 }
-.second-page .main__photos img:nth-child(6n + 4) {
+.second-page .main__photos img:nth-child(6n+4) {
   width: 687px;
   height: 411px;
 }
-.second-page .main__photos img:nth-child(6n + 5) {
+.second-page .main__photos img:nth-child(6n+5) {
   width: 883px;
   height: 411px;
 }
-.second-page .main__photos img:nth-child(6n + 6) {
+.second-page .main__photos img:nth-child(6n+6) {
   width: 1598px;
   height: 666px;
 }
@@ -300,6 +300,68 @@
   --stroke_mini_photo: #2ca7cb;
 }
 
+.popup {
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 15%;
+  left: 25%;
+}
+.popup__main-photo {
+  width: 1400px;
+  height: 700px;
+}
+.popup__menu {
+  margin-top: 59px;
+}
+.popup-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.popup-menu__left, .popup-menu__right {
+  width: 93px;
+  height: 93px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  background-image: url("../../images/arrows/ph_arrow.svg");
+  transition: all 0.5s ease;
+}
+.popup-menu__left {
+  margin-right: 67px;
+}
+.popup-menu__right {
+  margin-left: 67px;
+  transform: rotate(180deg);
+}
+.popup-menu__left:hover {
+  transform: translateX(-10px);
+}
+.popup-menu__right:hover {
+  transform: rotate(180deg) translateX(-10px);
+}
+.popup-menu__icons {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.popup-menu__icon {
+  height: 155px;
+  width: 155px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.popup-menu__icon--selected {
+  border: 2px solid var(--stroke_mini_photo);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -323,4 +385,4 @@ body {
   max-width: 1600px;
   width: 100%;
   margin: 0 auto;
-} /*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
