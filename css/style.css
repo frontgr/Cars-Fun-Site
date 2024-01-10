@@ -18,7 +18,7 @@
   gap: 20px;
   padding: 19px 46px 20px 22px;
   border-radius: 112px;
-  background: var(--txt_color_second, #FFF);
+  background: var(--txt_color_second, #fff);
 }
 .header__search-input {
   width: 100%;
@@ -34,12 +34,12 @@
 }
 
 .second-page .header {
-  background: #020F14;
+  background: #020f14;
 }
 
 .main {
   padding: 110px 0 123px 0;
-  background: var(--txt_color_second, #FFF);
+  background: var(--txt_color_second, #fff);
 }
 .main__filter {
   display: flex;
@@ -52,7 +52,7 @@
   width: 518px;
   padding: 54px 0 36px;
   border-radius: 5px;
-  border: 1px solid #2CA7CB;
+  border: 1px solid #2ca7cb;
   background: transparent;
   color: var(--txt_color_main, #000);
   text-align: center;
@@ -61,11 +61,11 @@
   transition: all 0.3s ease;
 }
 .main__filter-btn.active {
-  color: var(--txt_color_second, #FFF);
-  background: var(--color_main, #2CA7CB);
+  color: var(--txt_color_second, #fff);
+  background: var(--color_main, #2ca7cb);
 }
 .main__filter-btn:not(.active):hover {
-  border: 1px solid var(--color_second, #E11E18);
+  border: 1px solid var(--color_second, #e11e18);
   background: rgba(44, 167, 203, 0.1);
 }
 .main__content {
@@ -73,7 +73,7 @@
   flex-wrap: wrap;
   gap: 70px 23px;
   padding: 70px 0 97px 0;
-  border-top: 1px solid #AAAAAA;
+  border-top: 1px solid #aaaaaa;
 }
 .main__item {
   display: flex;
@@ -89,7 +89,7 @@
   font-size: 32px;
 }
 .main__item-title span {
-  color: #E11E18;
+  color: #e11e18;
 }
 
 .item__btns {
@@ -105,7 +105,7 @@
   font-family: "Fugaz One";
   font-size: 20px;
   border-radius: 5px;
-  background: #EEE;
+  background: #eee;
   border: none;
   outline: none;
   transition: all 0.3s ease;
@@ -114,8 +114,8 @@
   flex-grow: 1;
 }
 .item__btns-btn:hover {
-  background: var(--stroke_mini_photo, #2CA7CB);
-  color: var(--txt_color_second, #FFF);
+  background: var(--stroke_mini_photo, #2ca7cb);
+  color: var(--txt_color_second, #fff);
 }
 
 .show-more-btns {
@@ -124,12 +124,12 @@
   align-items: center;
 }
 .show-more-btns_showmore {
-  color: var(--txt_color_second, #FFF);
+  color: var(--txt_color_second, #fff);
   text-align: center;
   font-family: "Fugaz One";
   font-size: 32px;
   border-radius: 10px;
-  background: var(--color_main, #2CA7CB);
+  background: var(--color_main, #2ca7cb);
   width: 377px;
   padding: 23px 0;
   border: none;
@@ -137,7 +137,7 @@
   transition: all 0.3s ease;
 }
 .show-more-btns_showmore:hover {
-  background: #17CBFF;
+  background: #17cbff;
 }
 .show-more-btns_up {
   background: none;
@@ -172,7 +172,7 @@
   margin-bottom: 16px;
 }
 .second-page .main__desc-title span {
-  color: #E11E18;
+  color: #e11e18;
 }
 .second-page .main__desc-text {
   color: #000;
@@ -223,7 +223,7 @@
   padding-bottom: 11px;
 }
 .second-page .main__description-title span {
-  color: #E11E18;
+  color: #e11e18;
 }
 .second-page .main__box {
   display: flex;
@@ -239,12 +239,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #AAA;
+  color: #aaa;
   font-size: 20px;
   position: relative;
 }
 .second-page .main__speed-number span {
-  color: var(--stroke_mini_photo, #2CA7CB);
+  color: var(--stroke_mini_photo, #2ca7cb);
   font-size: 80px;
 }
 .second-page .main__speed-number:first-child::after {
@@ -259,7 +259,7 @@
 }
 
 .footer {
-  background: #010B0F;
+  background: #010b0f;
   padding: 88px 0;
 }
 .footer__content {
@@ -274,21 +274,21 @@
 }
 .footer__logos-logo {
   padding-left: 30px;
-  border-left: 1px solid #FFFFFF;
+  border-left: 1px solid #ffffff;
 }
 .footer__company {
-  color: var(--txt_color_second, #FFF);
+  color: var(--txt_color_second, #fff);
   font-family: "Montserrat";
   font-size: 20px;
   font-weight: 700;
 }
 
 .logo {
-  color: var(--txt_color_second, #FFF);
+  color: var(--txt_color_second, #fff);
   font-size: 32px;
 }
 .logo span {
-  color: var(--color_second, #E11E18);
+  color: var(--color_second, #e11e18);
 }
 .footer__company {
   display: flex;
@@ -297,12 +297,74 @@
 }
 
 :root {
-  --txt_color_second: #FFF;
-  --color_second: #E11E18;
+  --txt_color_second: #fff;
+  --color_second: #e11e18;
   --txt_color_main: #000;
-  --color_main: #2CA7CB;
+  --color_main: #2ca7cb;
   --txt_color-on-btn: #666;
-  --stroke_mini_photo: #2CA7CB;
+  --stroke_mini_photo: #2ca7cb;
+}
+
+.popup {
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 15%;
+  left: 25%;
+}
+.popup__main-photo {
+  width: 1400px;
+  height: 700px;
+}
+.popup__menu {
+  margin-top: 59px;
+}
+.popup-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.popup-menu__left, .popup-menu__right {
+  width: 93px;
+  height: 93px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  background-image: url("../../images/arrows/ph_arrow.svg");
+  transition: all 0.5s ease;
+}
+.popup-menu__left {
+  margin-right: 67px;
+}
+.popup-menu__right {
+  margin-left: 67px;
+  transform: rotate(180deg);
+}
+.popup-menu__left:hover {
+  transform: translateX(-10px);
+}
+.popup-menu__right:hover {
+  transform: rotate(180deg) translateX(-10px);
+}
+.popup-menu__icons {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.popup-menu__icon {
+  height: 155px;
+  width: 155px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.popup-menu__icon--selected {
+  border: 2px solid var(--stroke_mini_photo);
 }
 
 * {
