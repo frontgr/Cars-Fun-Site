@@ -25,5 +25,5 @@ def login_post():
 
     admin.is_authenticated_update(True)
     login_user(admin)
-    return redirect(url_for('profile'))
+    return redirect(url_for('panel.panel_post'))
 
