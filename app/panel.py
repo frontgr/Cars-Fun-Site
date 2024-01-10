@@ -14,25 +14,25 @@ def panel_get():
 @login_required
 def panel_post():
     # return all cars from DB
-    pass
+    return None
 
 
 @panel.route('/panel/add_car', methods=['POST'])
 @login_required
-def panel_post():
+def panel_add_post():
     # add car to DB
     pass
 
 
 @panel.route('/panel/delete_car', methods=['POST'])
 @login_required
-def panel_post():
+def panel_delete_post():
     # delete car from DB
     pass
 
 
 @panel.route('/panel/update_car', methods=['POST'])
 @login_required
-def panel_post():
+def panel_update_post():
     # update car
     pass
