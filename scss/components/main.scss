@@ -193,6 +193,10 @@
       justify-content: space-between;
       align-items: flex-start;
     }
+    &__box-img {
+      width: 297px;
+      height: 180px;
+    }
     &__speed {
       display: flex;
       padding-top: 11px;
