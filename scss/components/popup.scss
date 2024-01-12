@@ -1,27 +1,27 @@
 .popup {
-  display: none;
+  display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   position: fixed;
-  top: 15%;
-  left: 25%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   &__main-photo {
-    width: 1400px;
-    height: 700px;
+    width: 961px;
+    height: 480.5px;
   }
   &__menu {
-    margin-top: 59px;
+    margin-top: 40.5px;
   }
   &-menu {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 10px;
     &__left,
     &__right {
-      width: 93px;
-      height: 93px;
+      width: 74px;
+      height: 74px;
       border-radius: 5px;
       border: none;
       cursor: pointer;
@@ -30,10 +30,10 @@
       transition: all 0.5s ease;
     }
     &__left {
-      margin-right: 67px;
+      margin-right: 40px;
     }
     &__right {
-      margin-left: 67px;
+      margin-left: 40px;
       transform: rotate(180deg);
     }
     &__left:hover {
@@ -45,11 +45,11 @@
     &__icons {
       display: flex;
       align-items: center;
-      gap: 30px;
+      gap: 20.59px;
     }
     &__icon {
-      height: 155px;
-      width: 155px;
+      width: 106.4px;
+      height: 106.4px;
       object-fit: cover;
       border-radius: 5px;
       cursor: pointer;
