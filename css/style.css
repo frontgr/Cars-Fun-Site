@@ -109,6 +109,7 @@
   border: none;
   outline: none;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 .item__btns-btn:nth-child(2) {
   flex-grow: 1;
@@ -124,6 +125,7 @@
   align-items: center;
 }
 .show-more-btns_showmore {
+  cursor: pointer;
   color: var(--txt_color_second, #fff);
   text-align: center;
   font-family: "Fugaz One";
@@ -305,7 +307,7 @@
 }
 
 .popup {
-  display: flex;
+  display: none;
   justify-content: center;
   flex-direction: column;
   align-items: center;

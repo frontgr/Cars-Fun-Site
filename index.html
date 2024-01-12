@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+<meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
@@ -9,7 +9,7 @@
     <title>Cars. Fan site</title>
   </head>
   <body>
-    <div class="popup">
+    <div class="popup" id="popupWindow">
       <div class="popup__slider">
         <img src="./images/main_photo_1.webp" alt="car_slider" class="popup__main-photo"/>
       </div>
@@ -69,7 +69,7 @@
               Lightning McQueen <span>#95</span>
             </div>
             <div class="item__btns">
-              <button class="item__btns-btn btn-photo">Photo</button>
+              <button class="item__btns-btn btn-photo" onclick="hangePhotoButtonClick()">Photo</button>
               <a
                 href="./pages/car_info.html"
                 class="item__btns-btn btn-specifications"
@@ -88,7 +88,7 @@
               Lightning McQueen <span>#95</span>
             </div>
             <div class="item__btns">
-              <button class="item__btns-btn btn-photo">Photo</button>
+              <button class="item__btns-btn btn-photo" onclick="hangePhotoButtonClick()">Photo</button>
               <a
                 href="./pages/car_info.html"
                 class="item__btns-btn btn-specifications"
@@ -107,7 +107,7 @@
               Lightning McQueen <span>#95</span>
             </div>
             <div class="item__btns">
-              <button class="item__btns-btn btn-photo">Photo</button>
+              <button class="item__btns-btn btn-photo" onclick="hangePhotoButtonClick(event)">Photo</button>
               <a
                 href="./pages/car_info.html"
                 class="item__btns-btn btn-specifications"
@@ -124,7 +124,7 @@
             />
             <div class="main__item-title">Cruz Ramirez <span>~</span></div>
             <div class="item__btns">
-              <button class="item__btns-btn btn-photo">Photo</button>
+              <button class="item__btns-btn btn-photo" onclick="hangePhotoButtonClick()">Photo</button>
               <a
                 href="./pages/car_info.html"
                 class="item__btns-btn btn-specifications"
@@ -143,7 +143,7 @@
               Lightning McQueen <span>#95</span>
             </div>
             <div class="item__btns">
-              <button class="item__btns-btn btn-photo">Photo</button>
+              <button class="item__btns-btn btn-photo" onclick="hangePhotoButtonClick()">Photo</button>
               <a
                 href="./pages/car_info.html"
                 class="item__btns-btn btn-specifications"
@@ -162,7 +162,7 @@
               Lightning McQueen <span>#95</span>
             </div>
             <div class="item__btns">
-              <button class="item__btns-btn btn-photo">Photo</button>
+              <button class="item__btns-btn btn-photo" onclick="hangePhotoButtonClick()">Photo</button>
               <a
                 href="./pages/car_info.html"
                 class="item__btns-btn btn-specifications"
@@ -181,7 +181,7 @@
               Lightning McQueen <span>#95</span>
             </div>
             <div class="item__btns">
-              <button class="item__btns-btn btn-photo">Photo</button>
+              <button class="item__btns-btn btn-photo" onclick="hangePhotoButtonClick()">Photo</button>
               <a
                 href="./pages/car_info.html"
                 class="item__btns-btn btn-specifications"
@@ -200,7 +200,7 @@
               Lightning McQueen <span>#95</span>
             </div>
             <div class="item__btns">
-              <button class="item__btns-btn btn-photo">Photo</button>
+              <button class="item__btns-btn btn-photo" onclick="hangePhotoButtonClick()">Photo</button>
               <a
                 href="./pages/car_info.html"
                 class="item__btns-btn btn-specifications"
@@ -238,5 +238,6 @@
       </div>
     </footer>
     <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="js/popup.js"></script>
   </body>
 </html>
