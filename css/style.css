@@ -230,6 +230,10 @@
   justify-content: space-between;
   align-items: flex-start;
 }
+.second-page .main__box-img {
+  width: 297px;
+  height: 180px;
+}
 .second-page .main__speed {
   display: flex;
   padding-top: 11px;
