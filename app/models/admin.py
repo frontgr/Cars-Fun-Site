@@ -1,17 +1,13 @@
-from pymongo import MongoClient
 from bson.objectid import ObjectId
 
-from config import db_uri
-
-client = MongoClient(db_uri)
-db = client.cars_fun_site
+from .client import db
 
 
 class Admin:
-    def __init__(self, login=None, id=None):
+    def __init__(self, login=None, _id=None):
         # Determining based on which criteria we will conduct the search
-        if id is not None:
-            admin = db.admins.find_one({'_id': ObjectId(id)})
+        if _id is not None:
+            admin = db.admins.find_one({'_id': ObjectId(_id)})
         else:
             admin = db.admins.find_one({"login": login})
 
