@@ -1,1 +1,1 @@
-from . import admins
+from . import admin
