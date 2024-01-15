@@ -12,6 +12,8 @@ class Cars:
             temp = {'_id': str(item['_id']),
                     'name': item['name'],
                     'number': item['number'],
+                    'speed_up': item['speed_up'],
+                    'max_speed': item['max_speed'],
                     'cover_photo': item['cover_photo'],
                     'photos': item['photos']}
 
@@ -19,7 +21,7 @@ class Cars:
         return f
 
     @allowed_file
-    def add_new_car(self, photos, name, number):
+    def add_new_car(self, photos, name, number, speed_up, max_speed):
         cover_photo = ''
         if 'cover_photo' in photos:
             cover_photo = convert(name, 'cover_photo', photos.pop('cover_photo'))
@@ -31,6 +33,8 @@ class Cars:
         car = {
             'name': name,
             'number': number,
+            'speed_up': speed_up,
+            'max_speed': max_speed,
             'cover_photo': cover_photo,
             'photos': photos_dict
         }
