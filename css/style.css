@@ -506,12 +506,13 @@
 
 .analytics {
   padding-top: 60px;
+  flex-direction: column;
+  gap: 54px;
 }
 .analytics__statistics {
   display: flex;
   align-items: center;
   gap: 44px;
-  margin-bottom: 54px;
   font-size: 24px;
   font-weight: 400;
   color: var(--txt_color, #000);
@@ -522,8 +523,15 @@
   gap: 12px;
 }
 
-.content, .analytics {
+.content,
+.analytics,
+.users {
   display: none;
+}
+.content.active,
+.analytics.active,
+.users.active {
+  display: flex;
 }
 
 .admin-popup {
@@ -794,7 +802,8 @@
 
 .user-popup,
 .edit-car-popup,
-.add-car-popup {
+.add-car-popup,
+.edit-user-popup {
   display: none;
 }
 
