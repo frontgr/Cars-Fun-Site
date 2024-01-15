@@ -605,11 +605,17 @@
   font-size: 18px;
   font-weight: 700;
   outline: none;
+  transition: all 0.3s;
 }
 .add-car-popup__btns-btn.active,
 .edit-car-popup__btns-btn.active {
   background: #2CA7CB;
   border: none;
+  color: #EEE;
+}
+.add-car-popup__btns-btn:hover:not(.active),
+.edit-car-popup__btns-btn:hover:not(.active) {
+  background: #75E0FF;
   color: #EEE;
 }
 
@@ -659,22 +665,39 @@
   width: 55px;
   height: 55px;
   border-radius: 5px;
-  -o-object-fit: cover;
-     object-fit: cover;
   position: relative;
   z-index: 2;
+  overflow: hidden;
+}
+.popup__photo-item:hover img {
+  filter: brightness(0.6);
+}
+.popup__photo-item img {
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s;
 }
 .popup__photo-item:first-child {
   border: 2px solid #FF0B0B;
 }
-.popup__photo-item::after {
-  content: "+";
+.popup__photo-item_delete {
+  display: none;
   position: absolute;
-  inset: 0;
-  background: rgba(255, 1, 1, 0.1);
-  z-index: 5;
-  font-size: 45px;
+  font-size: 80px;
+  color: #FF0B0B;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) rotate(45deg);
+  font-family: "Montserrat";
+  transition: all 0.3s;
+}
+.popup__photo-item:hover .popup__photo-item_delete {
+  display: block;
 }
 .popup__photo-btn {
   border-radius: 5px;
