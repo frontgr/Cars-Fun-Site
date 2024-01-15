@@ -46,8 +46,9 @@ def panel_delete():
 @panel.route('/panel/update_car', methods=['POST'])
 @login_required
 def panel_update_post():
+    _id = request.args.get('_id')
     values = {i: request.form.get(i) for i in request.form if i != 'name'}
     photos = {i: request.files.get(i) for i in request.files}
 
-    response = Cars().update_car(photos=photos, values_dict=values)
+    response = Cars().update_car(photos=photos, _id=_id, values_dict=values)
     return response
