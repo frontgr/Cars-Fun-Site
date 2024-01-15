@@ -17,11 +17,15 @@ def panel_post():
 def panel_add_post():
     name = request.form.get('name')
     number = request.form.get('number')
+    speed_up = request.form.get('speed_up')
+    max_speed = request.form.get('max_speed')
     photos = {i: request.files.get(i) for i in request.files}
 
     response = Cars().add_new_car(
                         name=name,
                         number=number,
+                        speed_up=speed_up,
+                        max_speed=max_speed,
                         photos=photos
                         )
 
