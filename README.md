@@ -30,9 +30,9 @@ We use Prettier for formatting our text. See more about our configuration [here]
 
 You should clone the repository, install Docker and run this command in the same directory:
 
-    ```bash
+    
     docker-compose up --build
-    ```
+    
 
 You can read more about Docker [here](https://frontgr.github.io/docs/docker/docker/).
 
