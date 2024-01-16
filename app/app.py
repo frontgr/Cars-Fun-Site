@@ -7,6 +7,7 @@ from .models.admin import Admin
 from .routers.main import main
 from .routers.auth import auth
 from .routers.panel import panel
+from .routers.admins import admins
 
 app = Flask(__name__)
 app.secret_key = secret_key
@@ -23,3 +24,4 @@ def load_user(user_id):
 app.register_blueprint(main)
 app.register_blueprint(auth)
 app.register_blueprint(panel)
+app.register_blueprint(admins)
