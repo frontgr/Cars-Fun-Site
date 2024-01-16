@@ -7,42 +7,29 @@ from .client import db
 
 class Cars:
     def get_cars(self):
-        f = {}
+        cars_dict = {}
         for index, item in enumerate(db.cars.find()):
-            temp = {'_id': str(item['_id']),
-                    'name': item['name'],
-                    'number': item['number'],
-                    'car_type': item['car_type'],
-                    'speed_up': item['speed_up'],
-                    'max_speed': item['max_speed'],
-                    'cover_photo': item['cover_photo'],
-                    'photos': item['photos']}
-
-            f[index] = temp
-        return f
+            temp = {}
+            for key, value in item.items():
+                if key == '_id':
+                    temp[key] = str(value)
+                    continue
+                temp[key] = value
+            cars_dict[index] = temp
+        return cars_dict
 
     @allowed_file
-    def add_new_car(self, photos, name, number, car_type, speed_up, max_speed):
-        cover_photo = ''
-        if 'cover_photo' in photos:
-            cover_photo = convert(name, 'cover_photo', photos.pop('cover_photo'))
+    def add_new_car(self, photos, values):
+        car = {key: value for key, value in values}
 
-        photos_dict = {}
-        for photo in photos.items():
-            photos_dict[photo[0]] = convert(name, photo[0], photo[1])
+        car['cover_photo'] = convert(filename=car.get('name'),
+                                     index='cover_photo',
+                                     file=photos.pop('cover_photo'))
 
-        car = {
-            'name': name,
-            'number': number,
-            'car_type': car_type,
-            'speed_up': speed_up,
-            'max_speed': max_speed,
-            'cover_photo': cover_photo,
-            'photos': photos_dict
-        }
+        car['photos'] = {key: convert(filename=car['name'], index=key, file=value)
+                         for key, value in photos.items()}
 
         db.cars.insert_one(car)
-
         return {'status': 'ok'}
 
     def delete_car(self, _id):
@@ -53,16 +40,12 @@ class Cars:
         return {'status': 'ok'}
 
     @allowed_file
-    def update_car(self, photos, values_dict):
-        _id = values_dict.pop('_id')
+    def update_car(self, photos, _id, values_dict):
         name = db.cars.find_one({'_id': ObjectId(_id)})['name']
-        update = {}
+        update = {key: value for key, value in values_dict.items()}
 
-        for item in values_dict.items():
-            update[item[0]] = item[1]
-
-        for item in photos.items():
-            update[item[0]] = convert(name, item[0], item[1])
+        for key, value in photos.items():
+            update[key] = convert(name, key, value)
 
         car = {'_id': ObjectId(_id)}
         db.cars.update_one(car, {'$set': update})
