@@ -277,14 +277,14 @@
             <form class="add-car-popup__form">
                 <div class="add-car-popup__content">
                     <div class="add-car-popup__inputs">
-                        <input type="text" class="popup__input" placeholder="Name of a car...">
-                        <input type="text" class="popup__input popup__input_number" placeholder="Number, if available...">
+                        <input type="text" required class="popup__input" placeholder="Name of a car...">
+                        <input type="number" min="0" class="popup__input popup__input_number" placeholder="Number, if available...">
                         <div class="add-car-popup__btns">
                             <button class="add-car-popup__btns-btn active">Racer</button>
                             <button class="add-car-popup__btns-btn">Other</button>
                         </div>
-                        <input type="text" class="popup__input" placeholder="0-100 / sec...">
-                        <input type="text" class="popup__input" placeholder="top speed / kmph...">
+                        <input type="number" required min="0" class="popup__input" placeholder="0-100 / sec...">
+                        <input type="number" required min="0" class="popup__input" placeholder="top speed / kmph...">
                     </div>
                     <div class="popup__photo">
                         <div class="popup__photo-item">
@@ -324,14 +324,14 @@
             <form class="edit-car-popup__form">
                 <div class="edit-car-popup__content">
                     <div class="edit-car-popup__inputs">
-                        <input type="text" class="popup__input" placeholder="Lightning McQueen...">
-                        <input type="text" class="popup__input popup__input_number" placeholder="95...">
+                        <input type="text" required class="popup__input" placeholder="Lightning McQueen...">
+                        <input type="number" min="0" class="popup__input popup__input_number" placeholder="95...">
                         <div class="edit-car-popup__btns">
                             <button class="edit-car-popup__btns-btn active">Racer</button>
                             <button class="edit-car-popup__btns-btn">Other</button>
                         </div>
-                        <input type="text" class="popup__input" placeholder="4">
-                        <input type="text" class="popup__input" placeholder="318">
+                        <input type="number" required min="0" class="popup__input" placeholder="4">
+                        <input type="number" required min="0" class="popup__input" placeholder="318">
                     </div>
                     <div class="popup__photo">
                         <div class="popup__photo-item">
