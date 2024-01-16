@@ -4,7 +4,6 @@
 @import "./components/logo.scss";
 @import "./variables.scss";
 @import "./components/popup.scss";
-
 @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 
@@ -12,6 +11,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: transparent;
 }
 a {
   text-decoration: none;
@@ -28,3 +34,5 @@ body {
   width: 100%;
   margin: 0 auto;
 }
+
+@import "adaptive.scss";
