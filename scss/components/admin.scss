@@ -114,10 +114,10 @@
             & svg path{
             transition: all 0.3s;
             }
-            &:hover svg path{
+            &:not(.active):hover svg path{
                 stroke: #E11E18;
             }
-            &_eye:hover svg path{
+            &_eye:not(.active):hover svg path{
                 fill: #E11E18;
                 stroke: unset;
             }
@@ -277,6 +277,7 @@
             position: relative;
             z-index: 2;
             overflow: hidden;
+            cursor: pointer;
             &:hover img{
                 filter: brightness(0.6);
             }
@@ -429,6 +430,7 @@
             background: #F2F2F2; 
             width: 36px;
             height: 36px; 
+            cursor: pointer;
             &.active{
                 background: #75E0FF;
             }
@@ -436,9 +438,69 @@
     }
 }
 
+.delete-popup{
+    &__box{
+        width: 600px;
+        height: 340px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 23px;
+    }
+    &__title{
+        color: var(--txt_color, #000);
+        font-family: 'Montserrat';
+        font-size: 18px;
+        font-weight: 400;
+    }
+    &__btns{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        &-btn{
+            border-radius: 5px;
+            display: flex;
+            width: 190px;
+            padding: 14px 0px;
+            justify-content: center;
+            align-items: center;         
+            color: var(--txt_color_second, #FFF);
+            font-family: 'Montserrat';
+            font-size: 18px;
+            font-weight: 700;
+            border: none;
+            outline: none;
+            &_yes{
+                background: #2CA7CB;
+            }
+            &_no{
+                border: 1px solid var(--txt_color, #000);
+                background: #CECECE;                
+            }
+        }
+    }
+}
+
+
+.eye{
+    &__close{
+        display: none;
+    }
+    &.active{
+        & .eye__close{
+            display: block;
+        }
+        & .eye__open{
+            display: none;
+        }
+    }
+}
+
 .user-popup,
 .edit-car-popup,
 .add-car-popup,
-.edit-user-popup{
+.edit-user-popup,
+.delete-popup{
     display: none;
 }
