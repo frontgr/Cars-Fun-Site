@@ -1,5 +1,4 @@
-from flask import Blueprint, request, flash
-from werkzeug.security import check_password_hash
+from flask import Blueprint, request
 from flask_login import login_user
 
 from app.models.admin import Admin
@@ -14,7 +13,7 @@ def login_post():
 
     admin = Admin(login)
 
-    if admin.login is None or check_password_hash(admin.password, password) is False:
+    if admin.data_validation(password) is False:
         return {'status': 'Error'}
 
     admin.is_authenticated_update(True)
