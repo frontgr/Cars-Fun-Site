@@ -18,8 +18,12 @@
     padding: 60px 36px 0 240px;
     &__title{
         margin-bottom: 60px;
-        color: #000;
-        font-size: 24px;
+        
+        & a{
+            color: #000;
+            font-size: 24px;
+            font-weight: 400;
+        }
         & span{
             color: var(--color_second, #E11E18);
         }
@@ -71,7 +75,7 @@
     align-items: flex-end;
     gap: 48px;
     &__btn{
-        padding: 17px 60px;
+        padding: 17px 70px;
         color: var(--txt_color_second, #FFF);
         text-align: center;
         font-family: 'Montserrat';
@@ -98,7 +102,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 17px 36px 11px 36px;
+    padding: 16px 36px;
     border-radius: 6px;
     background: #FFF;     
     &__title{
@@ -138,7 +142,7 @@
 .analytics{
     padding-top: 60px;
     flex-direction: column;
-    gap: 54px;
+    gap: 60px;
     &__statistics{
         display: flex;
         align-items: center;
@@ -192,7 +196,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 95px;
+        gap: 34px;
         
     }
     &__content{
