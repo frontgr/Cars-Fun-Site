@@ -177,9 +177,6 @@
 }
 .add-car-popup,
 .edit-car-popup{
-
-
-    
     &__title{
         color: var(--txt_color, #000);
         font-family: 'Montserrat';
@@ -258,6 +255,10 @@
         font-weight: 700;
         &::placeholder{
         color: #AEAEAE;
+        }
+        &_description{
+            height: 139px;
+            resize: none;
         }
         &_number{
             color: var(--txt_color, #FF0B0B);

@@ -649,6 +649,10 @@
 .popup__input::placeholder {
   color: #AEAEAE;
 }
+.popup__input_description {
+  height: 139px;
+  resize: none;
+}
 .popup__input_number {
   color: var(--txt_color, #FF0B0B);
 }
