@@ -415,6 +415,7 @@
   color: #000;
   font-family: "Montserrat";
   font-size: 21.6px;
+  cursor: pointer;
 }
 .aside__item.active {
   background: #BEEFFF;
@@ -430,9 +431,12 @@
 }
 .aside__logout {
   padding: 17px 36px;
+}
+.aside__logout-link {
   color: #F00;
   font-family: "Montserrat";
   font-size: 21.6px;
+  cursor: pointer;
 }
 
 .content,

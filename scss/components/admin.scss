@@ -38,6 +38,7 @@
         color: #000;
         font-family: 'Montserrat';
         font-size: 21.6px;
+        cursor: pointer;
         &.active{
             background: #BEEFFF;
             & .aside__item-line{
@@ -53,9 +54,13 @@
     }
     &__logout{
         padding: 17px 36px;
-        color: #F00;
-        font-family: 'Montserrat';
-        font-size: 21.6px;
+        &-link{
+            color: #F00;
+            font-family: 'Montserrat';
+            font-size: 21.6px;
+            cursor: pointer;
+        }
+        
     }
 }
 .content,
