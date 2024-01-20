@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="admin">
+        <aside class="aside">
+            <h2 class="aside__title">Cars. <span>Fan site</span></h2>
+            <ul class="aside__list">
+                <li class="aside__item active">
+                    Content
+                    <div class="aside__item-line"></div>
+                </li>
+                <li class="aside__item">
+                    Analytics
+                    <div class="aside__item-line"></div>
+                </li>
+                <li class="aside__item">
+                    Users
+                    <div class="aside__item-line"></div>
+                </li>
+            </ul>
+            <div class="aside__logout">Log out</div>
+        </aside>
+        <div class="admin__box">
+            <div class="admin__container">
+                <section class="content active">
+                    <button class="content__btn" id="add-car-btn">Add car</button>
+                    <div class="content__list">
+                        <div class="item">
+                            <div class="item__title">
+                                Lightning McQueen <span>#95</span>
+                            </div>
+                            <div class="item__buttons">
+                                <button class="item__buttons-btn edit-car-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+                                        <path d="M6.67968 7.48001H5.23968C4.47586 7.48001 3.74332 7.78344 3.20321 8.32354C2.66311 8.86365 2.35968 9.59619 2.35968 10.36V23.32C2.35968 24.0838 2.66311 24.8164 3.20321 25.3565C3.74332 25.8966 4.47586 26.2 5.23968 26.2H18.1997C18.9635 26.2 19.696 25.8966 20.2361 25.3565C20.7763 24.8164 21.0797 24.0838 21.0797 23.32V21.88" stroke="#666666" stroke-width="2.88" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M19.6398 4.59997L23.9598 8.91997M25.9542 6.88237C26.5213 6.31523 26.8399 5.54603 26.8399 4.74397C26.8399 3.94192 26.5213 3.17271 25.9542 2.60557C25.387 2.03843 24.6178 1.71982 23.8158 1.71982C23.0137 1.71982 22.2445 2.03843 21.6774 2.60557L9.55975 14.68V19H13.8798L25.9542 6.88237Z" stroke="#666666" stroke-width="2.88" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                                <button class="item__buttons-btn item__buttons-btn_eye eye">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none" class="eye__open">
+                                        <path d="M14.8 11.2C15.7548 11.2 16.6705 11.5793 17.3456 12.2544C18.0208 12.9295 18.4 13.8452 18.4 14.8C18.4 15.7548 18.0208 16.6704 17.3456 17.3456C16.6705 18.0207 15.7548 18.4 14.8 18.4C13.8453 18.4 12.9296 18.0207 12.2545 17.3456C11.5793 16.6704 11.2 15.7548 11.2 14.8C11.2 13.8452 11.5793 12.9295 12.2545 12.2544C12.9296 11.5793 13.8453 11.2 14.8 11.2ZM14.8 5.79999C20.8 5.79999 25.924 9.53199 28 14.8C25.924 20.068 20.8 23.8 14.8 23.8C8.80004 23.8 3.67604 20.068 1.60004 14.8C3.67604 9.53199 8.80004 5.79999 14.8 5.79999ZM4.21604 14.8C5.18594 16.7804 6.692 18.4489 8.56301 19.6159C10.434 20.7829 12.5949 21.4016 14.8 21.4016C17.0052 21.4016 19.1661 20.7829 21.0371 19.6159C22.9081 18.4489 24.4141 16.7804 25.384 14.8C24.4141 12.8196 22.9081 11.1511 21.0371 9.98408C19.1661 8.81707 17.0052 8.1984 14.8 8.1984C12.5949 8.1984 10.434 8.81707 8.56301 9.98408C6.692 11.1511 5.18594 12.8196 4.21604 14.8Z" fill="#666666"/>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" class="eye__close">
+                                        <path d="M3 10C3.85861 11.0414 4.87009 11.9467 6 12.685M6 12.685C7.21621 13.4793 8.57444 14.0311 10 14.31C11.3212 14.5641 12.6788 14.5641 14 14.31C15.4256 14.0311 16.7838 13.4793 18 12.685M6 12.685L4.5 14.5M21 10C20.1414 11.0414 19.1299 11.9467 18 12.685M18 12.685L19.5 14.5M10 14.309L9.5 16.5M14 14.309L14.5 16.5" stroke="#2CA7CB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>                                
+                                <button class="item__buttons-btn delete-car-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="30" viewBox="0 0 29 30" fill="none">
+                                        <path d="M11.2064 18.1936L14.6012 14.8M14.6012 14.8L17.9948 11.4064M14.6012 14.8L11.2064 11.4064M14.6012 14.8L17.9948 18.1936M14.6 26.8C21.2276 26.8 26.6 21.4276 26.6 14.8C26.6 8.17239 21.2276 2.79999 14.6 2.79999C7.97244 2.79999 2.60004 8.17239 2.60004 14.8C2.60004 21.4276 7.97244 26.8 14.6 26.8Z" stroke="#666666" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>                                
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item__title">
+                                Lightning McQueen <span>#95</span>
+                            </div>
+                            <div class="item__buttons">
+                                <button class="item__buttons-btn edit-car-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+                                        <path d="M6.67968 7.48001H5.23968C4.47586 7.48001 3.74332 7.78344 3.20321 8.32354C2.66311 8.86365 2.35968 9.59619 2.35968 10.36V23.32C2.35968 24.0838 2.66311 24.8164 3.20321 25.3565C3.74332 25.8966 4.47586 26.2 5.23968 26.2H18.1997C18.9635 26.2 19.696 25.8966 20.2361 25.3565C20.7763 24.8164 21.0797 24.0838 21.0797 23.32V21.88" stroke="#666666" stroke-width="2.88" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M19.6398 4.59997L23.9598 8.91997M25.9542 6.88237C26.5213 6.31523 26.8399 5.54603 26.8399 4.74397C26.8399 3.94192 26.5213 3.17271 25.9542 2.60557C25.387 2.03843 24.6178 1.71982 23.8158 1.71982C23.0137 1.71982 22.2445 2.03843 21.6774 2.60557L9.55975 14.68V19H13.8798L25.9542 6.88237Z" stroke="#666666" stroke-width="2.88" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                                <button class="item__buttons-btn item__buttons-btn_eye eye">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none" class="eye__open">
+                                        <path d="M14.8 11.2C15.7548 11.2 16.6705 11.5793 17.3456 12.2544C18.0208 12.9295 18.4 13.8452 18.4 14.8C18.4 15.7548 18.0208 16.6704 17.3456 17.3456C16.6705 18.0207 15.7548 18.4 14.8 18.4C13.8453 18.4 12.9296 18.0207 12.2545 17.3456C11.5793 16.6704 11.2 15.7548 11.2 14.8C11.2 13.8452 11.5793 12.9295 12.2545 12.2544C12.9296 11.5793 13.8453 11.2 14.8 11.2ZM14.8 5.79999C20.8 5.79999 25.924 9.53199 28 14.8C25.924 20.068 20.8 23.8 14.8 23.8C8.80004 23.8 3.67604 20.068 1.60004 14.8C3.67604 9.53199 8.80004 5.79999 14.8 5.79999ZM4.21604 14.8C5.18594 16.7804 6.692 18.4489 8.56301 19.6159C10.434 20.7829 12.5949 21.4016 14.8 21.4016C17.0052 21.4016 19.1661 20.7829 21.0371 19.6159C22.9081 18.4489 24.4141 16.7804 25.384 14.8C24.4141 12.8196 22.9081 11.1511 21.0371 9.98408C19.1661 8.81707 17.0052 8.1984 14.8 8.1984C12.5949 8.1984 10.434 8.81707 8.56301 9.98408C6.692 11.1511 5.18594 12.8196 4.21604 14.8Z" fill="#666666"/>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" class="eye__close">
+                                        <path d="M3 10C3.85861 11.0414 4.87009 11.9467 6 12.685M6 12.685C7.21621 13.4793 8.57444 14.0311 10 14.31C11.3212 14.5641 12.6788 14.5641 14 14.31C15.4256 14.0311 16.7838 13.4793 18 12.685M6 12.685L4.5 14.5M21 10C20.1414 11.0414 19.1299 11.9467 18 12.685M18 12.685L19.5 14.5M10 14.309L9.5 16.5M14 14.309L14.5 16.5" stroke="#2CA7CB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>                                
+                                <button class="item__buttons-btn delete-car-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="30" viewBox="0 0 29 30" fill="none">
+                                        <path d="M11.2064 18.1936L14.6012 14.8M14.6012 14.8L17.9948 11.4064M14.6012 14.8L11.2064 11.4064M14.6012 14.8L17.9948 18.1936M14.6 26.8C21.2276 26.8 26.6 21.4276 26.6 14.8C26.6 8.17239 21.2276 2.79999 14.6 2.79999C7.97244 2.79999 2.60004 8.17239 2.60004 14.8C2.60004 21.4276 7.97244 26.8 14.6 26.8Z" stroke="#666666" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>                             
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item__title">
+                                Lightning McQueen <span>#95</span>
+                            </div>
+                            <div class="item__buttons">
+                                <button class="item__buttons-btn edit-car-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+                                        <path d="M6.67968 7.48001H5.23968C4.47586 7.48001 3.74332 7.78344 3.20321 8.32354C2.66311 8.86365 2.35968 9.59619 2.35968 10.36V23.32C2.35968 24.0838 2.66311 24.8164 3.20321 25.3565C3.74332 25.8966 4.47586 26.2 5.23968 26.2H18.1997C18.9635 26.2 19.696 25.8966 20.2361 25.3565C20.7763 24.8164 21.0797 24.0838 21.0797 23.32V21.88" stroke="#666666" stroke-width="2.88" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M19.6398 4.59997L23.9598 8.91997M25.9542 6.88237C26.5213 6.31523 26.8399 5.54603 26.8399 4.74397C26.8399 3.94192 26.5213 3.17271 25.9542 2.60557C25.387 2.03843 24.6178 1.71982 23.8158 1.71982C23.0137 1.71982 22.2445 2.03843 21.6774 2.60557L9.55975 14.68V19H13.8798L25.9542 6.88237Z" stroke="#666666" stroke-width="2.88" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                                <button class="item__buttons-btn item__buttons-btn_eye eye">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none" class="eye__open">
+                                        <path d="M14.8 11.2C15.7548 11.2 16.6705 11.5793 17.3456 12.2544C18.0208 12.9295 18.4 13.8452 18.4 14.8C18.4 15.7548 18.0208 16.6704 17.3456 17.3456C16.6705 18.0207 15.7548 18.4 14.8 18.4C13.8453 18.4 12.9296 18.0207 12.2545 17.3456C11.5793 16.6704 11.2 15.7548 11.2 14.8C11.2 13.8452 11.5793 12.9295 12.2545 12.2544C12.9296 11.5793 13.8453 11.2 14.8 11.2ZM14.8 5.79999C20.8 5.79999 25.924 9.53199 28 14.8C25.924 20.068 20.8 23.8 14.8 23.8C8.80004 23.8 3.67604 20.068 1.60004 14.8C3.67604 9.53199 8.80004 5.79999 14.8 5.79999ZM4.21604 14.8C5.18594 16.7804 6.692 18.4489 8.56301 19.6159C10.434 20.7829 12.5949 21.4016 14.8 21.4016C17.0052 21.4016 19.1661 20.7829 21.0371 19.6159C22.9081 18.4489 24.4141 16.7804 25.384 14.8C24.4141 12.8196 22.9081 11.1511 21.0371 9.98408C19.1661 8.81707 17.0052 8.1984 14.8 8.1984C12.5949 8.1984 10.434 8.81707 8.56301 9.98408C6.692 11.1511 5.18594 12.8196 4.21604 14.8Z" fill="#666666"/>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" class="eye__close">
+                                        <path d="M3 10C3.85861 11.0414 4.87009 11.9467 6 12.685M6 12.685C7.21621 13.4793 8.57444 14.0311 10 14.31C11.3212 14.5641 12.6788 14.5641 14 14.31C15.4256 14.0311 16.7838 13.4793 18 12.685M6 12.685L4.5 14.5M21 10C20.1414 11.0414 19.1299 11.9467 18 12.685M18 12.685L19.5 14.5M10 14.309L9.5 16.5M14 14.309L14.5 16.5" stroke="#2CA7CB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>                                
+                                <button class="item__buttons-btn delete-car-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="30" viewBox="0 0 29 30" fill="none">
+                                        <path d="M11.2064 18.1936L14.6012 14.8M14.6012 14.8L17.9948 11.4064M14.6012 14.8L11.2064 11.4064M14.6012 14.8L17.9948 18.1936M14.6 26.8C21.2276 26.8 26.6 21.4276 26.6 14.8C26.6 8.17239 21.2276 2.79999 14.6 2.79999C7.97244 2.79999 2.60004 8.17239 2.60004 14.8C2.60004 21.4276 7.97244 26.8 14.6 26.8Z" stroke="#666666" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>                             
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item__title">
+                                Lightning McQueen <span>#95</span>
+                            </div>
+                            <div class="item__buttons">
+                                <button class="item__buttons-btn edit-car-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+                                        <path d="M6.67968 7.48001H5.23968C4.47586 7.48001 3.74332 7.78344 3.20321 8.32354C2.66311 8.86365 2.35968 9.59619 2.35968 10.36V23.32C2.35968 24.0838 2.66311 24.8164 3.20321 25.3565C3.74332 25.8966 4.47586 26.2 5.23968 26.2H18.1997C18.9635 26.2 19.696 25.8966 20.2361 25.3565C20.7763 24.8164 21.0797 24.0838 21.0797 23.32V21.88" stroke="#666666" stroke-width="2.88" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M19.6398 4.59997L23.9598 8.91997M25.9542 6.88237C26.5213 6.31523 26.8399 5.54603 26.8399 4.74397C26.8399 3.94192 26.5213 3.17271 25.9542 2.60557C25.387 2.03843 24.6178 1.71982 23.8158 1.71982C23.0137 1.71982 22.2445 2.03843 21.6774 2.60557L9.55975 14.68V19H13.8798L25.9542 6.88237Z" stroke="#666666" stroke-width="2.88" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                                <button class="item__buttons-btn item__buttons-btn_eye eye">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none" class="eye__open">
+                                        <path d="M14.8 11.2C15.7548 11.2 16.6705 11.5793 17.3456 12.2544C18.0208 12.9295 18.4 13.8452 18.4 14.8C18.4 15.7548 18.0208 16.6704 17.3456 17.3456C16.6705 18.0207 15.7548 18.4 14.8 18.4C13.8453 18.4 12.9296 18.0207 12.2545 17.3456C11.5793 16.6704 11.2 15.7548 11.2 14.8C11.2 13.8452 11.5793 12.9295 12.2545 12.2544C12.9296 11.5793 13.8453 11.2 14.8 11.2ZM14.8 5.79999C20.8 5.79999 25.924 9.53199 28 14.8C25.924 20.068 20.8 23.8 14.8 23.8C8.80004 23.8 3.67604 20.068 1.60004 14.8C3.67604 9.53199 8.80004 5.79999 14.8 5.79999ZM4.21604 14.8C5.18594 16.7804 6.692 18.4489 8.56301 19.6159C10.434 20.7829 12.5949 21.4016 14.8 21.4016C17.0052 21.4016 19.1661 20.7829 21.0371 19.6159C22.9081 18.4489 24.4141 16.7804 25.384 14.8C24.4141 12.8196 22.9081 11.1511 21.0371 9.98408C19.1661 8.81707 17.0052 8.1984 14.8 8.1984C12.5949 8.1984 10.434 8.81707 8.56301 9.98408C6.692 11.1511 5.18594 12.8196 4.21604 14.8Z" fill="#666666"/>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" class="eye__close">
+                                        <path d="M3 10C3.85861 11.0414 4.87009 11.9467 6 12.685M6 12.685C7.21621 13.4793 8.57444 14.0311 10 14.31C11.3212 14.5641 12.6788 14.5641 14 14.31C15.4256 14.0311 16.7838 13.4793 18 12.685M6 12.685L4.5 14.5M21 10C20.1414 11.0414 19.1299 11.9467 18 12.685M18 12.685L19.5 14.5M10 14.309L9.5 16.5M14 14.309L14.5 16.5" stroke="#2CA7CB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>                                
+                                <button class="item__buttons-btn delete-car-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="30" viewBox="0 0 29 30" fill="none">
+                                        <path d="M11.2064 18.1936L14.6012 14.8M14.6012 14.8L17.9948 11.4064M14.6012 14.8L11.2064 11.4064M14.6012 14.8L17.9948 18.1936M14.6 26.8C21.2276 26.8 26.6 21.4276 26.6 14.8C26.6 8.17239 21.2276 2.79999 14.6 2.79999C7.97244 2.79999 2.60004 8.17239 2.60004 14.8C2.60004 21.4276 7.97244 26.8 14.6 26.8Z" stroke="#666666" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>                            
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item__title">
+                                Lightning McQueen <span>#95</span>
+                            </div>
+                            <div class="item__buttons">
+                                <button class="item__buttons-btn edit-car-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+                                        <path d="M6.67968 7.48001H5.23968C4.47586 7.48001 3.74332 7.78344 3.20321 8.32354C2.66311 8.86365 2.35968 9.59619 2.35968 10.36V23.32C2.35968 24.0838 2.66311 24.8164 3.20321 25.3565C3.74332 25.8966 4.47586 26.2 5.23968 26.2H18.1997C18.9635 26.2 19.696 25.8966 20.2361 25.3565C20.7763 24.8164 21.0797 24.0838 21.0797 23.32V21.88" stroke="#666666" stroke-width="2.88" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M19.6398 4.59997L23.9598 8.91997M25.9542 6.88237C26.5213 6.31523 26.8399 5.54603 26.8399 4.74397C26.8399 3.94192 26.5213 3.17271 25.9542 2.60557C25.387 2.03843 24.6178 1.71982 23.8158 1.71982C23.0137 1.71982 22.2445 2.03843 21.6774 2.60557L9.55975 14.68V19H13.8798L25.9542 6.88237Z" stroke="#666666" stroke-width="2.88" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                                <button class="item__buttons-btn item__buttons-btn_eye eye">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none" class="eye__open">
+                                        <path d="M14.8 11.2C15.7548 11.2 16.6705 11.5793 17.3456 12.2544C18.0208 12.9295 18.4 13.8452 18.4 14.8C18.4 15.7548 18.0208 16.6704 17.3456 17.3456C16.6705 18.0207 15.7548 18.4 14.8 18.4C13.8453 18.4 12.9296 18.0207 12.2545 17.3456C11.5793 16.6704 11.2 15.7548 11.2 14.8C11.2 13.8452 11.5793 12.9295 12.2545 12.2544C12.9296 11.5793 13.8453 11.2 14.8 11.2ZM14.8 5.79999C20.8 5.79999 25.924 9.53199 28 14.8C25.924 20.068 20.8 23.8 14.8 23.8C8.80004 23.8 3.67604 20.068 1.60004 14.8C3.67604 9.53199 8.80004 5.79999 14.8 5.79999ZM4.21604 14.8C5.18594 16.7804 6.692 18.4489 8.56301 19.6159C10.434 20.7829 12.5949 21.4016 14.8 21.4016C17.0052 21.4016 19.1661 20.7829 21.0371 19.6159C22.9081 18.4489 24.4141 16.7804 25.384 14.8C24.4141 12.8196 22.9081 11.1511 21.0371 9.98408C19.1661 8.81707 17.0052 8.1984 14.8 8.1984C12.5949 8.1984 10.434 8.81707 8.56301 9.98408C6.692 11.1511 5.18594 12.8196 4.21604 14.8Z" fill="#666666"/>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" class="eye__close">
+                                        <path d="M3 10C3.85861 11.0414 4.87009 11.9467 6 12.685M6 12.685C7.21621 13.4793 8.57444 14.0311 10 14.31C11.3212 14.5641 12.6788 14.5641 14 14.31C15.4256 14.0311 16.7838 13.4793 18 12.685M6 12.685L4.5 14.5M21 10C20.1414 11.0414 19.1299 11.9467 18 12.685M18 12.685L19.5 14.5M10 14.309L9.5 16.5M14 14.309L14.5 16.5" stroke="#2CA7CB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>                                
+                                <button class="item__buttons-btn delete-car-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="30" viewBox="0 0 29 30" fill="none">
+                                        <path d="M11.2064 18.1936L14.6012 14.8M14.6012 14.8L17.9948 11.4064M14.6012 14.8L11.2064 11.4064M14.6012 14.8L17.9948 18.1936M14.6 26.8C21.2276 26.8 26.6 21.4276 26.6 14.8C26.6 8.17239 21.2276 2.79999 14.6 2.79999C7.97244 2.79999 2.60004 8.17239 2.60004 14.8C2.60004 21.4276 7.97244 26.8 14.6 26.8Z" stroke="#666666" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>                         
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="analytics">
+                    <div class="analytics__statistics">
+                        <div class="analytics__statistics-total">
+                            Total views: 42041
+                        </div>
+                        <div class="analytics__statistics-mainPage">
+                            Main page views: 18021
+                        </div>
+                    </div>
+                    <div class="analytics__list">
+                        <div class="item">
+                            <div class="item__title">
+                                Lightning McQueen <span>#95</span>
+                            </div>
+                            <div class="item__views">Views: 1322</div>
+                        </div>
+                        <div class="item">
+                            <div class="item__title">
+                                Lightning McQueen <span>#95</span>
+                            </div>
+                            <div class="item__views">Views: 1322</div>
+                        </div>
+                        <div class="item">
+                            <div class="item__title">
+                                Lightning McQueen <span>#95</span>
+                            </div>
+                            <div class="item__views">Views: 1322</div>
+                        </div>
+                        <div class="item">
+                            <div class="item__title">
+                                Lightning McQueen <span>#95</span>
+                            </div>
+                            <div class="item__views">Views: 1322</div>
+                        </div>
+                        <div class="item">
+                            <div class="item__title">
+                                Lightning McQueen <span>#95</span>
+                            </div>
+                            <div class="item__views">Views: 1322</div>
+                        </div>
+                    </div>
+                </section>
+                <section class="users">
+                    <button class="users__btn" id="add-user-btn">Add user</button>
+                    <div class="users__list">
+                        <div class="item">
+                            <div class="item__title">
+                                Admin 2
+                            </div>
+                            <div class="item__buttons">
+                                <button class="item__buttons-btn edit-user-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+                                        <path d="M6.67968 7.48001H5.23968C4.47586 7.48001 3.74332 7.78344 3.20321 8.32354C2.66311 8.86365 2.35968 9.59619 2.35968 10.36V23.32C2.35968 24.0838 2.66311 24.8164 3.20321 25.3565C3.74332 25.8966 4.47586 26.2 5.23968 26.2H18.1997C18.9635 26.2 19.696 25.8966 20.2361 25.3565C20.7763 24.8164 21.0797 24.0838 21.0797 23.32V21.88" stroke="#666666" stroke-width="2.88" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M19.6398 4.59997L23.9598 8.91997M25.9542 6.88237C26.5213 6.31523 26.8399 5.54603 26.8399 4.74397C26.8399 3.94192 26.5213 3.17271 25.9542 2.60557C25.387 2.03843 24.6178 1.71982 23.8158 1.71982C23.0137 1.71982 22.2445 2.03843 21.6774 2.60557L9.55975 14.68V19H13.8798L25.9542 6.88237Z" stroke="#666666" stroke-width="2.88" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                                <button class="item__buttons-btn delete-user-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="30" viewBox="0 0 29 30" fill="none">
+                                        <path d="M11.2064 18.1936L14.6012 14.8M14.6012 14.8L17.9948 11.4064M14.6012 14.8L11.2064 11.4064M14.6012 14.8L17.9948 18.1936M14.6 26.8C21.2276 26.8 26.6 21.4276 26.6 14.8C26.6 8.17239 21.2276 2.79999 14.6 2.79999C7.97244 2.79999 2.60004 8.17239 2.60004 14.8C2.60004 21.4276 7.97244 26.8 14.6 26.8Z" stroke="#666666" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>                                
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item__title">
+                                Moderator X
+                            </div>
+                            <div class="item__buttons">
+                                <button class="item__buttons-btn edit-user-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+                                        <path d="M6.67968 7.48001H5.23968C4.47586 7.48001 3.74332 7.78344 3.20321 8.32354C2.66311 8.86365 2.35968 9.59619 2.35968 10.36V23.32C2.35968 24.0838 2.66311 24.8164 3.20321 25.3565C3.74332 25.8966 4.47586 26.2 5.23968 26.2H18.1997C18.9635 26.2 19.696 25.8966 20.2361 25.3565C20.7763 24.8164 21.0797 24.0838 21.0797 23.32V21.88" stroke="#666666" stroke-width="2.88" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M19.6398 4.59997L23.9598 8.91997M25.9542 6.88237C26.5213 6.31523 26.8399 5.54603 26.8399 4.74397C26.8399 3.94192 26.5213 3.17271 25.9542 2.60557C25.387 2.03843 24.6178 1.71982 23.8158 1.71982C23.0137 1.71982 22.2445 2.03843 21.6774 2.60557L9.55975 14.68V19H13.8798L25.9542 6.88237Z" stroke="#666666" stroke-width="2.88" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                                <button class="item__buttons-btn delete-user-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="30" viewBox="0 0 29 30" fill="none">
+                                        <path d="M11.2064 18.1936L14.6012 14.8M14.6012 14.8L17.9948 11.4064M14.6012 14.8L11.2064 11.4064M14.6012 14.8L17.9948 18.1936M14.6 26.8C21.2276 26.8 26.6 21.4276 26.6 14.8C26.6 8.17239 21.2276 2.79999 14.6 2.79999C7.97244 2.79999 2.60004 8.17239 2.60004 14.8C2.60004 21.4276 7.97244 26.8 14.6 26.8Z" stroke="#666666" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>                                
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item__title">
+                                CarsLover
+                            </div>
+                            <div class="item__buttons">
+                                <button class="item__buttons-btn edit-user-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+                                        <path d="M6.67968 7.48001H5.23968C4.47586 7.48001 3.74332 7.78344 3.20321 8.32354C2.66311 8.86365 2.35968 9.59619 2.35968 10.36V23.32C2.35968 24.0838 2.66311 24.8164 3.20321 25.3565C3.74332 25.8966 4.47586 26.2 5.23968 26.2H18.1997C18.9635 26.2 19.696 25.8966 20.2361 25.3565C20.7763 24.8164 21.0797 24.0838 21.0797 23.32V21.88" stroke="#666666" stroke-width="2.88" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M19.6398 4.59997L23.9598 8.91997M25.9542 6.88237C26.5213 6.31523 26.8399 5.54603 26.8399 4.74397C26.8399 3.94192 26.5213 3.17271 25.9542 2.60557C25.387 2.03843 24.6178 1.71982 23.8158 1.71982C23.0137 1.71982 22.2445 2.03843 21.6774 2.60557L9.55975 14.68V19H13.8798L25.9542 6.88237Z" stroke="#666666" stroke-width="2.88" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                                <button class="item__buttons-btn delete-user-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="30" viewBox="0 0 29 30" fill="none">
+                                        <path d="M11.2064 18.1936L14.6012 14.8M14.6012 14.8L17.9948 11.4064M14.6012 14.8L11.2064 11.4064M14.6012 14.8L17.9948 18.1936M14.6 26.8C21.2276 26.8 26.6 21.4276 26.6 14.8C26.6 8.17239 21.2276 2.79999 14.6 2.79999C7.97244 2.79999 2.60004 8.17239 2.60004 14.8C2.60004 21.4276 7.97244 26.8 14.6 26.8Z" stroke="#666666" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>                                
+                            </div>
+                        </div>
+                    </div>
+                </section>                
+            </div>
+        </div>
+    </div>
+    <div class="admin-popup add-car-popup" id="add-car-popup">
+        <div class="admin-popup__box">
+            <h2 class="add-car-popup__title">
+                Add at least <span>1</span> photo. The first photo added will be the <span>cover photo</span> of the car
+            </h2>
+            <form class="add-car-popup__form">
+                <div class="add-car-popup__content">
+                    <div class="add-car-popup__inputs">
+                        <input type="text" class="popup__input" placeholder="Name of a car...">
+                        <input type="text" class="popup__input popup__input_number" placeholder="Number, if available...">
+                        <div class="add-car-popup__btns">
+                            <button class="add-car-popup__btns-btn active">Racer</button>
+                            <button class="add-car-popup__btns-btn">Other</button>
+                        </div>
+                        <input type="text" class="popup__input" placeholder="0-100 / sec...">
+                        <input type="text" class="popup__input" placeholder="top speed / kmph...">
+                    </div>
+                    <div class="popup__photo">
+                        <div class="popup__photo-item">
+                            <img src="../images/main_photo_2.webp" alt="">
+                            <div class="popup__photo-item_delete">+</div>
+                        </div>
+                        <div class="popup__photo-item">
+                            <img src="../images/main_photo_6.webp" alt="">
+                            <div class="popup__photo-item_delete">+</div>
+                        </div>
+                        <div class="popup__photo-item">
+                            <img src="../images/main_photo_1.webp" alt="">
+                            <div class="popup__photo-item_delete">+</div>
+                        </div>
+                        <div class="popup__photo-item">
+                            <img src="../images/main_photo_3.webp" alt="">
+                            <div class="popup__photo-item_delete">+</div>
+                        </div>
+
+                        <button class="popup__photo-btn">+</button>
+                    </div>
+                </div>
+                <button class="popup__form-btn">Add car</button>
+            </form>
+            <button class="popup__close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M9.172 14.828L12.001 12M12.001 12L14.829 9.172M12.001 12L9.172 9.172M12.001 12L14.829 14.828M12 22C17.523 22 22 17.523 22 12C22 6.477 17.523 2 12 2C6.477 2 2 6.477 2 12C2 17.523 6.477 22 12 22Z" stroke="#666666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div class="admin-popup edit-car-popup" id="edit-car-popup">
+        <div class="admin-popup__box">
+            <h2 class="edit-car-popup__title">
+                <span>Edit car</span> Lightning McQueen #95
+            </h2>
+            <form class="edit-car-popup__form">
+                <div class="edit-car-popup__content">
+                    <div class="edit-car-popup__inputs">
+                        <input type="text" class="popup__input" placeholder="Lightning McQueen...">
+                        <input type="text" class="popup__input popup__input_number" placeholder="95...">
+                        <div class="edit-car-popup__btns">
+                            <button class="edit-car-popup__btns-btn active">Racer</button>
+                            <button class="edit-car-popup__btns-btn">Other</button>
+                        </div>
+                        <input type="text" class="popup__input" placeholder="4">
+                        <input type="text" class="popup__input" placeholder="318">
+                    </div>
+                    <div class="popup__photo">
+                        <div class="popup__photo-item">
+                            <img src="../images/main_photo_2.webp" alt="">
+                            <div class="popup__photo-item_delete">+</div>
+                        </div>
+                        <div class="popup__photo-item">
+                            <img src="../images/main_photo_6.webp" alt="">
+                            <div class="popup__photo-item_delete">+</div>
+                        </div>
+                        <div class="popup__photo-item">
+                            <img src="../images/main_photo_1.webp" alt="">
+                            <div class="popup__photo-item_delete">+</div>
+                        </div>
+                        <div class="popup__photo-item">
+                            <img src="../images/main_photo_3.webp" alt="">
+                            <div class="popup__photo-item_delete">+</div>
+                        </div>
+
+                        <button class="popup__photo-btn">+</button>
+                    </div>
+                </div>
+                <button class="popup__form-btn">Update car</button>
+            </form>
+            <button class="popup__close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M9.172 14.828L12.001 12M12.001 12L14.829 9.172M12.001 12L9.172 9.172M12.001 12L14.829 14.828M12 22C17.523 22 22 17.523 22 12C22 6.477 17.523 2 12 2C6.477 2 2 6.477 2 12C2 17.523 6.477 22 12 22Z" stroke="#666666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div class="admin-popup user-popup" id="user-popup">
+        <div class="admin-popup__box">
+            <div class="user-popup__title"><span>Add user</span></div>
+            <form class="user-popup__form">
+                <div class="user-popup__inputs">
+                    <input type="text" class="popup__input" placeholder="Login of a new user...">
+                    <input type="text" class="popup__input" placeholder="Password of a new user...">
+                </div>
+                <div class="permision">
+                    <div class="permision__title">New user can</div>
+                    <div class="permision__box">
+                        <div class="permision__item">
+                            <span>Add users</span>
+                            <div class="permision__item-checkbox active"></div>
+                        </div>
+                        <div class="permision__item">
+                            <span>Delete users</span>
+                            <div class="permision__item-checkbox"></div>
+                        </div>
+                        <div class="permision__item">
+                            <span>Add cars</span>
+                            <div class="permision__item-checkbox"></div>
+                        </div>
+                        <div class="permision__item">
+                            <span>See analytics</span>
+                            <div class="permision__item-checkbox"></div>
+                        </div>
+                        <div class="permision__item">
+                            <span>Delete cars</span>
+                            <div class="permision__item-checkbox"></div>
+                        </div>
+                        <div class="permision__item">
+                            <span>Edit users</span>
+                            <div class="permision__item-checkbox"></div>
+                        </div>
+                        <div class="permision__item">
+                            <span>Edit cars</span>
+                            <div class="permision__item-checkbox"></div>
+                        </div>
+                        <div class="permision__item">
+                            <span>Hide cars</span>
+                            <div class="permision__item-checkbox"></div>
+                        </div>
+                    </div>
+                </div>
+                <button class="popup__form-btn">Add user</button>
+            </form>
+            <button class="popup__close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M9.172 14.828L12.001 12M12.001 12L14.829 9.172M12.001 12L9.172 9.172M12.001 12L14.829 14.828M12 22C17.523 22 22 17.523 22 12C22 6.477 17.523 2 12 2C6.477 2 2 6.477 2 12C2 17.523 6.477 22 12 22Z" stroke="#666666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div class="admin-popup edit-user-popup" id="edit-user-popup">
+        <div class="admin-popup__box">
+            <div class="user-popup__title"><span>Edit user</span> CarsLover</div>
+            <form class="user-popup__form">
+                <div class="user-popup__inputs">
+                    <input type="text" class="popup__input" placeholder="New login...">
+                    <input type="text" class="popup__input" placeholder="New password...">
+                </div>
+                <div class="permision">
+                    <div class="permision__title">New user can</div>
+                    <div class="permision__box">
+                        <div class="permision__item">
+                            <span>Add users</span>
+                            <div class="permision__item-checkbox active"></div>
+                        </div>
+                        <div class="permision__item">
+                            <span>Delete users</span>
+                            <div class="permision__item-checkbox"></div>
+                        </div>
+                        <div class="permision__item">
+                            <span>Add cars</span>
+                            <div class="permision__item-checkbox"></div>
+                        </div>
+                        <div class="permision__item">
+                            <span>See analytics</span>
+                            <div class="permision__item-checkbox"></div>
+                        </div>
+                        <div class="permision__item">
+                            <span>Delete cars</span>
+                            <div class="permision__item-checkbox"></div>
+                        </div>
+                        <div class="permision__item">
+                            <span>Edit users</span>
+                            <div class="permision__item-checkbox"></div>
+                        </div>
+                        <div class="permision__item">
+                            <span>Edit cars</span>
+                            <div class="permision__item-checkbox"></div>
+                        </div>
+                        <div class="permision__item">
+                            <span>Hide cars</span>
+                            <div class="permision__item-checkbox"></div>
+                        </div>
+                    </div>
+                </div>
+                <button class="popup__form-btn">Update user</button>
+            </form>
+            <button class="popup__close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M9.172 14.828L12.001 12M12.001 12L14.829 9.172M12.001 12L9.172 9.172M12.001 12L14.829 14.828M12 22C17.523 22 22 17.523 22 12C22 6.477 17.523 2 12 2C6.477 2 2 6.477 2 12C2 17.523 6.477 22 12 22Z" stroke="#666666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div class="delete-popup admin-popup" id="delete-popup">
+        <div class="delete-popup__box admin-popup__box">
+            <h3 class="delete-popup__title">Are you sure you want to delete this file?</h3>
+            <div class="delete-popup__btns">
+                <button class="delete-popup__btns-btn delete-popup__btns-btn_yes" onclick="closePopup()">Yes</button>
+                <button class="delete-popup__btns-btn delete-popup__btns-btn_no" onclick="closePopup()">No</button>
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/popup.js"></script>
+</body>
+</html>
