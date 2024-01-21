@@ -20,31 +20,20 @@ class Admin:
             return False
         return check_password_hash(self.admin.get('password'), password)
 
-    def is_active(self):
-        return True
-
     def get_id(self):
         return str(self.admin.get('_id'))
 
-    def is_authenticated(self):
-        return self.admin.get('authenticated')
-
-    def is_anonymous(self):
-        return False
-
-    def is_authenticated_update(self, status):
-        db.admins.update_one({"_id": self.admin.get('_id')},
-                             {"$set": {"authenticated": status}})
-
     def check_permission(self, requested_permission):
         return self.admin.get(requested_permission)
+
+    def get_info(self):
+        return self.admin.get('permission')
 
 
 def admin_permission(admin, requested_permission):
     def decorator_admin(func):
         @wraps(func)
         def decorator_wrapper(*args, **kwargs):
-            print(requested_permission)
             if admin.check_permission(requested_permission) == 'False':
                 return {'status': 'Error',
                         'message': 'Access denied'}
