@@ -1,5 +1,5 @@
 from flask import Blueprint, request
-from flask_login import login_user
+from flask_jwt_extended import create_access_token
 
 from app.models.admin import Admin
 
@@ -16,6 +16,5 @@ def login_post():
     if admin.data_validation(password) is False:
         return {'status': 'Error'}
 
-    admin.is_authenticated_update(True)
-    login_user(admin)
-    return {'status': 'ok'}
+    token = create_access_token(identity=admin.get_id())
+    return {'status': 'ok', 'access_token': token}

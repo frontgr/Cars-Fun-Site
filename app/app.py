@@ -1,7 +1,8 @@
 from flask import Flask
-from flask_login import LoginManager
+from flask_jwt_extended import JWTManager
 
-from .config import secret_key
+from .config import secret_key, jwt_secret_key
+
 from .models.admin import Admin
 
 from .routers.main import main
@@ -11,14 +12,15 @@ from .routers.admins import admins
 
 app = Flask(__name__)
 app.secret_key = secret_key
+app.config['JWT_SECRET_KEY'] = jwt_secret_key
 
-login_manager = LoginManager()
-login_manager.init_app(app)
+jwt = JWTManager(app)
 
 
-@login_manager.user_loader
-def load_user(user_id):
-    return Admin(_id=user_id)
+@jwt.user_lookup_loader
+def user_lookup_callback(_jwt_header, jwt_data):
+    identity = jwt_data["sub"]
+    return Admin(_id=identity)
 
 
 app.register_blueprint(main)
