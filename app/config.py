@@ -5,10 +5,11 @@ load_dotenv()
 
 # Flask app
 secret_key = os.getenv('SECRET_KEY')
+jwt_secret_key = os.getenv('JWT_SECRET_KEY')
 
 # Storage
 storage = './app/storage'
-extensions = {'png', 'jpg', 'jpeg'}
+extensions = {'png', 'jpg', 'jpeg', 'webp'}
 
 # DataBase
 host = os.getenv('HOST')
