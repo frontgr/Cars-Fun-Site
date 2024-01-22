@@ -1,8 +1,10 @@
 from bson.objectid import ObjectId
 
-from app.converter import convert, allowed_file
+from app.converter import convert
 from app.storage import delete_storage
+
 from .client import db
+from .decorators_cars_model import allowed_file, check_cars_input_fields
 
 
 class Cars:
@@ -18,9 +20,21 @@ class Cars:
             cars_dict[index] = temp
         return cars_dict
 
+    def get_car(self, _id):
+        car_dict = {}
+        response = db.cars.find_one({'_id': ObjectId(_id)})
+
+        for key, value in response.items():
+            if key == '_id':
+                car_dict[key] = str(value)
+                continue
+            car_dict[key] = value
+
+        return car_dict
+
     @allowed_file
-    def add_new_car(self, photos, values):
-        car = {key: value for key, value in values}
+    def add_new_car(self, photos, values_dict):
+        car = {key: value for key, value in values_dict.items()}
 
         car['cover_photo'] = convert(filename=car.get('name'),
                                      index='cover_photo',
