@@ -6,7 +6,7 @@ from app.storage import create_storage
 def convert(filename, index, file):
     w_dir = create_storage(filename, index)
 
-    photo_path = f'{w_dir}/{filename}.webp'
+    photo_path = f'{w_dir}/{index}.webp'
 
     image = Image.open(file)
     image = image.convert('RGB')
