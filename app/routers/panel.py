@@ -2,7 +2,7 @@ from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, current_user
 
 from app.models.cars import Cars
-from app.models.admin import admin_permission
+from app.routers.decorators_routers import admin_permission
 
 panel = Blueprint('panel', __name__)
 
@@ -16,12 +16,12 @@ def panel_post():
 @panel.route('/panel/add_car', methods=['POST'])
 @jwt_required()
 @admin_permission(current_user, 'add_cars')
-def panel_add_post(*args, **kwargs):
+def panel_add_post():
     values_dict = {i: request.form.get(i) for i in request.form}
     photos = {i: request.files.get(i) for i in request.files}
 
     response = Cars().add_new_car(
-                        values=values_dict,
+                        values_dict=values_dict,
                         photos=photos
                         )
 
@@ -43,10 +43,10 @@ def panel_delete():
 @admin_permission(current_user, 'edit_cars')
 def panel_update_post():
     _id = request.args.get('_id')
-    values = {i: request.form.get(i) for i in request.form if i != 'name'}
+    values_dict = {i: request.form.get(i) for i in request.form if i != 'name'}
     photos = {i: request.files.get(i) for i in request.files}
 
     response = Cars().update_car(photos=photos,
                                  _id=_id,
-                                 values_dict=values)
-    return response
+                                 values_dict=values_dict)
+    return jsonify(response)
