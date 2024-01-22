@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    container_name: final-backend
+    ports:
+      - "5000:5000"
+  mongo:
+    image: "mongo:latest"
+    container_name: final-mongodb
+    ports:
+      - "27017"
+    volumes:
+      - ./data:/data/db
