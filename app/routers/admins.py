@@ -2,7 +2,8 @@ from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, current_user
 
 from app.models.admins import Admins
-from app.models.admin import admin_permission
+
+from .decorators_routers import admin_permission
 
 
 admins = Blueprint('admins', __name__)
