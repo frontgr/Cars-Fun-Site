@@ -2,6 +2,7 @@ from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, current_user
 
 from app.models.admins import Admins
+from app.config import add_admin_fields, update_admin_fields
 
 from .decorators_routers import admin_permission
 
@@ -19,10 +20,17 @@ def admins_post():
 @jwt_required()
 @admin_permission(current_user, 'add_users')
 def admins_add_post():
-    values_dict = {i: request.form.get(i) for i in request.form}
+    input_fields = {i for i in request.form}
 
-    response = Admins().add_admin(values=values_dict)
-    return response
+    if input_fields in add_admin_fields:
+        values_dict = {i: request.form.get(i) for i in request.form if i in add_admin_fields}
+
+        response = Admins().add_admin(values=values_dict)
+        return response
+
+    else:
+        return {'status': 'Error',
+                'message': 'Not all fields are filled or an unexpected value has been passed'}
 
 
 @admins.route('/panel/delete_admin', methods=['DELETE'])
@@ -39,9 +47,16 @@ def delete_admin():
 @jwt_required()
 @admin_permission(current_user, 'edit_users')
 def admin_update_post():
-    _id = request.args.get('_id')
-    values = {i: request.form.get(i) for i in request.form if i != 'password'}
+    input_fields = {i for i in request.form}
 
-    response = Admins().update_admin(_id=_id,
-                                     values_dict=values)
-    return response
+    if input_fields in update_admin_fields:
+        _id = request.args.get('_id')
+        values = {i: request.form.get(i) for i in request.form if i != 'password'}
+
+        response = Admins().update_admin(_id=_id,
+                                         values_dict=values)
+        return response
+
+    else:
+        return {'status': 'Error',
+                'message': 'Not all fields are filled or an unexpected value has been passed'}

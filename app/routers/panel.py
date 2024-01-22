@@ -3,6 +3,8 @@ from flask_jwt_extended import jwt_required, current_user
 
 from app.models.cars import Cars
 from app.routers.decorators_routers import admin_permission
+from app.config import add_car_fields
+
 
 panel = Blueprint('panel', __name__)
 
@@ -17,15 +19,18 @@ def panel_post():
 @jwt_required()
 @admin_permission(current_user, 'add_cars')
 def panel_add_post():
-    values_dict = {i: request.form.get(i) for i in request.form}
-    photos = {i: request.files.get(i) for i in request.files}
+    input_fields = {i for i in request.form}
 
-    response = Cars().add_new_car(
-                        values_dict=values_dict,
-                        photos=photos
-                        )
+    if input_fields in add_car_fields:
+        values_dict = {i: request.form.get(i) for i in request.form}
+        photos = {i: request.files.get(i) for i in request.files}
 
-    return response
+        response = Cars().add_new_car(values_dict=values_dict,
+                                      photos=photos)
+        return response
+    else:
+        return {'status': 'Error',
+                'message': 'Not all fields are filled or an unexpected value has been passed'}
 
 
 @panel.route('/panel/delete_car', methods=['DELETE'])
