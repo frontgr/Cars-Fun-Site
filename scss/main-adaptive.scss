@@ -5,45 +5,6 @@
   .main__item {
     width: 420px;
   }
-  // Second page
-  .second-page {
-    max-width: 100%;
-  }
-  .second-page .main__info {
-    flex-direction: column-reverse;
-  }
-  .second-page .main__photos {
-    justify-content: center;
-  }
-  .second-page .container {
-    max-width: 1164px;
-  }
-  .second-page .main__photos img {
-    &:nth-child(6n + 1) {
-      width: calc(883px * 0.5);
-      height: calc(411px * 0.5);
-    }
-    &:nth-child(6n + 2) {
-      width: calc(687px * 0.5);
-      height: calc(411px * 0.5);
-    }
-    &:nth-child(6n + 3) {
-      width: calc(1598px * 0.5 + 15px);
-      height: calc(570px * 0.5);
-    }
-    &:nth-child(6n + 4) {
-      width: calc(687px * 0.5);
-      height: calc(411px * 0.5);
-    }
-    &:nth-child(6n + 5) {
-      width: calc(883px * 0.5);
-      height: calc(411px * 0.5);
-    }
-    &:nth-child(6n + 6) {
-      width: calc(1598px * 0.5 + 15px);
-      height: calc(666px * 0.5);
-    }
-  }
 }
 @media (min-width: 1313px) and (max-width: 1380px) {
   .container {
@@ -72,42 +33,6 @@
   }
   .show-more-btns_showmore {
     padding: 20px;
-  }
-  // Second page
-  .second-page .main__info {
-    flex-direction: column-reverse;
-  }
-  .second-page .main__photos {
-    justify-content: center;
-  }
-  .second-page .container {
-    max-width: 1164px;
-  }
-  .second-page .main__photos img {
-    &:nth-child(6n + 1) {
-      width: calc(883px * 0.5);
-      height: calc(411px * 0.5);
-    }
-    &:nth-child(6n + 2) {
-      width: calc(687px * 0.5);
-      height: calc(411px * 0.5);
-    }
-    &:nth-child(6n + 3) {
-      width: calc(1598px * 0.5 + 15px);
-      height: calc(570px * 0.5);
-    }
-    &:nth-child(6n + 4) {
-      width: calc(687px * 0.5);
-      height: calc(411px * 0.5);
-    }
-    &:nth-child(6n + 5) {
-      width: calc(883px * 0.5);
-      height: calc(411px * 0.5);
-    }
-    &:nth-child(6n + 6) {
-      width: calc(1598px * 0.5 + 15px);
-      height: calc(666px * 0.5);
-    }
   }
 }
 @media (min-width: 991px) and (max-width: 1313px) {
@@ -138,101 +63,8 @@
       width: 457px;
     }
   }
-  // Second page
-  .second-page .main__info {
-    flex-direction: column-reverse;
-  }
-  .second-page .main__photos {
-    justify-content: center;
-  }
-  .second-page .container {
-    max-width: 1000px;
-  }
-  .second-page .main__info-img {
-    width: 1000px;
-    height: calc(474px * 1.215);
-  }
-  .second-page .footer__content {
-    justify-content: space-around;
-  }
-  .second-page .main__photos img {
-    &:nth-child(6n + 1) {
-      width: calc(883px * 0.6);
-      height: calc(411px * 0.6);
-    }
-    &:nth-child(6n + 2) {
-      width: calc(687px * 0.6);
-      height: calc(411px * 0.6);
-    }
-    &:nth-child(6n + 3) {
-      width: calc(1598px * 0.6 + 15px);
-      height: calc(570px * 0.6);
-    }
-    &:nth-child(6n + 4) {
-      width: calc(687px * 0.6);
-      height: calc(411px * 0.6);
-    }
-    &:nth-child(6n + 5) {
-      width: calc(883px * 0.6);
-      height: calc(411px * 0.6);
-    }
-    &:nth-child(6n + 6) {
-      width: calc(1598px * 0.6 + 15px);
-      height: calc(666px * 0.6);
-    }
-  }
 }
-@media (min-width: 570px) and (max-width: 1060px) {
-  // Second page
-  .second-page .main__info {
-    flex-direction: column-reverse;
-  }
-  .second-page .main__photos {
-    justify-content: center;
-  }
-  .second-page .container {
-    max-width: 1000px;
-  }
-  .second-page .main__info-img {
-    width: 720px;
-    height: 353px;
-  }
-  .second-page .header__search {
-    transform: translateX(-48px);
-  }
-  .second-page .header__nav {
-    justify-content: space-around;
-  }
-  .second-page .footer__content {
-    justify-content: space-around;
-  }
-  .second-page .main__photos img {
-    &:nth-child(6n + 1) {
-      width: 398px;
-      height: 185px;
-    }
-    &:nth-child(6n + 2) {
-      width: 309px;
-      height: 185px;
-    }
-    &:nth-child(6n + 3) {
-      width: 719px +15px;
-      height: 257px;
-    }
-    &:nth-child(6n + 4) {
-      width: 309px;
-      height: 185px;
-    }
-    &:nth-child(6n + 5) {
-      width: 397px;
-      height: 185px;
-    }
-    &:nth-child(6n + 6) {
-      width: 719px +15px;
-      height: 300px;
-    }
-  }
-}
+
 @media (min-width: 812px) and (max-width: 990px) {
   .container {
     max-width: 720px;
