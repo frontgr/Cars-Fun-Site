@@ -395,8 +395,11 @@
 }
 .aside__title {
   margin-bottom: 60px;
+}
+.aside__title a {
   color: #000;
   font-size: 24px;
+  font-weight: 400;
 }
 .aside__title span {
   color: var(--color_second, #E11E18);
@@ -415,6 +418,7 @@
   color: #000;
   font-family: "Montserrat";
   font-size: 21.6px;
+  cursor: pointer;
 }
 .aside__item.active {
   background: #BEEFFF;
@@ -430,9 +434,12 @@
 }
 .aside__logout {
   padding: 17px 36px;
+}
+.aside__logout-link {
   color: #F00;
   font-family: "Montserrat";
   font-size: 21.6px;
+  cursor: pointer;
 }
 
 .content,
@@ -445,7 +452,7 @@
 }
 .content__btn,
 .users__btn {
-  padding: 17px 60px;
+  padding: 17px 70px;
   color: var(--txt_color_second, #FFF);
   text-align: center;
   font-family: "Montserrat";
@@ -474,7 +481,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 17px 36px 11px 36px;
+  padding: 16px 36px;
   border-radius: 6px;
   background: #FFF;
 }
@@ -513,7 +520,7 @@
 .analytics {
   padding-top: 60px;
   flex-direction: column;
-  gap: 54px;
+  gap: 60px;
 }
 .analytics__statistics {
   display: flex;
@@ -573,7 +580,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 95px;
+  gap: 34px;
 }
 .add-car-popup__content,
 .edit-car-popup__content {
@@ -644,6 +651,10 @@
 }
 .popup__input::placeholder {
   color: #AEAEAE;
+}
+.popup__input_description {
+  height: 139px;
+  resize: none;
 }
 .popup__input_number {
   color: var(--txt_color, #FF0B0B);

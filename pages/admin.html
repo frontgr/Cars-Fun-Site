@@ -5,12 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Document</title>
+    <link rel="icon" href="../images/cars_logo.webp" type="image/x-icon" />
+    <title>Cars. Fan site</title>
 </head>
 <body>
     <div class="admin">
         <aside class="aside">
-            <h2 class="aside__title">Cars. <span>Fan site</span></h2>
+            <div class="aside__title">
+                <a href="../">Cars. <span>Fan site</span></a>
+            </div>
             <ul class="aside__list">
                 <li class="aside__item active">
                     Content
@@ -25,7 +28,9 @@
                     <div class="aside__item-line"></div>
                 </li>
             </ul>
-            <div class="aside__logout">Log out</div>
+            <div class="aside__logout">
+                <a href="../" class="aside__logout-link">Log out</a>
+            </div>
         </aside>
         <div class="admin__box">
             <div class="admin__container">
@@ -276,14 +281,15 @@
             <form class="add-car-popup__form">
                 <div class="add-car-popup__content">
                     <div class="add-car-popup__inputs">
-                        <input type="text" class="popup__input" placeholder="Name of a car...">
-                        <input type="text" class="popup__input popup__input_number" placeholder="Number, if available...">
+                        <input type="text" required class="popup__input" placeholder="Name of a car...">
+                        <input type="number" min="0" class="popup__input popup__input_number" placeholder="Number, if available...">
                         <div class="add-car-popup__btns">
                             <button class="add-car-popup__btns-btn active">Racer</button>
                             <button class="add-car-popup__btns-btn">Other</button>
                         </div>
-                        <input type="text" class="popup__input" placeholder="0-100 / sec...">
-                        <input type="text" class="popup__input" placeholder="top speed / kmph...">
+                        <input type="number" required min="0" class="popup__input" placeholder="0-100 / sec...">
+                        <input type="number" required min="0" class="popup__input" placeholder="top speed / kmph...">
+                        <textarea required class="popup__input popup__input_description" placeholder="Description..."></textarea>
                     </div>
                     <div class="popup__photo">
                         <div class="popup__photo-item">
@@ -323,14 +329,15 @@
             <form class="edit-car-popup__form">
                 <div class="edit-car-popup__content">
                     <div class="edit-car-popup__inputs">
-                        <input type="text" class="popup__input" placeholder="Lightning McQueen...">
-                        <input type="text" class="popup__input popup__input_number" placeholder="95...">
+                        <input type="text" required class="popup__input" placeholder="Lightning McQueen...">
+                        <input type="number" min="0" class="popup__input popup__input_number" placeholder="95...">
                         <div class="edit-car-popup__btns">
                             <button class="edit-car-popup__btns-btn active">Racer</button>
                             <button class="edit-car-popup__btns-btn">Other</button>
                         </div>
-                        <input type="text" class="popup__input" placeholder="4">
-                        <input type="text" class="popup__input" placeholder="318">
+                        <input type="number" required min="0" class="popup__input" placeholder="4">
+                        <input type="number" required min="0" class="popup__input" placeholder="318">
+                        <textarea required class="popup__input popup__input_description" placeholder="Description..."></textarea>
                     </div>
                     <div class="popup__photo">
                         <div class="popup__photo-item">
