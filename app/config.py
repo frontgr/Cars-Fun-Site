@@ -1,19 +1,17 @@
 import os
-from dotenv import load_dotenv
 
-load_dotenv()
 
 # Flask app
-secret_key = os.getenv('SECRET_KEY')
-jwt_secret_key = os.getenv('JWT_SECRET_KEY')
+secret_key = os.environ['SECRET_KEY']
+jwt_secret_key = os.environ['JWT_SECRET_KEY']
 
 # Storage
 storage = './app/storage'
 extensions = {'png', 'jpg', 'jpeg', 'webp'}
 
 # DataBase
-host = os.getenv('HOST')
-port = os.getenv('PORT')
+host = os.environ['HOST']
+port = int(os.environ['PORT'])
 
 db_uri = f"mongodb://{host}:{port}/"
 

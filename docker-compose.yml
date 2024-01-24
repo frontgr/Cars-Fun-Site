@@ -4,6 +4,13 @@ services:
   web:
     build: .
     container_name: final-backend
+    environment:
+      - SECRET_KEY= bb62c9e98f31a614b1e93d04be8c21d4
+      - JWT_SECRET_KEY= 6af6f102384506266aee8e043dae115d3f5de3caf22fa692
+      - HOST= mongo
+      - PORT= 27017
+      - DBNAME= cars_fun_site
+      - MY_VARIABLE= "bebra"
     ports:
       - "5000:5000"
   mongo:
