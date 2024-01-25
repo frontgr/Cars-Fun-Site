@@ -1,6 +1,6 @@
 from flask import Blueprint, request
 
-from app.models.cars import Cars
+from back.app.models.cars import Cars
 
 main = Blueprint('main', __name__)
 

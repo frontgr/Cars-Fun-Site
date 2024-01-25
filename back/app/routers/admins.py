@@ -1,8 +1,8 @@
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, current_user
 
-from app.models.admins import Admins
-from app.config import add_admin_fields, update_admin_fields
+from back.app.models.admins import Admins
+from back.app.config import add_admin_fields, update_admin_fields
 
 from .decorators_routers import admin_permission
 

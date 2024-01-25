@@ -1,9 +1,9 @@
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, current_user
 
-from app.models.cars import Cars
-from app.routers.decorators_routers import admin_permission
-from app.config import add_car_fields
+from back.app.models.cars import Cars
+from back.app.routers.decorators_routers import admin_permission
+from back.app.config import add_car_fields
 
 
 panel = Blueprint('panel', __name__)
