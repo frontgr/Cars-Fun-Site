@@ -1,9 +1,17 @@
 version: '3'
 
 services:
-  web:
-    build: .
-    container_name: final-backend
+  front:
+    image: nginx:latest
+    container_name: frontend
+    ports:
+        - "8080:80"
+    volumes:
+        - ./front:/usr/share/nginx/html
+
+  back:
+    build: ./back
+    container_name: backend
     environment:
       - SECRET_KEY= bb62c9e98f31a614b1e93d04be8c21d4
       - JWT_SECRET_KEY= 6af6f102384506266aee8e043dae115d3f5de3caf22fa692
@@ -15,7 +23,7 @@ services:
       - "5000:5000"
   mongo:
     image: "mongo:latest"
-    container_name: final-mongodb
+    container_name: mongodb
     ports:
       - "27017"
     volumes:
