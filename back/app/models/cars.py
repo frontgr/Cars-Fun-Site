@@ -1,7 +1,7 @@
 from bson.objectid import ObjectId
 
-from back.app.converter import convert
-from back.app.storage import delete_storage
+from app.converter import convert
+from app.storage import delete_storage
 
 from .client import db
 from .decorators_cars_model import allowed_file

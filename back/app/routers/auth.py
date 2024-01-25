@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import create_access_token, set_access_cookies
 
-from back.app.models.admin import Admin
+from app.models.admin import Admin
 
 auth = Blueprint('auth', __name__)
 

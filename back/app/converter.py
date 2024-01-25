@@ -1,6 +1,6 @@
 from PIL import Image
 
-from back.app.storage import create_storage
+from app.storage import create_storage
 
 
 def convert(filename, index, file):

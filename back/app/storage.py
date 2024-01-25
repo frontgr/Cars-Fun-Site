@@ -1,7 +1,7 @@
 import shutil
 import os
 
-from back.app.config import storage
+from app.config import storage
 
 
 def delete_storage(dir_name):

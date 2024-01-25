@@ -1,4 +1,4 @@
-from back.app.config import extensions
+from app.config import extensions
 
 
 def allowed_file(func):
