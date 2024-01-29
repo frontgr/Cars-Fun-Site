@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  front:
+    image: nginx:latest
+    container_name: frontend
+    ports:
+        - "8080:80"
+    volumes:
+        - ./front:/usr/share/nginx/html
+        - shared_data:/usr/share/nginx/html/storage
+
+  back:
+    build: ./back
+    container_name: backend
+    environment:
+      SECRET_KEY: "bb62c9e98f31a614b1e93d04be8c21d4"
+      JWT_SECRET_KEY: "6af6f102384506266aee8e043dae115d3f5de3caf22fa692"
+      DB_URI: "mongodb://root:root@mongo:27017"
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./data/back:/data/back
+      - shared_data:/Cars-Fun-Site/storage
+
+  mongo:
+    image: "mongo:latest"
+    container_name: mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: "root"
+      MONGO_INITDB_ROOT_PASSWORD: "root"
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data/db:/data/db
+
+volumes:
+  shared_data:

@@ -4,7 +4,7 @@ The project is a fully adaptive catalog site focused on demonstrating various ve
 
 ## Preview of the project
 
-![Preview image](images/assets/main_page.jpg)
+![Preview image](front/images/assets/main_page.jpg)
 Link to Figma layout is [here](https://www.figma.com/file/ol0x9Z5dX0ieiRWCvPva4T/Cars.-Fun-Site?type=design&node-id=1%3A1000&mode=design&t=7tHvCBJEXAwLnWIi-1).
 
 ---
