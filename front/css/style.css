@@ -56,7 +56,7 @@
 }
 .main__filter-btn {
   width: 518px;
-  padding: 54px 0 36px;
+  padding: 36px 0 36px;
   border-radius: 5px;
   border: 1px solid #2ca7cb;
   background: transparent;
@@ -1584,7 +1584,7 @@ body {
   .main__filter-btn {
     width: 720px;
     height: 85px;
-    padding: 28px 0px 10px 0px;
+    padding: 10px 0px 10px 0px;
   }
   .main__content {
     padding: 110px 0 110px 0;
@@ -1652,7 +1652,7 @@ body {
   .main__filter-btn {
     width: 518px;
     height: 85px;
-    padding: 28px 0px 10px 0px;
+    padding: 10px 0px 10px 0px;
   }
   .main__content {
     padding: 110px 0 110px 0;
@@ -1718,7 +1718,7 @@ body {
     display: flex;
     width: 320px;
     height: 52px;
-    padding: 11px 0px 15px 0px;
+    padding: 15px 0px 15px 0px;
     justify-content: center;
     align-items: center;
     font-size: 18px;
@@ -1816,7 +1816,7 @@ body {
     display: flex;
     width: 290px;
     height: 52px;
-    padding: 11px 0px 15px 0px;
+    padding: 15px 0px 15px 0px;
     justify-content: center;
     align-items: center;
     font-size: 18px;
