@@ -5,14 +5,18 @@ from app.models.cars import Cars
 main = Blueprint('main', __name__)
 
 
-@main.route('/cars', methods=['POST'])
-def get_all_cars():
-    return Cars().get_cars()
+@main.route('/cars', methods=['GET'])
+def get_cars():
+    return Cars().get_cars(), 200
 
 
-@main.route('/get_car', methods=['POST'])
-def get_car_by_id():
+@main.route('/car', methods=['GET'])
+def get_car():
     _id = request.args.get('_id')
 
-    response = Cars().get_car(_id)
-    return response
+    try:
+        response = Cars().get_car(_id)
+    except AttributeError:
+        return '', 400
+
+    return response, 200
