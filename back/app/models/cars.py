@@ -44,14 +44,11 @@ class Cars:
                          for key, value in photos.items()}
 
         db.cars.insert_one(car)
-        return {'status': 'ok'}
 
     def delete_car(self, _id):
         name = db.cars.find_one({'_id': ObjectId(_id)})['name']
         delete_storage(name)
         db.cars.delete_one({'_id': ObjectId(_id)})
-
-        return {'status': 'ok'}
 
     @allowed_file
     def update_car(self, photos, _id, values_dict):
@@ -63,5 +60,3 @@ class Cars:
 
         car = {'_id': ObjectId(_id)}
         db.cars.update_one(car, {'$set': update})
-
-        return {'status': 'ok'}
