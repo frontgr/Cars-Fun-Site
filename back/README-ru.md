@@ -37,6 +37,7 @@
   ### Запрос: '/car', Метод: ['GET'],
   ### Запрашиваемые значения: Не запрашивает значений
   Возвращает: запись из базы данных. Status code: 200 (OK)
+  
   Возвращает: None. Status code: 400 (BAD REQUEST)
 
 
@@ -45,6 +46,7 @@
   ### Запрос: '/login', Метод: ['POST'],
   ### Запрашиваемые значения: Запришивает из формы [login, password]
   Возвращает: {"msg": "Login successful"}. Status code: 200 (OK)
+  
   Возвращает: {"msg": "The data did not pass validation"}. Status code: 400 (BAD REQUEST)
 
 
@@ -97,6 +99,7 @@
   (ВНИМАНИЕ! Все поля описывающие права доступа содержат True если пользователь имеет это право или False в противном случае)
   
   Возвращает: None. Status code: 201 (CREATED)
+  
   Возвращает: {"msg": "Not all fields are filled or an unexpected value has been passed"}. Status code: 400 (BAD REQUEST)
 
   
@@ -113,5 +116,6 @@
   (ВНИМАНИЕ! На данный момент нельзя обновлять пароль)
   
   Возвращает: None. Status code: 200 (OK)
+  
   Возвращает: {"msg": "Not all fields are filled or an unexpected value has been passed"}. Status code: 400 (BAD REQUEST)
   
