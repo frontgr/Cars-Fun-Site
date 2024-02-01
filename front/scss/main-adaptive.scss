@@ -195,6 +195,10 @@
     &__content {
       flex-direction: column;
     }
+    &__company,
+    &__admin {
+      margin-top: 43px;
+    }
   }
 }
 @media (min-width: 420px) and (max-width: 569px) {
@@ -283,7 +287,8 @@
     &__content {
       flex-direction: column;
     }
-    &__company {
+    &__company,
+    &__admin {
       margin-top: 43px;
     }
     &__logos > a > img {

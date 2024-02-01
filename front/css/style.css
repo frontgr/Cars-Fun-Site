@@ -289,11 +289,14 @@
   padding-left: 30px;
   border-left: 1px solid #ffffff;
 }
-.footer__company {
+.footer__company, .footer__admin {
   color: var(--txt_color_second, #fff);
   font-family: "Montserrat";
   font-size: 20px;
   font-weight: 700;
+}
+.footer__admin {
+  color: var(--color_second);
 }
 
 .logo {
@@ -653,6 +656,7 @@
 .popup__input_description {
   height: 139px;
   resize: none;
+  font-size: 14px;
 }
 .popup__input_number {
   color: var(--txt_color, #ff0b0b);
@@ -662,6 +666,12 @@
 }
 .popup__input_number::placeholder {
   color: #eda8a8;
+}
+.popup__input_acceleration {
+  font-size: 14px;
+}
+.popup__input_speed {
+  font-size: 14px;
 }
 .popup__photo {
   width: 229px;
@@ -1671,6 +1681,9 @@ body {
   .footer__content {
     flex-direction: column;
   }
+  .footer__company, .footer__admin {
+    margin-top: 43px;
+  }
 }
 @media (min-width: 420px) and (max-width: 569px) {
   .container {
@@ -1759,7 +1772,7 @@ body {
   .footer__content {
     flex-direction: column;
   }
-  .footer__company {
+  .footer__company, .footer__admin {
     margin-top: 43px;
   }
   .footer__logos > a > img {
