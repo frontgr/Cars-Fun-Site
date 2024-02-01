@@ -6,7 +6,7 @@ const cars = [
     photo: "./images/main_item_1.webp",
   },
   {
-    name: "Jackson storm",
+    name: "Jackson Storm",
     type: "racers",
     number: 20,
     photo: "./images/main_item_3.webp",
