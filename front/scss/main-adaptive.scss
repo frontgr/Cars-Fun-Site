@@ -383,6 +383,9 @@
   }
   .footer {
     padding: 46px 0px 99px 0px;
+    &__admin {
+      margin-top: 43px;
+    }
     &__content {
       flex-direction: column;
     }
