@@ -102,6 +102,12 @@
       background: #17cbff;
     }
   }
+  &_hide{
+    background: var(--color_second, #e11e18);
+    &:hover {
+      background: #ff261f;
+    }
+  }
   &_up {
     background: none;
     border: none;

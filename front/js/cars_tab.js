@@ -53,13 +53,176 @@ const cars = [
     type: "racers",
     photo: "./images/main_item_2.webp",
   },
+  {
+    name: "Lightning McQueen",
+    number: 95,
+    type: "racers",
+    photo: "./images/main_item_1.webp",
+  },
+  {
+    name: "Jackson storm",
+    type: "racers",
+    number: 20,
+    photo: "./images/main_item_3.webp",
+  },
+  {
+    name: "Lewis Hamilton",
+    type: "racers",
+    photo: "./images/main_item_4.webp",
+  },
+  {
+    name: "Metr",
+    type: "other",
+    photo: "./images/main_item_5.webp",
+  },
+  {
+    name: "Luigi",
+    type: "other",
+    photo: "./images/main_item_6.webp",
+  },
+  {
+    name: "Cruz Ramirez",
+    type: "racers",
+    photo: "./images/main_item_2.webp",
+  },
+  {
+    name: "Lightning McQueen",
+    number: 95,
+    type: "racers",
+    photo: "./images/main_item_1.webp",
+  },
+  {
+    name: "Cruz Ramirez",
+    type: "racers",
+    photo: "./images/main_item_2.webp",
+  },
+  {
+    name: "Lightning McQueen",
+    number: 95,
+    type: "racers",
+    photo: "./images/main_item_1.webp",
+  },
+  {
+    name: "Cruz Ramirez",
+    type: "racers",
+    photo: "./images/main_item_2.webp",
+  },
+  {
+    name: "Lightning McQueen",
+    number: 95,
+    type: "racers",
+    photo: "./images/main_item_1.webp",
+  },
+  {
+    name: "Jackson storm",
+    type: "racers",
+    number: 20,
+    photo: "./images/main_item_3.webp",
+  },
+  {
+    name: "Lewis Hamilton",
+    type: "racers",
+    photo: "./images/main_item_4.webp",
+  },
+  {
+    name: "Metr",
+    type: "other",
+    photo: "./images/main_item_5.webp",
+  },
+  {
+    name: "Luigi",
+    type: "other",
+    photo: "./images/main_item_6.webp",
+  },
+  {
+    name: "Cruz Ramirez",
+    type: "racers",
+    photo: "./images/main_item_2.webp",
+  },
+  {
+    name: "Lightning McQueen",
+    number: 95,
+    type: "racers",
+    photo: "./images/main_item_1.webp",
+  },
+  {
+    name: "Cruz Ramirez",
+    type: "racers",
+    photo: "./images/main_item_2.webp",
+  },
+  {
+    name: "Lightning McQueen",
+    number: 95,
+    type: "racers",
+    photo: "./images/main_item_1.webp",
+  },
+  {
+    name: "Cruz Ramirez",
+    type: "racers",
+    photo: "./images/main_item_2.webp",
+  },
+  {
+    name: "Lightning McQueen",
+    number: 95,
+    type: "racers",
+    photo: "./images/main_item_1.webp",
+  },
+  {
+    name: "Jackson storm",
+    type: "racers",
+    number: 20,
+    photo: "./images/main_item_3.webp",
+  },
+  {
+    name: "Lewis Hamilton",
+    type: "racers",
+    photo: "./images/main_item_4.webp",
+  },
+  {
+    name: "Metr",
+    type: "other",
+    photo: "./images/main_item_5.webp",
+  },
+  {
+    name: "Luigi",
+    type: "other",
+    photo: "./images/main_item_6.webp",
+  },
+  {
+    name: "Cruz Ramirez",
+    type: "racers",
+    photo: "./images/main_item_2.webp",
+  },
+  {
+    name: "Lightning McQueen",
+    number: 95,
+    type: "racers",
+    photo: "./images/main_item_1.webp",
+  },
+  {
+    name: "Cruz Ramirez",
+    type: "racers",
+    photo: "./images/main_item_2.webp",
+  },
+  {
+    name: "Lightning McQueen",
+    number: 95,
+    type: "racers",
+    photo: "./images/main_item_1.webp",
+  },
+  {
+    name: "Cruz Ramirez",
+    type: "racers",
+    photo: "./images/main_item_2.webp",
+  },
 ];
 
-function changeTab(filter) {
+function changeTab(filter, countCars = 6) {
   let content__cars = "";
   let filterType = filter.slice(4);
   cars
     .filter((car) => car.type == filterType || filterType == "all")
+    .slice(0,countCars)
     .forEach((car) => {
       content__cars += `
         <div class="main__item">
@@ -101,5 +264,14 @@ $(".main__filter-btn").each(function (index, el) {
     $(this).addClass("active");
     filter = $(this).attr("id");
     changeTab(filter);
+    countCars = 6;
   });
 });
+
+
+
+let showMoreBtn = $("#btn-show-more");
+let countCars = 6;
+showMoreBtn.on("click", function () {
+  changeTab(filter, countCars+=6);
+})
