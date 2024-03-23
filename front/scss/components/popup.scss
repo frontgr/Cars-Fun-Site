@@ -6,6 +6,7 @@
   position: fixed;
   top: 50%;
   left: 50%;
+  z-index: 199;
   transform: translate(-50%, -50%);
   &__main-photo {
     width: 961px;
