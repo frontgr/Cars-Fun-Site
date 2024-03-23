@@ -327,6 +327,20 @@
   z-index: 199;
   transform: translate(-50%, -50%);
 }
+.popup__slider {
+  position: relative;
+}
+.popup__slider-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.popup__slider-close:hover {
+  filter: brightness(0.8);
+  transform: scale(0.8);
+}
 .popup__main-photo {
   width: 961px;
   height: 480.5px;

@@ -9,7 +9,10 @@ function hangePhotoButtonClick(event) {
     popupWindow.css("display", "none");
   }
 }
-
+$(".popup__slider-close").on("click", function (e) {
+  document.getElementById("overlay").style.display = "none";
+  popupWindow.css("display", "none");
+});
 $(document).on("click", function (e) {
   if (
     !(
