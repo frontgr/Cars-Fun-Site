@@ -104,8 +104,9 @@
   }
   &_hide{
     background: var(--color_second, #e11e18);
+    display: none;
     &:hover {
-      background: #ff261f;
+      background: #ff5656;
     }
   }
   &_up {
