@@ -282,6 +282,7 @@ $(".main__filter-btn").each(function (index, el) {
 let showMoreBtn = $("#btn-show-more");
 let btnBox = $('.show-more-btns');
 let hideBtn = $("#btn-hide");
+let upBtn = $("#btn-up");
 let countCars = 6;
 showMoreBtn.on("click", function () {
   changeTab(filter, countCars+=6);
@@ -303,4 +304,8 @@ hideBtn.on("click", function () {
   if(showMoreBtn[0].style.display=='none'){
     showMoreBtn[0].style.display='block';
   }
+})
+
+upBtn.on("click", function () {
+  $("html, body").animate({ scrollTop: 0 }, "slow");
 })
