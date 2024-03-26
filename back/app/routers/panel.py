@@ -3,55 +3,48 @@ from flask_jwt_extended import jwt_required, current_user
 
 from app.models.cars import Cars
 from app.routers.decorators_routers import admin_permission
-from app.config import add_car_fields
 
 
 panel = Blueprint('panel', __name__)
 
 
-@panel.route('/panel', methods=['POST'])
+@panel.route('/panel/cars', methods=['GET'])
 @jwt_required()
-def panel_post():
-    return jsonify(Cars().get_cars())
+def panel_get_cars():
+    return jsonify(Cars().get_cars()), 200
 
 
-@panel.route('/panel/add_car', methods=['POST'])
+@panel.route('/panel/car', methods=['POST'])
 @jwt_required()
 @admin_permission(current_user, 'add_cars')
-def panel_add_post():
-    input_fields = {i for i in request.form}
+def add_car():
+    values_dict = {i: request.form.get(i) for i in request.form}
+    photos = {i: request.files.get(i) for i in request.files}
 
-    if input_fields in add_car_fields:
-        values_dict = {i: request.form.get(i) for i in request.form}
-        photos = {i: request.files.get(i) for i in request.files}
-
-        response = Cars().add_new_car(values_dict=values_dict,
-                                      photos=photos)
-        return response
-    else:
-        return {'status': 'Error',
-                'message': 'Not all fields are filled or an unexpected value has been passed'}
+    Cars().add_new_car(values_dict=values_dict, photos=photos)
+    return '', 201
 
 
-@panel.route('/panel/delete_car', methods=['DELETE'])
+@panel.route('/panel/car', methods=['DELETE'])
 @jwt_required()
 @admin_permission(current_user, 'delete_cars')
-def panel_delete():
+def delete_car():
     _id = request.args.get('_id')
 
-    response = Cars().delete_car(_id)
-    return response
+    Cars().delete_car(_id)
+    return '', 204
 
 
-@panel.route('/panel/update_car', methods=['POST'])
+@panel.route('/panel/car', methods=['PUT'])
 @jwt_required()
 @admin_permission(current_user, 'edit_cars')
-def panel_update_post():
+def update_car():
     _id = request.args.get('_id')
     values_dict = {i: request.form.get(i) for i in request.form if i != 'name'}
     photos = {i: request.files.get(i) for i in request.files}
 
-    response = Cars().update_car(photos=photos,
-                                 _id=_id,
-                                 values_dict=values_dict)
-    return jsonify(response)
+    Cars().update_car(photos=photos,
+                      _id=_id,
+                      values_dict=values_dict)
+
+    return '', 200

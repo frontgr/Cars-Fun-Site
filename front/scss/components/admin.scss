@@ -258,12 +258,19 @@
     &_description {
       height: 139px;
       resize: none;
+      font-size: 14px;
     }
     &_number {
       color: var(--txt_color, #ff0b0b);
       &::placeholder {
         color: #eda8a8;
       }
+    }
+    &_acceleration {
+      font-size: 14px;
+    }
+    &_speed {
+      font-size: 14px;
     }
   }
   &__photo {

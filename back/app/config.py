@@ -29,20 +29,3 @@ update_admin_fields = {'_id',
                        'add_cars',
                        'edit_cars',
                        'delete_cars'}
-
-
-add_car_fields = {'name',
-                  'number',
-                  'type',
-                  'speed_up',
-                  'max_speed',
-                  'description',
-                  }
-
-update_car_fields = {'_id',
-                     'number',
-                     'type',
-                     'speed_up',
-                     'max_speed',
-                     'description',
-                     }

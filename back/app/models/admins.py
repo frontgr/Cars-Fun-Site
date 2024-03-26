@@ -14,6 +14,8 @@ class Admins:
                 if key == '_id':
                     temp[key] = str(value)
                     continue
+                if key == 'password':
+                    continue
                 temp[key] = value
             admins_dict[index] = temp
         return admins_dict
@@ -28,15 +30,10 @@ class Admins:
             admin[key] = value
 
         db.admins.insert_one(admin)
-        return {'status': 'ok'}
 
     def delete_admin(self, _id):
         db.admins.delete_one({'_id': ObjectId(_id)})
 
-        return {'status': 'ok'}
-
     def update_admin(self, _id, values_dict):
         admin = {'_id': ObjectId(_id)}
         db.admins.update_one(admin, {'$set': values_dict})
-
-        return {'status': 'ok'}
