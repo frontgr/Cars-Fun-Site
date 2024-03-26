@@ -196,30 +196,8 @@
 }
 .second-page .main__photos img {
   border-radius: 5px;
-}
-.second-page .main__photos img:nth-child(6n+1) {
-  width: 883px;
-  height: 411px;
-}
-.second-page .main__photos img:nth-child(6n+2) {
-  width: 687px;
-  height: 411px;
-}
-.second-page .main__photos img:nth-child(6n+3) {
-  width: 1598px;
-  height: 570px;
-}
-.second-page .main__photos img:nth-child(6n+4) {
-  width: 687px;
-  height: 411px;
-}
-.second-page .main__photos img:nth-child(6n+5) {
-  width: 883px;
-  height: 411px;
-}
-.second-page .main__photos img:nth-child(6n+6) {
-  width: 1598px;
-  height: 666px;
+  width: auto;
+  height: auto;
 }
 .second-page .main__description {
   padding-top: 71px;
@@ -324,7 +302,22 @@
   position: fixed;
   top: 50%;
   left: 50%;
+  z-index: 199;
   transform: translate(-50%, -50%);
+}
+.popup__slider {
+  position: relative;
+}
+.popup__slider-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.popup__slider-close:hover {
+  filter: brightness(0.8);
+  transform: scale(0.8);
 }
 .popup__main-photo {
   width: 961px;
@@ -971,6 +964,17 @@
   background: #1CB03D;
 }
 
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 100;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -1105,8 +1109,18 @@ body {
   .second-page .main__item {
     width: 420px;
   }
+  .second-page .main__photos img {
+    width: 100%;
+  }
+  .second-page .main__info {
+    flex-direction: column;
+    row-gap: 30px;
+  }
 }
 @media (min-width: 1313px) and (max-width: 1380px) {
+  .second-page .main__photos img {
+    width: 100%;
+  }
   .second-page .container {
     max-width: 1163px;
   }
@@ -1234,7 +1248,7 @@ body {
   }
   .second-page .header__search {
     background: none;
-    width: 0px;
+    width: 30px;
     height: 63px;
     padding: 0px;
   }
@@ -1397,6 +1411,9 @@ body {
   .second-page .header__nav {
     padding-bottom: 39px;
   }
+  .second-page .header__nav .logo {
+    display: none;
+  }
   .second-page .header__image {
     padding: 0px 0 60px 0;
   }
@@ -1482,6 +1499,38 @@ body {
   }
   .second-page .footer__logos-logo {
     font-size: 18px;
+  }
+}
+@media screen and (max-width: 1686px) {
+  .second-page .main__info {
+    flex-direction: column;
+    row-gap: 30px;
+  }
+}
+@media screen and (max-width: 1364px) {
+  .main {
+    padding-top: 0 !important;
+  }
+}
+@media screen and (max-width: 1364px) {
+  .second-page .main__photos img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 812px) {
+  .second-page .main__desc {
+    padding: 56px 0;
+  }
+  .second-page .main__info-img {
+    width: auto;
+    height: auto;
+  }
+  .second-page .main__box {
+    flex-wrap: wrap;
+  }
+  .second-page .main__box-img {
+    width: auto;
+    height: auto;
   }
 }
 @media (min-width: 1380px) and (max-width: 1700px) {

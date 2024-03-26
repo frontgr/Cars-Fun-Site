@@ -152,30 +152,8 @@
       gap: 30px;
       & img {
         border-radius: 5px;
-        &:nth-child(6n + 1) {
-          width: 883px;
-          height: 411px;
-        }
-        &:nth-child(6n + 2) {
-          width: 687px;
-          height: 411px;
-        }
-        &:nth-child(6n + 3) {
-          width: 1598px;
-          height: 570px;
-        }
-        &:nth-child(6n + 4) {
-          width: 687px;
-          height: 411px;
-        }
-        &:nth-child(6n + 5) {
-          width: 883px;
-          height: 411px;
-        }
-        &:nth-child(6n + 6) {
-          width: 1598px;
-          height: 666px;
-        }
+        width: auto;
+        height: auto;
       }
     }
     &__description {
