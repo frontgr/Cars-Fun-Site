@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /login.html/
+Sitemap: https://www.yoursite.com/sitemap.xml
+
+User-agent: Googlebot
+Allow: /
+User-agent: Yandex
+Allow: /
