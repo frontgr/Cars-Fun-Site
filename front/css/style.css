@@ -148,6 +148,13 @@
 .show-more-btns_showmore:hover {
   background: #17cbff;
 }
+.show-more-btns_hide {
+  background: var(--color_second, #e11e18);
+  display: none;
+}
+.show-more-btns_hide:hover {
+  background: #ff5656;
+}
 .show-more-btns_up {
   background: none;
   border: none;
