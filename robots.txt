@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /login.html/
+Sitemap: cars-fun-site.vercel.app/sitemap.xml
+
+User-agent: Googlebot
+Allow: /
+User-agent: Yandex
+Allow: /
