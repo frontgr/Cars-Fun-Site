@@ -5,7 +5,7 @@ from werkzeug.security import check_password_hash
 from .client import db
 
 
-class Admin:
+class CurrentAdmin:
     def __init__(self, login=None, _id=None):
         # Determining based on which criteria we will conduct the search
         if _id is not None:
@@ -23,6 +23,3 @@ class Admin:
 
     def check_permission(self, requested_permission):
         return self.admin.get(requested_permission)
-
-    def get_info(self):
-        return self.admin.get('permission')
