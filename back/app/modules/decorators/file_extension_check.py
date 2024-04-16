@@ -1,7 +1,7 @@
 from app.config import extensions
 
 
-def allowed_file(func):
+def check_file_extension(func):
     def wrapper_allowed_file(*args, **kwargs):
         filename_list = kwargs['photos'] if 'photos' in kwargs else args[1]['photos']
         if not filename_list:
