@@ -1,7 +1,21 @@
+from PIL import Image
+
 import shutil
 import os
 
-from app.config import storage
+from ..config import storage
+
+
+def convert(filename, index, file):
+    w_dir = create_storage(filename, index)
+
+    photo_path = f'{w_dir}/{index}.webp'
+
+    image = Image.open(file)
+    image = image.convert('RGB')
+    image.save(photo_path, 'webp')
+
+    return photo_path
 
 
 def delete_storage(dir_name):
