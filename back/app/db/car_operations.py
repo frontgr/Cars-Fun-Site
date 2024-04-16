@@ -1,14 +1,14 @@
 from bson.objectid import ObjectId
 
-from app.converter import convert
-from app.storage import delete_storage
+from ..modules.converter import convert, delete_storage
 
 from .client import db
-from .decorators_cars_model import allowed_file
+from ..modules.decorators import check_file_extension
 
 
-class Cars:
-    def get_cars(self):
+class CarOperations:
+    @staticmethod
+    def get_cars():
         cars_dict = {}
         for index, item in enumerate(db.cars.find()):
             temp = {}
@@ -20,7 +20,8 @@ class Cars:
             cars_dict[index] = temp
         return cars_dict
 
-    def get_car(self, _id):
+    @staticmethod
+    def get_car(_id):
         car_dict = {}
         response = db.cars.find_one({'_id': ObjectId(_id)})
 
@@ -32,8 +33,9 @@ class Cars:
 
         return car_dict
 
-    @allowed_file
-    def add_new_car(self, photos, values_dict):
+    @staticmethod
+    @check_file_extension
+    def add_new_car(photos, values_dict):
         car = {key: value for key, value in values_dict.items()}
 
         car['cover_photo'] = convert(filename=car.get('name'),
@@ -45,13 +47,15 @@ class Cars:
 
         db.cars.insert_one(car)
 
-    def delete_car(self, _id):
+    @staticmethod
+    def delete_car(_id):
         name = db.cars.find_one({'_id': ObjectId(_id)})['name']
         delete_storage(name)
         db.cars.delete_one({'_id': ObjectId(_id)})
 
-    @allowed_file
-    def update_car(self, photos, _id, values_dict):
+    @staticmethod
+    @check_file_extension
+    def update_car(photos, _id, values_dict):
         name = db.cars.find_one({'_id': ObjectId(_id)})['name']
         update = {key: value for key, value in values_dict.items()}
 
