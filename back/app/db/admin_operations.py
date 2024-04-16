@@ -5,22 +5,19 @@ from werkzeug.security import generate_password_hash
 from .client import db
 
 
-class Admins:
-    def get_admins(self):
+class AdminOperations:
+    @staticmethod
+    def get_admins():
         admins_dict = {}
-        for index, item in enumerate(db.admins.find()):
-            temp = {}
-            for key, value in item.items():
-                if key == '_id':
-                    temp[key] = str(value)
-                    continue
-                if key == 'password':
-                    continue
-                temp[key] = value
+
+        result = db.admins.find({}, {'password': False})
+        for index, item in enumerate(result):
+            temp = {key: (str(value) if key == "_id" else value) for key, value in item.items()}
             admins_dict[index] = temp
         return admins_dict
 
-    def add_admin(self, values):
+    @staticmethod
+    def add_admin(values):
         admin = {}
         for key, value in values.items():
             if key == 'password':
@@ -31,9 +28,11 @@ class Admins:
 
         db.admins.insert_one(admin)
 
-    def delete_admin(self, _id):
+    @staticmethod
+    def delete_admin(_id):
         db.admins.delete_one({'_id': ObjectId(_id)})
 
-    def update_admin(self, _id, values_dict):
+    @staticmethod
+    def update_admin(_id, values_dict):
         admin = {'_id': ObjectId(_id)}
         db.admins.update_one(admin, {'$set': values_dict})
