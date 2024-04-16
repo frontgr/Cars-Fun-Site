@@ -1,7 +1,7 @@
 from functools import wraps
 
 
-def admin_permission(admin, requested_permission):
+def check_admin_permission(admin, requested_permission):
     def decorator_admin(func):
         @wraps(func)
         def decorator_wrapper(*args, **kwargs):
