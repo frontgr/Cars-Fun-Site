@@ -11,8 +11,6 @@ db = client.cars_fun_site
 
 
 logging.info('Скрипт запущен')
-print(db.admins.estimated_document_count())
-print(type(db.admins.estimated_document_count()))
 if db.admins.estimated_document_count() == 0:
     login = input('Write user name: ')
     password_hash = generate_password_hash(input('Write password: '))
