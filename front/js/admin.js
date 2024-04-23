@@ -1,30 +1,3 @@
-let popupWindow = $("#popupWindow");
-
-function hangePhotoButtonClick(event) {
-  if (popupWindow.css("display") == "none") {
-    document.getElementById("overlay").style.display = "block";
-    popupWindow.css("display", "flex");
-  } else {
-    document.getElementById("overlay").style.display = "none";
-    popupWindow.css("display", "none");
-  }
-}
-$(".popup__slider-close").on("click", function (e) {
-  document.getElementById("overlay").style.display = "none";
-  popupWindow.css("display", "none");
-});
-$(document).on("click", function (e) {
-  if (
-    !(
-      $(e.target).closest("#popupWindow").length > 0 ||
-      $(e.target).closest(".btn-photo").length > 0
-    )
-  ) {
-    document.getElementById("overlay").style.display = "none";
-    $("#popupWindow").hide();
-  }
-});
-
 let asideItems = $(".aside__item");
 asideItems.each(function (index, el) {
   $(el).on("click", function () {

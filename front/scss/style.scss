@@ -1,12 +1,3 @@
-@import "./components/header.scss";
-@import "./components/main.scss";
-@import "./components/footer.scss";
-@import "./components/logo.scss";
-@import "./variables.scss";
-@import "./components/popup.scss";
-@import "./components/admin.scss";
-@import "./components/login.scss";
-@import "./components/overlay.scss";
 @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 
@@ -37,8 +28,3 @@ body {
   width: 100%;
   margin: 0 auto;
 }
-
-@import "popup-adaptive.scss";
-@import "car_info-adaptive.scss";
-
-@import "main-adaptive.scss";
