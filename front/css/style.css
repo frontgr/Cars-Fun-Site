@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+.header {
+  background: url("../images/header_background.webp"), #03070a 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 0;
+}
+.header__search {
+  width: 479px;
+  height: 63px;
+  display: flex;
+  align-items: center;
+  margin-right: 160px;
+  gap: 20px;
+  padding: 19px 15px 20px 22px;
+  border-radius: 112px;
+  background: var(--txt_color_second, #fff);
+}
+.header__search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 20px;
+}
+.header__search-desktop {
+  display: block;
+}
+.header__search-mobile {
+  display: none;
+}
+.header__image {
+  padding: 32px 0 144px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.second-page .header {
+  background: #020f14;
+}
+
+.logo {
+  color: var(--txt_color_second, #fff);
+  font-size: 32px;
+  margin-left: 162px;
+}
+.logo span {
+  color: var(--color_second, #e11e18);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  font-family: "Fugaz One";
+  font-weight: 400;
+}
+
+.container {
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+}

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="icon" href="./images/cars_logo.webp" type="image/x-icon" />
     <title>
       Cars Fan Site - Discover the World of Lightning McQueen and Pals
@@ -43,6 +43,39 @@
     <meta name="twitter:image" content="./images/cars_logo.webp" />
   </head>
   <body>
+    <header class="header">
+      <div class="container container__header">
+        <nav class="header__nav">          
+          <a href="./" class="header__nav-logo logo">
+            Cars. <span>Fan site</span>
+          </a>
+
+          <div class="header__search">
+            <input
+              type="search"
+              name="searchQuery"
+              id="searchInput"
+              class="header__search-input"
+            />
+            <img
+              src="./images/search.svg"
+              class="header__search-desktop"
+              alt="search"
+            />
+            <img
+              src="./images/search_mobile.png"
+              class="header__search-mobile"
+              alt="search"
+            />
+            
+          </div>
+        </nav>
+        <div class="header__image">
+          <img src="./images/header_McQueen.webp" alt="McQueen image" />
+        </div>
+      </div>
+    </header>
+
     <script src="./js/jquery-3.7.1.min.js"></script>
   </body>
 </html>
