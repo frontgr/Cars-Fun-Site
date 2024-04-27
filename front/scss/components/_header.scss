@@ -26,6 +26,10 @@
         }
         &-desktop {
             display: block;
+            
+        &:hover {
+            cursor: pointer;
+        }
         }
         &-mobile {
             display: none;
@@ -36,6 +40,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        
     }
 }
 

@@ -44,7 +44,7 @@
   </head>
   <body>
     <header class="header">
-      <div class="container container__header">
+      <div class="container">
         <nav class="header__nav">          
           <a href="./" class="header__nav-logo logo">
             Cars. <span>Fan site</span>
@@ -75,7 +75,58 @@
         </div>
       </div>
     </header>
+        
+    <main class="main">
+        <div class="container">
+          
+          <div class="main__filter">
+            <button class="main__filter-btn active" id="btn-racers">
+              Racers
+            </button>
+            <button class="main__filter-btn" id="btn-other">
+              Other characters
+            </button>
+            <button class="main__filter-btn" id="btn-all">All</button>
+          </div>
+
+          <div class="main__content"></div>
+
+          <div class="show-more-btns">
+            <button class="show-more-btns_showmore show-more-btns_hide" id="btn-hide">
+              Hide
+            </button>
+            <button class="show-more-btns_showmore" id="btn-show-more">
+              Show more...
+            </button>
+            <button class="show-more-btns_up" id="btn-up">
+              <img src="./images/up.svg" alt="arrow up" />
+            </button>
+          </div>
+
+        </div>
+
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__logos">
+            <a href="./">
+              <img src="./images/cars_logo.webp" alt="cars logo">
+            </a>
+            <a href="./" class="footer__logos-logo logo">
+              Cars. <span>Fan site</span>
+            </a>
+          </div>
+          <a href="./pages/login.html" class="footer__admin">Admin panel</a>
+          <a href="https://github.com/frontgr" class="footer__company"
+            >frontGR. 2024</a
+          >
+        </div>
+      </div>
+    </footer>
 
     <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/cars_tab.js"></script>
   </body>
 </html>
