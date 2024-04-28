@@ -1,0 +1,75 @@
+.popup {
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 199;
+    transform: translate(-50%, -50%);
+    &__slider {
+      position: relative;
+      &-close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        cursor: pointer;
+        transition: all 0.2s;
+        &:hover {
+          filter: brightness(0.8);
+          transform: scale(0.8);
+        }
+      }
+    }
+    &__main-photo {
+      width: 961px;
+      height: 480.5px;
+    }
+    &__menu {
+      margin-top: 40.5px;
+    }
+    &-menu {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      &__left,
+      &__right {
+        width: 74px;
+        height: 74px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+        transition: all 0.5s ease;
+      }
+      &__left {
+        margin-right: 40px;
+      }
+      &__right {
+        margin-left: 40px;
+        transform: rotate(180deg);
+      }
+      &__left:hover {
+        transform: translateX(-10px);
+      }
+      &__right:hover {
+        transform: rotate(180deg) translateX(-10px);
+      }
+      &__icons {
+        display: flex;
+        align-items: center;
+        gap: 20.59px;
+      }
+      &__icon {
+        width: 106.4px;
+        height: 106.4px;
+        object-fit: cover;
+        border-radius: 5px;
+        cursor: pointer;
+        &--selected {
+          border: 2px solid var(--stroke_mini_photo);
+        }
+      }
+    }
+  }

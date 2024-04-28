@@ -43,6 +43,57 @@
     <meta name="twitter:image" content="./images/cars_logo.webp" />
   </head>
   <body>
+  <div id="overlay" class="overlay"></div>
+    <div class="popup" id="popupWindow">
+      <div class="popup__slider">
+        <img
+          class="popup__slider-close"
+          src="./images/material-symbols-light_close.svg"
+          alt="Close popup icon"
+        />
+        <img
+          src="./images/main_photo_1.webp"
+          alt="car_slider"
+          class="popup__main-photo"
+        />
+      </div>
+      <div class="popup-menu popup__menu">
+        <button class="popup-menu__left"><img src="./images/arrows/ph_arrow.svg" alt=""></button>
+        <div class="popup-menu__icons">
+          <img
+            src="./images/main_photo_1.webp"
+            alt="icon"
+            class="popup-menu__icon popup-menu__icon--selected"
+          />
+          <img
+            src="./images/main_photo_2.webp"
+            alt="icon"
+            class="popup-menu__icon"
+          />
+          <img
+            src="./images/main_photo_3.webp"
+            alt="icon"
+            class="popup-menu__icon"
+          />
+          <img
+            src="./images/main_photo_4.webp"
+            alt="icon"
+            class="popup-menu__icon"
+          />
+          <img
+            src="./images/main_photo_5.webp"
+            alt="icon"
+            class="popup-menu__icon"
+          />
+          <img
+            src="./images/main_photo_6.webp"
+            alt="icon"
+            class="popup-menu__icon"
+          />
+        </div>
+        <button class="popup-menu__right"><img src="./images/arrows/ph_arrow.svg" alt="">z</button>
+      </div>
+    </div>  
     <header class="header">
       <div class="container">
         <nav class="header__nav">          
@@ -125,8 +176,10 @@
         </div>
       </div>
     </footer>
-
-    <script src="./js/jquery-3.7.1.min.js"></script>
+  
+  
+  <script src="./js/jquery-3.7.1.min.js"></script>
     <script src="./js/cars_tab.js"></script>
+    <script src="./js/overlay.js"></script>
   </body>
 </html>

@@ -6,7 +6,7 @@
         justify-content: space-between;
         align-items: center;
         gap: 23px;
-        margin-bottom: 70px;
+        margin: 0 145px 70px 145px;
         &-btn {
             width: 518px;
             padding: 36px 0 36px;
@@ -34,18 +34,20 @@
     &__content {
         display: grid;
         grid-template-columns: repeat(3, auto);
-        flex-wrap: wrap;
-        gap: 70px 23px;
+        align-items: center;
+        gap: 50px 23px;
         padding: 70px 0 97px 0;
+        margin: 0 145px;
         border-top: 1px solid #aaaaaa;
     }
     &__item {
         display: flex;
         flex-direction: column;
         gap: 15px;
+        width: 393px;
         &-img {
-            width: 518px;
-            height: 312px;
+            width: 393px;
+            height: 220px;
             border-radius: 5px;
         }
         &-title {
@@ -89,6 +91,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0 145px;
     &_showmore {
         cursor: pointer;
         color: var(--txt_color_second, #fff);
