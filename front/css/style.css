@@ -566,6 +566,9 @@
   outline: none;
   font-size: 20px;
 }
+.header__search-input::-webkit-search-cancel-button {
+  cursor: pointer;
+}
 .header__search-desktop {
   display: block;
 }
@@ -633,7 +636,8 @@
   display: grid;
   grid-template-columns: repeat(3, auto);
   align-items: center;
-  gap: 50px 23px;
+  justify-items: center;
+  gap: 50px 57px;
   padding: 70px 0 97px 0;
   margin: 0 145px;
   border-top: 1px solid #aaaaaa;
@@ -642,10 +646,10 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  width: 393px;
+  width: 395px;
 }
 .main__item-img {
-  width: 393px;
+  width: 395px;
   height: 220px;
   border-radius: 5px;
 }
