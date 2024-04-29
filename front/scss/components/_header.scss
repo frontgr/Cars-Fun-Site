@@ -23,16 +23,16 @@
             border: none;
             outline: none;
             font-size: 20px;
-        &::-webkit-search-cancel-button {
-            cursor: pointer;
-        }
+            &::-webkit-search-cancel-button {
+                cursor: pointer;
+            }
         }
         &-desktop {
             display: block;
-            
-        &:hover {
-            cursor: pointer;
-        }
+
+            &:hover {
+                cursor: pointer;
+            }
         }
         &-mobile {
             display: none;
@@ -43,7 +43,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        
     }
 }
 
