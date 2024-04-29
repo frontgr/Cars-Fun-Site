@@ -9,6 +9,9 @@
 @import "./components/_overlay";
 @import "./components/_popup";
 
+// Second page imports
+@import "./components/info-page/header-info";
+@import "./components/info-page/main-info";
 * {
     margin: 0;
     padding: 0;
