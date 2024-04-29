@@ -3,31 +3,40 @@
 
 @import "./_variables";
 @import "./components/_admin";
+@import "./components/_header";
+@import "./components/_main";
+@import "./components/_footer";
+@import "./components/_overlay";
+@import "./components/_popup";
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 input,
 textarea,
 button,
 select,
 a {
-  -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
 }
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 li {
-  list-style: none;
+    list-style: none;
 }
 body {
-  font-family: "Fugaz One";
-  font-weight: 400;
+    font-family: "Fugaz One";
+    font-weight: 400;
 }
+
 .container {
-  max-width: 1600px;
-  width: 100%;
-  margin: 0 auto;
+    width: 100%;
+    max-width: 1600px;
+}
+
+body .container {
+    margin: 0 auto;
 }
