@@ -1,5 +1,4 @@
-.header {
-    background: url("../images/header_background.webp"), #03070a 50%;
+@mixin header {
     background-repeat: no-repeat;
     background-position: center;
     &__nav {
@@ -45,11 +44,9 @@
         justify-content: center;
     }
 }
-
-.second-page {
-    & .header {
-        background: #020f14;
-    }
+.header {
+    background: url("../images/header_background.webp"), #03070a 50%;
+    @include header;
 }
 
 .logo {
