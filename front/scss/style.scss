@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 
 @import "./_variables";
+@import "./components/login";
 @import "./components/_admin";
 @import "./components/_header";
 @import "./components/_main";
@@ -39,7 +40,6 @@ body {
     width: 100%;
     max-width: 1600px;
 }
-
 body .container {
     margin: 0 auto;
 }
