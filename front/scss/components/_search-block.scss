@@ -1,0 +1,20 @@
+.search-block {
+    display: none;
+    position: relative;
+    &__not-found {
+        font-size: 32px;
+        display: none;
+    }
+    &__close-button {
+        position: absolute;
+        top: 0px;
+        right: -40px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        &:hover {
+            transform: scale(1.15);
+        }
+    }
+}

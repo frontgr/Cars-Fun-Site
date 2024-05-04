@@ -1,6 +1,9 @@
 .main {
     padding: 110px 0 123px 0;
     background: var(--txt_color_second, #fff);
+    &__search-block {
+        margin: 0 145px 88px 145px;
+    }
     &__filter {
         display: flex;
         justify-content: space-between;
@@ -40,24 +43,6 @@
         padding: 70px 0 97px 0;
         margin: 0 145px;
         border-top: 1px solid #aaaaaa;
-    }
-    &__item {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        width: 395px;
-        &-img {
-            width: 395px;
-            height: 220px;
-            border-radius: 5px;
-        }
-        &-title {
-            color: #000;
-            font-size: 32px;
-            & span {
-                color: #e11e18;
-            }
-        }
     }
 }
 .item {
