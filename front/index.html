@@ -111,6 +111,7 @@
                             name="searchQuery"
                             id="searchInput"
                             class="header__search-input"
+                            oninput="removeError()"
                         />
                         <img
                             src="./images/search.svg"
@@ -151,33 +152,7 @@
                     <span class="search-block__not-found"
                         >Nothing was found. Try again!</span
                     >
-                    <div class="search-block__container">
-                        <div class="car-item search-block-item">
-                            <img
-                                src="./images/main_item_4.webp"
-                                alt="car image"
-                                class="main__item-img car-item__img"
-                            />
-                            <div class="main__item-title car-item__title">
-                                Jackson storm
-                                <span>#20</span>
-                            </div>
-                            <div class="item__btns">
-                                <button
-                                    class="item__btns-btn btn-photo"
-                                    onclick="hangePhotoButtonClick()"
-                                >
-                                    Photo
-                                </button>
-                                <a
-                                    href="./pages/car_info.html"
-                                    class="item__btns-btn btn-specifications"
-                                >
-                                    Specifications
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="search-block__container"></div>
                 </div>
                 <div class="main__filter">
                     <button class="main__filter-btn active" id="btn-racers">
@@ -192,16 +167,13 @@
                 <div class="main__content"></div>
 
                 <div class="show-more-btns">
-                    <button
-                        class="show-more-btns_showmore show-more-btns_hide"
-                        id="btn-hide"
-                    >
+                    <button class="show-more-btns__hide" id="btn-hide">
                         Hide
                     </button>
-                    <button class="show-more-btns_showmore" id="btn-show-more">
+                    <button class="show-more-btns__showmore" id="btn-show-more">
                         Show more...
                     </button>
-                    <button class="show-more-btns_up" id="btn-up">
+                    <button class="show-more-btns__up" id="btn-up">
                         <img src="./images/up.svg" alt="arrow up" />
                     </button>
                 </div>
@@ -235,6 +207,7 @@
         <script src="./js/jquery-3.7.1.min.js"></script>
         <script type="module" src="./js/cars_tab.js"></script>
         <script src="./js/overlay.js"></script>
+        <script type="module" src="./js/search.js"></script>
         <script type="module" src="./js/search.js"></script>
     </body>
 </html>

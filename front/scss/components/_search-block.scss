@@ -1,14 +1,21 @@
 .search-block {
     display: none;
     position: relative;
+
+    &__container {
+        display: grid;
+        @include grid-template;
+        padding: 0px 0 97px 0;
+        margin: 0;
+    }
     &__not-found {
         font-size: 32px;
         display: none;
     }
     &__close-button {
         position: absolute;
-        top: 0px;
-        right: -40px;
+        top: -2px;
+        right: -58px;
         background: none;
         border: none;
         cursor: pointer;

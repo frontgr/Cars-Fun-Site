@@ -17,6 +17,11 @@
         padding: 19px 15px 20px 22px;
         border-radius: 112px;
         background: var(--txt_color_second, #fff);
+        transition: border 0.3s ease;
+        &--error {
+            transition: border 0.3s ease;
+            border: 4px solid $color_second;
+        }
         &-input {
             width: 100%;
             border: none;

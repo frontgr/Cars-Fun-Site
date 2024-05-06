@@ -621,6 +621,32 @@
 .car-item__title span {
   color: #e11e18;
 }
+.car-item__btns {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.car-item__btns-btn {
+  width: 225px;
+  padding: 20px 0 19px 0;
+  color: var(--txt_color-on-btn, #666);
+  text-align: center;
+  font-family: "Fugaz One";
+  font-size: 20px;
+  border-radius: 5px;
+  background: #eee;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.car-item__btns-btn:nth-child(2) {
+  flex-grow: 1;
+}
+.car-item__btns-btn:hover {
+  background: var(--stroke_mini_photo, #2ca7cb);
+  color: var(--txt_color_second, #fff);
+}
 
 .header {
   background: url("../images/header_background.webp"), #03070a 50%;
@@ -643,6 +669,11 @@
   padding: 19px 15px 20px 22px;
   border-radius: 112px;
   background: var(--txt_color_second, #fff);
+  transition: border 0.3s ease;
+}
+.header__search--error {
+  transition: border 0.3s ease;
+  border: 4px solid #e11e18;
 }
 .header__search-input {
   width: 100%;
@@ -718,6 +749,7 @@
   background: rgba(44, 167, 203, 0.1);
 }
 .main__content {
+  border-top: 1px solid #aaaaaa;
   display: grid;
   grid-template-columns: repeat(3, auto);
   align-items: center;
@@ -725,34 +757,6 @@
   gap: 50px 57px;
   padding: 70px 0 97px 0;
   margin: 0 145px;
-  border-top: 1px solid #aaaaaa;
-}
-
-.item__btns {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-.item__btns-btn {
-  width: 225px;
-  padding: 20px 0 19px 0;
-  color: var(--txt_color-on-btn, #666);
-  text-align: center;
-  font-family: "Fugaz One";
-  font-size: 20px;
-  border-radius: 5px;
-  background: #eee;
-  border: none;
-  outline: none;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-.item__btns-btn:nth-child(2) {
-  flex-grow: 1;
-}
-.item__btns-btn:hover {
-  background: var(--stroke_mini_photo, #2ca7cb);
-  color: var(--txt_color_second, #fff);
 }
 
 .show-more-btns {
@@ -761,40 +765,42 @@
   align-items: center;
   margin: 0 145px;
 }
-.show-more-btns_showmore {
+.show-more-btns__showmore, .show-more-btns__hide {
   cursor: pointer;
   color: var(--txt_color_second, #fff);
   text-align: center;
   font-family: "Fugaz One";
   font-size: 32px;
   border-radius: 10px;
-  background: var(--color_main, #2ca7cb);
   width: 377px;
   padding: 23px 0;
   border: none;
   outline: none;
   transition: all 0.3s ease;
 }
-.show-more-btns_showmore:hover {
+.show-more-btns__showmore {
+  background: var(--color_main, #2ca7cb);
+}
+.show-more-btns__showmore:hover {
   background: #17cbff;
 }
-.show-more-btns_hide {
+.show-more-btns__hide {
   background: var(--color_second, #e11e18);
   display: none;
 }
-.show-more-btns_hide:hover {
+.show-more-btns__hide:hover {
   background: #ff5656;
 }
-.show-more-btns_up {
+.show-more-btns__up {
   background: none;
   border: none;
   outline: none;
 }
-.show-more-btns_up img {
+.show-more-btns__up img {
   display: block;
   transition: all 0.5s ease;
 }
-.show-more-btns_up:hover img {
+.show-more-btns__up:hover img {
   transform: translateY(-15px);
   cursor: pointer;
 }
@@ -932,14 +938,25 @@
   display: none;
   position: relative;
 }
+.search-block__container {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  align-items: center;
+  justify-items: center;
+  gap: 50px 57px;
+  padding: 70px 0 97px 0;
+  margin: 0 145px;
+  padding: 0px 0 97px 0;
+  margin: 0;
+}
 .search-block__not-found {
   font-size: 32px;
   display: none;
 }
 .search-block__close-button {
   position: absolute;
-  top: 0px;
-  right: -40px;
+  top: -2px;
+  right: -58px;
   background: none;
   border: none;
   cursor: pointer;
@@ -1046,6 +1063,11 @@
   padding: 19px 15px 20px 22px;
   border-radius: 112px;
   background: var(--txt_color_second, #fff);
+  transition: border 0.3s ease;
+}
+.header-info__search--error {
+  transition: border 0.3s ease;
+  border: 4px solid #e11e18;
 }
 .header-info__search-input {
   width: 100%;

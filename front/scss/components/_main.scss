@@ -35,42 +35,9 @@
         }
     }
     &__content {
-        display: grid;
-        grid-template-columns: repeat(3, auto);
-        align-items: center;
-        justify-items: center;
-        gap: 50px 57px;
-        padding: 70px 0 97px 0;
-        margin: 0 145px;
         border-top: 1px solid #aaaaaa;
-    }
-}
-.item {
-    &__btns {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        &-btn {
-            width: 225px;
-            padding: 20px 0 19px 0;
-            color: var(--txt_color-on-btn, #666);
-            text-align: center;
-            font-family: "Fugaz One";
-            font-size: 20px;
-            border-radius: 5px;
-            background: #eee;
-            border: none;
-            outline: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            &:nth-child(2) {
-                flex-grow: 1;
-            }
-            &:hover {
-                background: var(--stroke_mini_photo, #2ca7cb);
-                color: var(--txt_color_second, #fff);
-            }
-        }
+        display: grid;
+        @include grid-template;
     }
 }
 .show-more-btns {
@@ -78,31 +45,34 @@
     justify-content: space-between;
     align-items: center;
     margin: 0 145px;
-    &_showmore {
+    &__showmore,
+    &__hide {
         cursor: pointer;
         color: var(--txt_color_second, #fff);
         text-align: center;
         font-family: "Fugaz One";
         font-size: 32px;
         border-radius: 10px;
-        background: var(--color_main, #2ca7cb);
         width: 377px;
         padding: 23px 0;
         border: none;
         outline: none;
         transition: all 0.3s ease;
+    }
+    &__showmore {
+        background: var(--color_main, #2ca7cb);
         &:hover {
             background: #17cbff;
         }
     }
-    &_hide {
+    &__hide {
         background: var(--color_second, #e11e18);
         display: none;
         &:hover {
             background: #ff5656;
         }
     }
-    &_up {
+    &__up {
         background: none;
         border: none;
         outline: none;
