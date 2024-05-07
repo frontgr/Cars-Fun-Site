@@ -105,24 +105,25 @@
                         Cars. <span>Fan site</span>
                     </a>
 
-                    <div class="header__search">
+                    <div class="header__search search-field">
                         <input
                             type="search"
                             name="searchQuery"
                             id="searchInput"
-                            class="header__search-input"
+                            class="header__search-input search-field__search-input"
                             oninput="removeError()"
+                            autocomplete="off"
                         />
                         <img
                             src="./images/search.svg"
-                            class="header__search-desktop"
+                            class="header__search-desktop search-field__search-desktop"
                             id="searchInputButton"
                             alt="search"
                             onclick="search()"
                         />
                         <img
                             src="./images/search_mobile.png"
-                            class="header__search-mobile"
+                            class="header__search-mobile search-field__search-mobile"
                             id="searchInputButtonMobile"
                             alt="search"
                             onclick="search()"
@@ -207,7 +208,6 @@
         <script src="./js/jquery-3.7.1.min.js"></script>
         <script type="module" src="./js/cars_tab.js"></script>
         <script src="./js/overlay.js"></script>
-        <script type="module" src="./js/search.js"></script>
         <script type="module" src="./js/search.js"></script>
     </body>
 </html>

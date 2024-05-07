@@ -1,5 +1,8 @@
 .main-info {
     padding: 120px 0;
+    &__search-block {
+        margin: 0 145px 88px 145px;
+    }
     &__info {
         display: flex;
         justify-content: space-between;
@@ -22,7 +25,7 @@
             color: #000;
             font-family: "Montserrat";
             font-size: 20px;
-            line-height: 164%; /* 32.8px */
+            line-height: 164%;
         }
     }
     &__photos {

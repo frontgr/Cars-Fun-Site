@@ -1,7 +1,6 @@
 .search-block {
     display: none;
     position: relative;
-
     &__container {
         display: grid;
         @include grid-template;

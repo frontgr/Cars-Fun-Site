@@ -1,11 +1,16 @@
 import { cars } from "./cars_list.js";
-window.search = function search() {
-    $(".header__search").removeClass("header__search--error");
+window.search = function search(isCarInfoPage) {
+    $(".search-field").removeClass("search-field__search--error");
     let inputField = document.getElementById("searchInput");
     if (inputField.value.length >= 3 && inputField.value.length <= 256) {
-        $(".header__search").removeClass("header__search--error");
+        $(".search-field").removeClass("search-field__search--error");
         $(".search-block").show();
         inputField = inputField.value;
+        if (isCarInfoPage) {
+            $(".main-info__photos").hide();
+            $(".main-info__desc").hide();
+            $(".main-info__info").hide();
+        }
         let searchContent = "";
         $(".search-block__not-found").hide();
         cars.forEach((car) => {
@@ -14,7 +19,7 @@ window.search = function search() {
                 searchContent += `
                 <div class="search-block__item car-item">
                 <img
-                    src=${car.photo}
+                    src=${isCarInfoPage ? "." : ""}${car.photo}
                     alt="car image"
                     class="car-item__img"
                 />
@@ -44,22 +49,33 @@ window.search = function search() {
             $(".search-block__not-found").show();
         }
     } else {
-        $(".header__search").addClass("header__search--error");
+        $(".search-field").addClass("search-field__search--error");
         $(".search-block").hide();
+        if (isCarInfoPage) {
+            $(".main-info__photos").show();
+            $(".main-info__desc").show();
+            $(".main-info__info").show();
+        }
     }
 };
 
-window.closeSearch = function closeSearch() {
-    $(".header__search").removeClass("header__search--error");
+window.closeSearch = function closeSearch(isCarInfoPage) {
+    $(".search-field").removeClass("search-field__search--error");
     $(".search-block").hide();
+    console.log(isCarInfoPage);
+    if (isCarInfoPage) {
+        $(".main-info__photos").show();
+        $(".main-info__desc").show();
+        $(".main-info__info").show();
+    }
 };
 
 window.removeError = function removeError() {
-    $(".header__search").removeClass("header__search--error");
+    $(".search-field").removeClass("search-field__search--error");
 };
 
-$(".header__search").keydown(function (event) {
+$(".search-field").keydown(function (event) {
     if (event.keyCode === 13) {
-        search();
+        search(true);
     }
 });
