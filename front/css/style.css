@@ -941,6 +941,7 @@
   font-size: 20px;
   font-family: "Fugaz One";
   font-weight: 200;
+  text-indent: 5px;
 }
 .search-field__search-input::-webkit-search-cancel-button {
   cursor: pointer;
