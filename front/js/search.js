@@ -15,7 +15,6 @@ window.search = function search(isCarInfoPage) {
         $(".search-block__not-found").hide();
         cars.forEach((car) => {
             if (car.name.toLowerCase().includes(inputField.toLowerCase())) {
-                console.log(car.name);
                 searchContent += `
                 <div class="search-block__item car-item">
                 <img
@@ -62,7 +61,6 @@ window.search = function search(isCarInfoPage) {
 window.closeSearch = function closeSearch(isCarInfoPage) {
     $(".search-field").removeClass("search-field__search--error");
     $(".search-block").hide();
-    console.log(isCarInfoPage);
     if (isCarInfoPage) {
         $(".main-info__photos").show();
         $(".main-info__desc").show();
