@@ -5,6 +5,7 @@
         display: grid;
         @include grid-template;
         padding: 0px 0 97px 0;
+        gap: 70px 22px;
         margin: 0;
     }
     &__not-found {

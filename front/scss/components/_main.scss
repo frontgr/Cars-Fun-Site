@@ -1,9 +1,6 @@
 .main {
     padding: 110px 0 123px 0;
     background: var(--txt_color_second, #fff);
-    &__search-block {
-        margin: 0 145px 88px 145px;
-    }
     &__filter {
         display: flex;
         justify-content: space-between;
