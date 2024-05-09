@@ -9,7 +9,7 @@
         justify-content: space-between;
         align-items: center;
         gap: 23px;
-        margin: 0 145px 70px 145px;
+        margin: 0 0 70px 0;
         &-btn {
             width: 518px;
             padding: 36px 0 36px;
@@ -38,13 +38,14 @@
         border-top: 1px solid #aaaaaa;
         display: grid;
         @include grid-template;
+        margin: 0;
+        gap: 70px 22px;
     }
 }
 .show-more-btns {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 145px;
     &__showmore,
     &__hide {
         cursor: pointer;

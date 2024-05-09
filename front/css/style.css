@@ -607,11 +607,12 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  width: 395px;
+  width: 518px;
+  height: 457px;
 }
 .car-item__img {
-  width: 395px;
-  height: 220px;
+  width: 518px;
+  height: 312px;
   border-radius: 5px;
 }
 .car-item__title {
@@ -669,7 +670,6 @@
 .logo {
   color: var(--txt_color_second, #fff);
   font-size: 32px;
-  margin-left: 162px;
 }
 .logo span {
   color: var(--color_second, #e11e18);
@@ -687,7 +687,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 23px;
-  margin: 0 145px 70px 145px;
+  margin: 0 0 70px 0;
 }
 .main__filter-btn {
   width: 518px;
@@ -721,13 +721,14 @@
   gap: 50px 57px;
   padding: 70px 0 97px 0;
   margin: 0 145px;
+  margin: 0;
+  gap: 70px 22px;
 }
 
 .show-more-btns {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 145px;
 }
 .show-more-btns__showmore, .show-more-btns__hide {
   cursor: pointer;
@@ -777,7 +778,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 145px;
 }
 .footer__logos {
   display: flex;
@@ -923,7 +923,6 @@
   height: 63px;
   display: flex;
   align-items: center;
-  margin-right: 160px;
   gap: 20px;
   padding: 19px 15px 20px 22px;
   border-radius: 112px;
@@ -1099,4 +1098,4 @@ body {
 
 body .container {
   margin: 0 auto;
-}/*# sourceMappingURL=style.css.map */
+}
