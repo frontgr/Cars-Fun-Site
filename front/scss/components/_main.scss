@@ -58,6 +58,7 @@
         transition: all 0.3s ease;
     }
     &__showmore {
+        margin-right: 290px;
         background: var(--color_main, #2ca7cb);
         &:hover {
             background: #17cbff;
