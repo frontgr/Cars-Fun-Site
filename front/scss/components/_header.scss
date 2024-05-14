@@ -23,6 +23,10 @@
     color: var(--txt_color_second, #fff);
     font-size: 32px;
     & span {
+        transition: color 0.4s ease-in-out;
         color: var(--color_second, #e11e18);
+    }
+    &:hover span {
+        color: var(--txt_color_second, #fff) !important;
     }
 }

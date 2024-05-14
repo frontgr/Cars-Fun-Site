@@ -672,7 +672,11 @@
   font-size: 32px;
 }
 .logo span {
+  transition: color 0.4s ease-in-out;
   color: var(--color_second, #e11e18);
+}
+.logo:hover span {
+  color: var(--txt_color_second, #fff) !important;
 }
 
 .main {
