@@ -1,4 +1,18 @@
 import { cars } from "./cars_list.js";
+var inputField = document.getElementById("searchInput");
+
+// Add event listener for keypress event
+inputField.addEventListener("keypress", function (event) {
+    var charCode = event.which || event.keyCode;
+    if (
+        (charCode < 65 || charCode > 90) &&
+        (charCode < 97 || charCode > 122) &&
+        charCode !== 32
+    ) {
+        event.preventDefault();
+    }
+});
+
 window.search = function search(isCarInfoPage) {
     $(".search-field").removeClass("search-field__search--error");
     let inputField = document.getElementById("searchInput");
