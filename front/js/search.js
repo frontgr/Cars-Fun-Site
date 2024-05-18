@@ -1,7 +1,7 @@
 import { cars } from "./cars_list.js";
 var inputField = document.getElementById("searchInput");
 
-// Ввод латинских букв и пробелов
+// Add event listener for keypress event
 inputField.addEventListener("keypress", function (event) {
     var charCode = event.which || event.keyCode;
     if (
@@ -13,14 +13,10 @@ inputField.addEventListener("keypress", function (event) {
     }
 });
 
-// Ограничение на вставку только латинских букв
+// Add event listener for paste event
 inputField.addEventListener("paste", function (event) {
     event.preventDefault();
-    var paste = (event.clipboardData || window.clipboardData).getData('text');
-    var filteredPaste = paste.replace(/[^a-zA-Z ]/g, '');
-    var selectionStart = inputField.selectionStart;
-    var selectionEnd = inputField.selectionEnd;    
-    inputField.setRangeText(filteredPaste, selectionStart, selectionEnd, 'end');
+    // Optionally, you can show a message to the user or log an event here.
 });
 
 
