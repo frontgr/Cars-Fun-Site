@@ -986,9 +986,6 @@
 .main-info {
   padding: 120px 0;
 }
-.main-info__search-block {
-  margin: 0 145px 88px 145px;
-}
 .main-info__info {
   display: flex;
   justify-content: space-between;
@@ -1108,4 +1105,4 @@ body {
 
 body .container {
   margin: 0 auto;
-}
+}/*# sourceMappingURL=style.css.map */
