@@ -1,7 +1,7 @@
 import { cars } from "./cars_list.js";
 var inputField = document.getElementById("searchInput");
 
-// Add event listener for keypress event
+// Ввод латинских букв и пробелов
 inputField.addEventListener("keypress", function (event) {
     var charCode = event.which || event.keyCode;
     if (
@@ -12,6 +12,17 @@ inputField.addEventListener("keypress", function (event) {
         event.preventDefault();
     }
 });
+
+// Ограничение на вставку только латинских букв
+inputField.addEventListener("paste", function (event) {
+    event.preventDefault();
+    var paste = (event.clipboardData || window.clipboardData).getData('text');
+    var filteredPaste = paste.replace(/[^a-zA-Z ]/g, '');
+    var selectionStart = inputField.selectionStart;
+    var selectionEnd = inputField.selectionEnd;    
+    inputField.setRangeText(filteredPaste, selectionStart, selectionEnd, 'end');
+});
+
 
 window.search = function search(isCarInfoPage) {
     $(".search-field").removeClass("search-field__search--error");
