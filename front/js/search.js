@@ -13,10 +13,14 @@ inputField.addEventListener("keypress", function (event) {
     }
 });
 
-// Add event listener for paste event
+// Ограничение на вставку только латинских букв
 inputField.addEventListener("paste", function (event) {
     event.preventDefault();
-    // Optionally, you can show a message to the user or log an event here.
+    var paste = (event.clipboardData || window.clipboardData).getData('text');
+    var filteredPaste = paste.replace(/[^a-zA-Z ]/g, '');
+    var selectionStart = inputField.selectionStart;
+    var selectionEnd = inputField.selectionEnd;    
+    inputField.setRangeText(filteredPaste, selectionStart, selectionEnd, 'end');
 });
 
 
