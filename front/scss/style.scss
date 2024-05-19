@@ -4,11 +4,14 @@
 @import "./_variables";
 @import "./components/login";
 @import "./components/_admin";
+@import "./components/_car-item";
 @import "./components/_header";
 @import "./components/_main";
 @import "./components/_footer";
 @import "./components/_overlay";
+@import "./components/_search-block";
 @import "./components/_popup";
+@import "./components/search-field";
 
 // Second page imports
 @import "./components/info-page/header-info";

@@ -9,35 +9,113 @@
         <title>Lightning McQueen #95 | Cars. Fan site</title>
     </head>
     <body class="info-page">
+        <div id="overlay" class="overlay"></div>
+        <div class="popup" id="popupWindow">
+            <div class="popup__slider">
+                <img
+                    class="popup__slider-close"
+                    src="../images/material-symbols-light_close.svg"
+                    alt="Close popup icon"
+                />
+                <img
+                    src="../images/main_photo_1.webp"
+                    alt="car_slider"
+                    class="popup__main-photo"
+                />
+            </div>
+            <div class="popup-menu popup__menu">
+                <button class="popup-menu__left">
+                    <img src="../images/arrows/ph_arrow.svg" alt="" />
+                </button>
+                <div class="popup-menu__icons">
+                    <img
+                        src="../images/main_photo_1.webp"
+                        alt="icon"
+                        class="popup-menu__icon popup-menu__icon--selected"
+                    />
+                    <img
+                        src="../images/main_photo_2.webp"
+                        alt="icon"
+                        class="popup-menu__icon"
+                    />
+                    <img
+                        src="../images/main_photo_3.webp"
+                        alt="icon"
+                        class="popup-menu__icon"
+                    />
+                    <img
+                        src="../images/main_photo_4.webp"
+                        alt="icon"
+                        class="popup-menu__icon"
+                    />
+                    <img
+                        src="../images/main_photo_5.webp"
+                        alt="icon"
+                        class="popup-menu__icon"
+                    />
+                    <img
+                        src="../images/main_photo_6.webp"
+                        alt="icon"
+                        class="popup-menu__icon"
+                    />
+                </div>
+                <button class="popup-menu__right">
+                    <img src="../images/arrows/ph_arrow.svg" alt="" />z
+                </button>
+            </div>
+        </div>
         <header class="header-info">
             <div class="container">
                 <nav class="header-info__nav">
                     <a href="../index.html" class="header-info__nav-logo logo">
                         Cars. <span>Fan site</span>
                     </a>
-                    <div class="header-info__search">
+                    <div class="header-info__search search-field">
                         <input
                             type="search"
                             name="searchQuery"
                             id="searchInput"
-                            class="header-info__search-input"
+                            class="header-info__search-input search-field__search-input"
+                            oninput="removeError()"
+                            autocomplete="off"
+                            minlength="3"
+                            maxlength="100"
                         />
                         <img
                             src="../images/search.svg"
-                            class="header-info__search-desktop"
+                            class="header-info__search-desktop search-field__search-desktop"
                             alt="search"
+                            id="searchInputButton"
+                            onclick="search(true)"
                         />
                         <img
                             src="../images/search_mobile.png"
-                            class="header-info__search-mobile"
+                            class="header-info__search-mobile search-field__search-mobile"
+                            id="searchInputButtonMobile"
                             alt="search"
+                            onclick="search(true)"
                         />
                     </div>
                 </nav>
             </div>
         </header>
+
         <main class="main-info">
             <div class="container">
+                <div class="search-block main-info__search-block">
+                    <button class="search-block__close-button">
+                        <img
+                            src="../images/carbon_close-outline.svg"
+                            alt="close search container"
+                            class="search-block__close-icon"
+                            onclick="closeSearch(true)"
+                        />
+                    </button>
+                    <span class="search-block__not-found"
+                        >Nothing was found. Try again!</span
+                    >
+                    <div class="search-block__container"></div>
+                </div>
                 <div class="main-info__info">
                     <div class="main-info__description">
                         <div class="main-info__description-title">
@@ -115,5 +193,7 @@
         </footer>
         <script src="../js/jquery-3.7.1.min.js"></script>
         <script src="../js/counter.js"></script>
+        <script src="../js/overlay.js"></script>
+        <script type="module" src="../js/search.js"></script>
     </body>
 </html>

@@ -3,7 +3,7 @@ let time_to_100 = $("#time_to_100");
 
 function counterSpeed(element, endValue) {
     let value = 0;
-    let duration = 2000;
+    let duration = 10;
     element.text(value);
     let interval = setInterval(function () {
         if (value < endValue) {

@@ -105,22 +105,28 @@
                         Cars. <span>Fan site</span>
                     </a>
 
-                    <div class="header__search">
+                    <div class="header__search search-field">
                         <input
                             type="search"
                             name="searchQuery"
                             id="searchInput"
-                            class="header__search-input"
+                            class="header__search-input search-field__search-input"
+                            oninput="removeError()"
+                            autocomplete="off"
                         />
                         <img
                             src="./images/search.svg"
-                            class="header__search-desktop"
+                            class="header__search-desktop search-field__search-desktop"
+                            id="searchInputButton"
                             alt="search"
+                            onclick="search()"
                         />
                         <img
                             src="./images/search_mobile.png"
-                            class="header__search-mobile"
+                            class="header__search-mobile search-field__search-mobile"
+                            id="searchInputButtonMobile"
                             alt="search"
+                            onclick="search()"
                         />
                     </div>
                 </nav>
@@ -135,6 +141,20 @@
 
         <main class="main">
             <div class="container">
+                <div class="search-block main__search-block">
+                    <button class="search-block__close-button">
+                        <img
+                            src="./images/carbon_close-outline.svg"
+                            alt="close search container"
+                            class="search-block__close-icon"
+                            onclick="closeSearch()"
+                        />
+                    </button>
+                    <span class="search-block__not-found"
+                        >Nothing was found. Try again!</span
+                    >
+                    <div class="search-block__container"></div>
+                </div>
                 <div class="main__filter">
                     <button class="main__filter-btn active" id="btn-racers">
                         Racers
@@ -148,16 +168,13 @@
                 <div class="main__content"></div>
 
                 <div class="show-more-btns">
-                    <button
-                        class="show-more-btns_showmore show-more-btns_hide"
-                        id="btn-hide"
-                    >
+                    <button class="show-more-btns__hide" id="btn-hide">
                         Hide
                     </button>
-                    <button class="show-more-btns_showmore" id="btn-show-more">
+                    <button class="show-more-btns__showmore" id="btn-show-more">
                         Show more...
                     </button>
-                    <button class="show-more-btns_up" id="btn-up">
+                    <button class="show-more-btns__up" id="btn-up">
                         <img src="./images/up.svg" alt="arrow up" />
                     </button>
                 </div>
@@ -189,7 +206,8 @@
         </footer>
 
         <script src="./js/jquery-3.7.1.min.js"></script>
-        <script src="./js/cars_tab.js"></script>
+        <script type="module" src="./js/cars_tab.js"></script>
         <script src="./js/overlay.js"></script>
+        <script type="module" src="./js/search.js"></script>
     </body>
 </html>

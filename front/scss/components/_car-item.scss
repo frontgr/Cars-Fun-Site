@@ -1,0 +1,45 @@
+.car-item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 518px;
+    height: 457px;
+    &__img {
+        width: 518px;
+        height: 312px;
+        border-radius: 5px;
+    }
+    &__title {
+        color: #000;
+        font-size: 32px;
+        & span {
+            color: #e11e18;
+        }
+    }
+    &__btns {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        &-btn {
+            width: 225px;
+            padding: 20px 0 19px 0;
+            color: var(--txt_color-on-btn, #666);
+            text-align: center;
+            font-family: "Fugaz One";
+            font-size: 20px;
+            border-radius: 5px;
+            background: #eee;
+            border: none;
+            outline: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            &:nth-child(2) {
+                flex-grow: 1;
+            }
+            &:hover {
+                background: var(--stroke_mini_photo, #2ca7cb);
+                color: var(--txt_color_second, #fff);
+            }
+        }
+    }
+}
