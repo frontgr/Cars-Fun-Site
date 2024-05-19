@@ -1,0 +1,34 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Deploy using ssh
+        uses: appleboy/ssh-action@master
+        with:
+            host: ${{ secrets.SSH_HOST }}
+            username: ${{ secrets.SSH_USERNAME }}
+            password: ${{ secrets.SSH_PASSWORD }}
+            port: 22
+            script: |
+              PROJECT_PATH="Cars-Fun-Site"
+
+              # Остановит текущее приложение (если оно запущено)
+              cd $PROJECT_PATH
+              docker compose down
+
+              # Обновит репозиторий с GitHub
+              git pull origin main
+
+              # Соберет и запустит приложение
+              docker compose up -d --build
