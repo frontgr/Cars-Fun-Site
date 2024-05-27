@@ -649,6 +649,37 @@
   color: var(--txt_color_second, #fff);
 }
 
+@media (min-width: 991px) and (max-width: 1600px) {
+  .car-item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 30vw;
+    height: auto;
+  }
+  .car-item__img {
+    width: auto;
+    height: auto;
+    border-radius: 5px;
+  }
+  .car-item__title {
+    font-size: 1.6em;
+  }
+}
+@media (min-width: 320px) and (max-width: 990px) {
+  .car-item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 52vw;
+    height: auto;
+  }
+  .car-item__img {
+    width: 52vw;
+    height: auto;
+    border-radius: 5px;
+  }
+}
 .header {
   background: url("../images/header_background.webp"), #03070a 50%;
   background-repeat: no-repeat;
@@ -661,7 +692,7 @@
   padding: 50px 0;
 }
 .header__image {
-  padding: 32px 0 144px 0;
+  padding: 32px 0 144px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -679,6 +710,56 @@
   color: var(--txt_color_second, #fff) !important;
 }
 
+@media (min-width: 1281px) and (max-width: 1600px) {
+  .header__nav {
+    margin: 0 162px;
+  }
+  .header__image img {
+    width: 1000px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1280px) {
+  .header__nav {
+    margin: 0 50px;
+  }
+  .header__image {
+    margin: 0 145px;
+  }
+  .header__image img {
+    width: 700px;
+  }
+  .logo {
+    color: var(--txt_color_second, #fff);
+    font-size: 32px;
+  }
+  .logo span {
+    color: var(--color_second, #e11e18);
+  }
+}
+@media (min-width: 480px) and (max-width: 768px) {
+  .header__nav {
+    display: block;
+    text-align: center;
+  }
+  .header__image {
+    margin: 0 145px;
+  }
+  .header__image img {
+    width: 90vw;
+  }
+}
+@media (min-width: 280px) and (max-width: 480px) {
+  .header__nav {
+    display: block;
+    text-align: center;
+  }
+  .header__image {
+    margin: 0 145px;
+  }
+  .header__image img {
+    width: 90vw;
+  }
+}
 .main {
   padding: 110px 0 123px 0;
   background: var(--txt_color_second, #fff);
@@ -772,6 +853,91 @@
   cursor: pointer;
 }
 
+@media (min-width: 991px) and (max-width: 1600px) {
+  .main {
+    padding: 110px 0 123px 0;
+    background: var(--txt_color_second, #fff);
+  }
+  .main__filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95vw;
+    gap: 23px;
+    margin: 0 auto 70px auto;
+  }
+  .main__content {
+    border-top: 1px solid #aaaaaa;
+    grid-template-columns: repeat(3, auto);
+    align-items: center;
+    justify-items: center;
+    padding: 70px 0 97px 0;
+    gap: 20px 22px;
+    width: 95vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .show-more-btns {
+    width: 95vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .show-more-btns__showmore, .show-more-btns__hide {
+    cursor: pointer;
+    color: var(--txt_color_second, #fff);
+    text-align: center;
+    font-family: "Fugaz One";
+    font-size: 32px;
+    border-radius: 10px;
+    width: 377px;
+    padding: 23px 0;
+    border: none;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+}
+@media (min-width: 320px) and (max-width: 990px) {
+  .main {
+    width: auto;
+  }
+  .main__filter {
+    display: grid;
+    grid-template-columns: 1;
+    justify-content: center;
+  }
+  .main__filter-btn {
+    width: 72.8vw;
+    height: 10vh;
+    padding: 0;
+  }
+  .main__content {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+  }
+  .show-more-btns {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px 15px;
+    margin-left: 135px;
+  }
+  .show-more-btns__showmore {
+    margin-right: auto;
+    width: 38.1vw;
+    height: 11vh;
+    font-size: 3.4vw;
+  }
+  .show-more-btns__hide {
+    margin-right: auto;
+    width: 38vw;
+    height: 11vh;
+    font-size: 3.4vw;
+  }
+  .show-more-btns__up {
+    margin-right: 135px;
+    width: 11vw;
+    height: 11vh;
+  }
+}
 .footer {
   background: #010b0f;
   padding: 88px 0;
@@ -801,6 +967,24 @@
   color: var(--color_second);
 }
 
+@media (min-width: 768px) and (max-width: 990px) {
+  .footer__content {
+    width: 72.7vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .footer__content {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    justify-content: center;
+  }
+  .footer__company, .footer__admin {
+    text-align: center;
+    margin-top: 10px;
+  }
+}
 .overlay {
   display: none;
   position: fixed;
@@ -965,6 +1149,64 @@
   display: none;
 }
 
+@media (min-width: 768px) and (max-width: 1280px) {
+  .search-field {
+    width: 250px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 19px 15px 20px 22px;
+    border-radius: 112px;
+    background: var(--txt_color_second, #fff);
+    transition: border 0.3s ease;
+  }
+  .search-field__search-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    font-family: "Fugaz One";
+    font-weight: 200;
+    text-indent: 5px;
+  }
+  .search-field__search-desktop {
+    display: none;
+  }
+  .search-field__search-mobile {
+    display: block;
+  }
+}
+@media (min-width: 280px) and (max-width: 768px) {
+  .search-field {
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90vw;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 19px 15px 20px 22px;
+    border-radius: 112px;
+    background: var(--txt_color_second, #fff);
+  }
+  .search-field__search-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    font-family: "Fugaz One";
+    font-weight: 200;
+    text-indent: 5px;
+  }
+  .search-field__search-desktop {
+    display: none;
+  }
+  .search-field__search-mobile {
+    display: block;
+  }
+}
 .header-info {
   background-repeat: no-repeat;
   background-position: center;
@@ -977,7 +1219,7 @@
   padding: 50px 0;
 }
 .header-info__image {
-  padding: 32px 0 144px 0;
+  padding: 32px 0 144px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1105,4 +1347,4 @@ body {
 
 body .container {
   margin: 0 auto;
-}/*# sourceMappingURL=style.css.map */
+}

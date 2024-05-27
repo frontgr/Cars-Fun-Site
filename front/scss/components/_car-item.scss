@@ -43,3 +43,35 @@
         }
     }
 }
+
+@media (min-width: 991px) and (max-width: 1600px) {
+    .car-item {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 30vw;
+        height: auto;
+        &__img {
+            width: auto;
+            height: auto;
+            border-radius: 5px;
+        }
+        &__title {
+            font-size: 1.6em;
+        }
+    }
+}
+@media (min-width: 320px) and (max-width: 990px) {
+    .car-item {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 52vw;
+        height: auto;
+        &__img {
+            width: 52vw;
+            height: auto;
+            border-radius: 5px;
+        }
+    }
+}

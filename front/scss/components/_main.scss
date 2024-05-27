@@ -88,3 +88,90 @@
         }
     }
 }
+@media (min-width: 991px) and (max-width: 1600px) {
+.main {
+    padding: 110px 0 123px 0;
+    background: var(--txt_color_second, #fff);
+    &__filter {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 95vw;
+        gap: 23px;
+        margin: 0 auto 70px auto;
+    }
+    &__content {
+        border-top: 1px solid #aaaaaa;
+        grid-template-columns: repeat(3, auto);
+        align-items: center;
+        justify-items: center;
+        padding: 70px 0 97px 0;
+        gap: 20px 22px;
+        width: 95vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+.show-more-btns {
+    width: 95vw;
+    margin-left: auto;
+    margin-right: auto;
+    &__showmore,
+    &__hide {
+        cursor: pointer;
+        color: var(--txt_color_second, #fff);
+        text-align: center;
+        font-family: "Fugaz One";
+        font-size: 32px;
+        border-radius: 10px;
+        width: 377px;
+        padding: 23px 0;
+        border: none;
+        outline: none;
+        transition: all 0.3s ease;
+    }
+}
+}
+
+@media (min-width: 320px) and (max-width: 990px) {
+    .main {
+        width: auto;
+        &__filter {
+            display: grid;
+            grid-template-columns: 1;
+            justify-content: center;
+            &-btn {
+                width: 72.8vw;
+                height: 10vh;
+                padding: 0;
+            }
+        }
+        &__content {
+            display: grid;
+            grid-template-columns: repeat(1, auto);
+        }
+    }
+    .show-more-btns {
+        display: flex;
+        justify-content: space-between;
+        gap: 15px 15px;
+        margin-left: 135px;
+        &__showmore {
+            margin-right: auto;
+            width: 38.1vw;
+            height: 11vh;
+            font-size: 3.4vw;
+        }
+        &__hide {
+            margin-right: auto;
+            width: 38vw;
+            height: 11vh;
+            font-size: 3.4vw;
+        }
+        &__up {
+           margin-right: 135px;
+           width: 11vw;
+           height: 11vh;
+        }
+    }
+}

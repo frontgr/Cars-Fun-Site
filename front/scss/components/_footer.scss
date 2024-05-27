@@ -27,3 +27,28 @@
         color: var(--color_second);
     }
 }
+
+@media (min-width: 768px) and (max-width: 990px) {
+    .footer {
+        &__content {
+            width: 72.7vw;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .footer {
+        &__content {
+            display: grid;
+            grid-template-columns: repeat(1, auto);
+            justify-content: center;
+        }
+        &__company,
+        &__admin {
+            text-align: center;
+            margin-top: 10px;
+    }        
+    }
+}
