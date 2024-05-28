@@ -1,5 +1,7 @@
 from bson.objectid import ObjectId
 
+import uuid
+
 from ..modules.converter import convert, delete_storage
 
 from .client import db
@@ -35,32 +37,31 @@ class CarOperations:
 
     @staticmethod
     @check_file_extension
-    def add_new_car(photos, values_dict):
-        car = {key: value for key, value in values_dict.items()}
+    def add_new_car(values_dict, photos):
+        folder_id = str(uuid.uuid4())
 
-        car['cover_photo'] = convert(filename=car.get('name'),
-                                     index='cover_photo',
-                                     file=photos.pop('cover_photo'))
+        values_dict['folder_id'] = folder_id
 
-        car['photos'] = {key: convert(filename=car['name'], index=key, file=value)
-                         for key, value in photos.items()}
+        for key, value in photos.items():
+            values_dict[key] = convert(folder_id=folder_id, index=key, file=value)
 
-        db.cars.insert_one(car)
+        db.cars.insert_one(values_dict)
 
     @staticmethod
     def delete_car(_id):
-        name = db.cars.find_one({'_id': ObjectId(_id)})['name']
-        delete_storage(name)
+        folder_id = db.cars.find_one({'_id': ObjectId(_id)})['folder_id']
+
+        delete_storage(folder_id)
         db.cars.delete_one({'_id': ObjectId(_id)})
 
     @staticmethod
     @check_file_extension
-    def update_car(photos, _id, values_dict):
-        name = db.cars.find_one({'_id': ObjectId(_id)})['name']
-        update = {key: value for key, value in values_dict.items()}
+    def update_car(_id, values_dict, photos):
+        folder_id = db.cars.find_one({'_id': ObjectId(_id)})['folder_id']
 
         for key, value in photos.items():
-            update[key] = convert(name, key, value)
+            values_dict[key] = convert(folder_id=folder_id, index=key, file=value)
 
-        car = {'_id': ObjectId(_id)}
-        db.cars.update_one(car, {'$set': update})
+        db.cars.update_one(
+            {'_id': ObjectId(_id)}, 
+            {'$set': values_dict})
