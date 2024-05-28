@@ -9,7 +9,7 @@ services:
     volumes:
         - ./nginx.conf:/etc/nginx/nginx.conf
         - ./front:/usr/share/nginx/html
-        - shared_data:/usr/share/nginx/html/storage
+        - shared_data:/usr/share/nginx/html/photo
 
   back:
     build: ./back
@@ -22,7 +22,7 @@ services:
       - "5000:5000"
     volumes:
       - ./data/back:/data/back
-      - shared_data:/Cars-Fun-Site/storage
+      - shared_data:/Cars-Fun-Site/photo
 
   mongo:
     image: "mongo:latest"
