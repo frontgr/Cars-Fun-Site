@@ -1,8 +1,9 @@
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, current_user
 
+from pymongo.errors import DuplicateKeyError
+
 from ...db import AdminOperations
-from ...config import add_admin_fields, update_admin_fields
 
 from ...modules.decorators import check_admin_permission
 
@@ -20,16 +21,16 @@ def get_admins():
 @jwt_required()
 @check_admin_permission(current_user, 'add_users')
 def add_admin():
-    input_fields = {i for i in request.form}
-
-    if input_fields in add_admin_fields:
-        values_dict = {i: request.form.get(i) for i in request.form if i in add_admin_fields}
-
-        AdminOperations.add_admin(values=values_dict)
-        return '', 201
-
-    else:
-        response = jsonify({"msg": "Not all fields are filled or an unexpected value has been passed", "fields": list(input_fields)})
+    try:
+        AdminOperations.add_admin(values={i: request.form.get(i) for i in request.form})
+        
+        response = jsonify({"msg": "The admin was successfully created"})
+        return response, 201
+    except KeyError:
+        response = jsonify({"msg": "The password field was not received"})
+        return response, 400
+    except DuplicateKeyError:
+        response = jsonify({"msg": "An admin with this username already exists"})
         return response, 400
 
 
@@ -37,25 +38,18 @@ def add_admin():
 @jwt_required()
 @check_admin_permission(current_user, 'delete_users')
 def delete_admin():
-    _id = request.args.get('_id')
+    AdminOperations.delete_admin(_id=request.args.get('_id'))
 
-    AdminOperations.delete_admin(_id)
-    return '', 204
+    response = jsonify({"msg": "The admin was successfully deleted"})
+    return response, 204
 
 
 @admins_panel.route('/panel/admin', methods=['PUT'])
 @jwt_required()
 @check_admin_permission(current_user, 'edit_users')
 def update_admin():
-    input_fields = {i for i in request.form}
-
-    if input_fields in update_admin_fields:
-        _id = request.args.get('_id')
-        values = {i: request.form.get(i) for i in request.form if i != 'password'}
-
-        AdminOperations.update_admin(_id=_id, values_dict=values)
-        return '', 200
-
-    else:
-        response = jsonify({"msg": "Not all fields are filled or an unexpected value has been passed"})
-        return response, 400
+    AdminOperations.update_admin(_id=request.args.get('_id'), 
+                                values_dict={i: request.form.get(i) for i in request.form})
+    
+    response = jsonify({"msg": "The admin's data was successfully updated"})
+    return response, 200
