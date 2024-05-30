@@ -1190,6 +1190,12 @@
   .main-info__speed-number:first-child::after {
     right: -30px;
   }
+  .main-info__desc-title {
+    font-size: 28px;
+  }
+  .main-info__desc-text {
+    font-size: 16px;
+  }
 }
 @media (max-width: 550px) {
   .info-page .container {
@@ -1225,8 +1231,14 @@
   .main-info__speed-number:first-child::after {
     right: -20px;
   }
+  .main-info__desc-title {
+    font-size: 18px;
+  }
+  .main-info__desc-text {
+    font-size: 15px;
+  }
 }
-@media (max-width: 440px) {
+@media (max-width: 380px) {
   .info-page .container {
     max-width: 270px;
   }

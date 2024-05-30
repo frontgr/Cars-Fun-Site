@@ -255,7 +255,16 @@
                 }
             }
         }
+        &__desc{
+            &-title{
+                font-size: 28px;
+            }
+            &-text{
+                font-size: 16px;
+            }
+        }
     }
+
 }
 @media (max-width: 550px) {
     .info-page{
@@ -310,9 +319,17 @@
                 }
             }
         }
+        &__desc{
+            &-title{
+                font-size: 18px;
+            }
+            &-text{
+                font-size: 15px;
+            }
+        }
     }
 }
-@media (max-width: 440px) {
+@media (max-width: 380px) {
     .info-page{
         & .container{
             max-width: 270px;
@@ -339,3 +356,4 @@
         }
     }
 }
+
