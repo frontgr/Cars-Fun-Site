@@ -61,17 +61,40 @@
         }
     }
 }
-@media (min-width: 320px) and (max-width: 990px) {
+@media (min-width: 480px) and (max-width: 990px) {
     .car-item {
         display: flex;
         flex-direction: column;
         gap: 15px;
-        width: 52vw;
+        width: 72.8vw;
         height: auto;
         &__img {
-            width: 52vw;
+            width: 72.8vw;
             height: auto;
             border-radius: 5px;
+        }
+    }
+}
+
+@media (min-width: 320px) and (max-width: 479px) {
+    .car-item {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 90vw;
+        height: auto;
+        &__img {
+            width: 90vw;
+            height: auto;
+            border-radius: 5px;
+        }
+        &__title {
+            font-size: 28px;
+        }
+        &__btns {
+            &-btn {
+                font-size: 15px;
+            }
         }
     }
 }

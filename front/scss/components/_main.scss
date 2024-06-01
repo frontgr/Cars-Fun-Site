@@ -51,11 +51,15 @@
         font-family: "Fugaz One";
         font-size: 32px;
         border-radius: 10px;
-        width: 377px;
+        width: 22vw;
         padding: 23px 0;
         border: none;
         outline: none;
         transition: all 0.3s ease;
+    }
+    &__addaptive {
+        display: flex;
+        gap: 0 30px;
     }
     &__showmore {
         margin-right: 290px;
@@ -124,7 +128,7 @@
         font-family: "Fugaz One";
         font-size: 32px;
         border-radius: 10px;
-        width: 377px;
+        width: 22vw;
         padding: 23px 0;
         border: none;
         outline: none;
@@ -133,7 +137,7 @@
 }
 }
 
-@media (min-width: 320px) and (max-width: 990px) {
+@media (min-width: 480px) and (max-width: 990px) {
     .main {
         width: auto;
         &__filter {
@@ -154,24 +158,76 @@
     .show-more-btns {
         display: flex;
         justify-content: space-between;
-        gap: 15px 15px;
-        margin-left: 135px;
-        &__showmore {
-            margin-right: auto;
-            width: 38.1vw;
-            height: 11vh;
-            font-size: 3.4vw;
+        width: 72.8vw;
+        margin: 0 auto;
+        &__addaptive {
+            display: block;
+            margin: 0;
+            padding: 0;
+        }
+        &__showmore {            
+            height: 10vh;
+            width: 40vw;
+            font-size: 3vw;
+            margin: 10px 0 0 0;
         }
         &__hide {
-            margin-right: auto;
-            width: 38vw;
-            height: 11vh;
+            height: 10vh;
+            width: 40vw;
             font-size: 3.4vw;
+            margin: 0;
         }
         &__up {
-           margin-right: 135px;
-           width: 11vw;
-           height: 11vh;
+           margin: 0;
         }
     }
 }
+
+
+@media (min-width: 320px) and (max-width: 479px) {
+    .main {
+        width: auto;
+        &__filter {
+            display: grid;
+            grid-template-columns: 1;
+            justify-content: center;
+            &-btn {
+                width: 90vw;
+                height: 10vh;
+                padding: 0;
+                font-size: 22px;
+            }
+        }
+        &__content {
+            display: grid;
+            grid-template-columns: repeat(1, auto);
+        }
+    }
+    .show-more-btns {
+        display: flex;
+        justify-content: space-between;
+        width: 90vw;
+        margin: 0 auto;
+        &__addaptive {
+            display: block;
+            margin: 0;
+            padding: 0;
+        }
+        &__showmore {            
+            height: 10vh;
+            width: 40vw;
+            font-size: 3vw;
+            margin: 10px 0 0 0;
+        }
+        &__hide {
+            height: 10vh;
+            width: 40vw;
+            font-size: 3.4vw;
+            margin: 0;
+        }
+        &__up {
+           margin: 0;
+        }
+    }
+}
+

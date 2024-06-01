@@ -666,18 +666,38 @@
     font-size: 1.6em;
   }
 }
-@media (min-width: 320px) and (max-width: 990px) {
+@media (min-width: 480px) and (max-width: 990px) {
   .car-item {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    width: 52vw;
+    width: 72.8vw;
     height: auto;
   }
   .car-item__img {
-    width: 52vw;
+    width: 72.8vw;
     height: auto;
     border-radius: 5px;
+  }
+}
+@media (min-width: 320px) and (max-width: 479px) {
+  .car-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 90vw;
+    height: auto;
+  }
+  .car-item__img {
+    width: 90vw;
+    height: auto;
+    border-radius: 5px;
+  }
+  .car-item__title {
+    font-size: 28px;
+  }
+  .car-item__btns-btn {
+    font-size: 15px;
   }
 }
 .header {
@@ -819,11 +839,15 @@
   font-family: "Fugaz One";
   font-size: 32px;
   border-radius: 10px;
-  width: 377px;
+  width: 22vw;
   padding: 23px 0;
   border: none;
   outline: none;
   transition: all 0.3s ease;
+}
+.show-more-btns__addaptive {
+  display: flex;
+  gap: 0 30px;
 }
 .show-more-btns__showmore {
   margin-right: 290px;
@@ -889,14 +913,14 @@
     font-family: "Fugaz One";
     font-size: 32px;
     border-radius: 10px;
-    width: 377px;
+    width: 22vw;
     padding: 23px 0;
     border: none;
     outline: none;
     transition: all 0.3s ease;
   }
 }
-@media (min-width: 320px) and (max-width: 990px) {
+@media (min-width: 480px) and (max-width: 990px) {
   .main {
     width: auto;
   }
@@ -917,25 +941,74 @@
   .show-more-btns {
     display: flex;
     justify-content: space-between;
-    gap: 15px 15px;
-    margin-left: 135px;
+    width: 72.8vw;
+    margin: 0 auto;
+  }
+  .show-more-btns__addaptive {
+    display: block;
+    margin: 0;
+    padding: 0;
   }
   .show-more-btns__showmore {
-    margin-right: auto;
-    width: 38.1vw;
-    height: 11vh;
-    font-size: 3.4vw;
+    height: 10vh;
+    width: 40vw;
+    font-size: 3vw;
+    margin: 10px 0 0 0;
   }
   .show-more-btns__hide {
-    margin-right: auto;
-    width: 38vw;
-    height: 11vh;
+    height: 10vh;
+    width: 40vw;
     font-size: 3.4vw;
+    margin: 0;
   }
   .show-more-btns__up {
-    margin-right: 135px;
-    width: 11vw;
-    height: 11vh;
+    margin: 0;
+  }
+}
+@media (min-width: 320px) and (max-width: 479px) {
+  .main {
+    width: auto;
+  }
+  .main__filter {
+    display: grid;
+    grid-template-columns: 1;
+    justify-content: center;
+  }
+  .main__filter-btn {
+    width: 90vw;
+    height: 10vh;
+    padding: 0;
+    font-size: 22px;
+  }
+  .main__content {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+  }
+  .show-more-btns {
+    display: flex;
+    justify-content: space-between;
+    width: 90vw;
+    margin: 0 auto;
+  }
+  .show-more-btns__addaptive {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+  .show-more-btns__showmore {
+    height: 10vh;
+    width: 40vw;
+    font-size: 3vw;
+    margin: 10px 0 0 0;
+  }
+  .show-more-btns__hide {
+    height: 10vh;
+    width: 40vw;
+    font-size: 3.4vw;
+    margin: 0;
+  }
+  .show-more-btns__up {
+    margin: 0;
   }
 }
 .footer {
@@ -967,14 +1040,24 @@
   color: var(--color_second);
 }
 
+@media (min-width: 991px) and (max-width: 1600px) {
+  .footer__content {
+    width: 95vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 @media (min-width: 768px) and (max-width: 990px) {
   .footer__content {
     width: 72.7vw;
     margin-left: auto;
     margin-right: auto;
   }
+  .footer__company, .footer__admin {
+    font-size: 15px;
+  }
 }
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 480px) and (max-width: 768px) {
   .footer__content {
     display: grid;
     grid-template-columns: repeat(1, auto);
@@ -983,6 +1066,33 @@
   .footer__company, .footer__admin {
     text-align: center;
     margin-top: 10px;
+  }
+}
+@media (min-width: 320px) and (max-width: 479px) {
+  .footer__content {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin: 0;
+  }
+  .footer__logos {
+    display: grid;
+    margin: 0;
+    text-align: center;
+  }
+  .footer__logos-logo {
+    width: auto;
+    font-size: 25px;
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+  .footer__company .footer__admin {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 15px;
   }
 }
 .overlay {
