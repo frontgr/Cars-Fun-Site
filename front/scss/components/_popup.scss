@@ -80,3 +80,72 @@
         }
     }
 }
+
+@media (min-width: 1280px) and (max-width: 1599px) {
+    .popup {
+        height: 100vh;
+        width: auto;
+        top: 50%;
+        left: 50%;
+        z-index: 199;
+        transform: translate(-50%, -50%);
+        &__slider {
+            height: auto;
+            width: 73vw;
+            position: relative;
+            
+        }
+        &__main-photo {
+            width: 73vw;
+            height: 60vh;
+        }
+        &-menu {
+            width: 95vw;
+            height: auto;
+        
+        &__icons {
+            gap: 25px
+        }
+        &__icon {
+            height: 11vh;
+            width: 11vw;
+        }
+    }
+    }
+}
+@media (min-width: 320px) and (max-width: 1279px) {
+    .popup {
+        height: 100vh;
+        width: 90vw;
+        top: 50%;
+        left: 50%;
+        z-index: 199;
+        transform: translate(-50%, -50%);
+        &__slider {
+            height: 50vh;
+            width: 73vw;
+            position: relative;
+            
+        }
+        &__main-photo {
+            width: 73vw;
+            height: auto;
+        }
+        &-menu {
+            width: 100vw;
+            height: auto;        
+            &__icons {
+                gap: 20px
+            }
+            &__icon {
+                height: 10.5vh;
+                width: 10.5vw;
+            }
+        }
+    }
+}
+/* 
+1. Сделать свайпом
+2. Сделать точки, вместо картинок
+3. Точки + стрелки
+*/

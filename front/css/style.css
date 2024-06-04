@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 :root {
@@ -710,9 +711,13 @@
   justify-content: space-between;
   align-items: center;
   padding: 50px 0;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.95);
+  width: 100vw;
+  left: 0;
 }
 .header__image {
-  padding: 32px 0 144px;
+  padding: 132px 0 144px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -721,6 +726,7 @@
 .logo {
   color: var(--txt_color_second, #fff);
   font-size: 32px;
+  margin-left: 128px;
 }
 .logo span {
   transition: color 0.4s ease-in-out;
@@ -731,17 +737,12 @@
 }
 
 @media (min-width: 1281px) and (max-width: 1600px) {
-  .header__nav {
-    margin: 0 162px;
-  }
   .header__image img {
     width: 1000px;
+    padding-top: 10px;
   }
 }
 @media (min-width: 769px) and (max-width: 1280px) {
-  .header__nav {
-    margin: 0 50px;
-  }
   .header__image {
     margin: 0 145px;
   }
@@ -766,18 +767,30 @@
   }
   .header__image img {
     width: 90vw;
+    padding-top: 75px;
+  }
+  .logo {
+    margin: 0;
   }
 }
 @media (min-width: 280px) and (max-width: 480px) {
+  .header.container {
+    height: 400px;
+  }
   .header__nav {
     display: block;
     text-align: center;
+    padding: 15px 0;
   }
   .header__image {
     margin: 0 145px;
   }
   .header__image img {
     width: 90vw;
+    padding-top: 80px;
+  }
+  .logo {
+    margin: 0;
   }
 }
 .main {
@@ -1222,6 +1235,71 @@
   border: 2px solid var(--stroke_mini_photo);
 }
 
+@media (min-width: 1280px) and (max-width: 1599px) {
+  .popup {
+    height: 100vh;
+    width: auto;
+    top: 50%;
+    left: 50%;
+    z-index: 199;
+    transform: translate(-50%, -50%);
+  }
+  .popup__slider {
+    height: auto;
+    width: 73vw;
+    position: relative;
+  }
+  .popup__main-photo {
+    width: 73vw;
+    height: 60vh;
+  }
+  .popup-menu {
+    width: 95vw;
+    height: auto;
+  }
+  .popup-menu__icons {
+    gap: 25px;
+  }
+  .popup-menu__icon {
+    height: 11vh;
+    width: 11vw;
+  }
+}
+@media (min-width: 320px) and (max-width: 1279px) {
+  .popup {
+    height: 100vh;
+    width: 90vw;
+    top: 50%;
+    left: 50%;
+    z-index: 199;
+    transform: translate(-50%, -50%);
+  }
+  .popup__slider {
+    height: 50vh;
+    width: 73vw;
+    position: relative;
+  }
+  .popup__main-photo {
+    width: 73vw;
+    height: auto;
+  }
+  .popup-menu {
+    width: 100vw;
+    height: auto;
+  }
+  .popup-menu__icons {
+    gap: 20px;
+  }
+  .popup-menu__icon {
+    height: 10.5vh;
+    width: 10.5vw;
+  }
+}
+/* 
+1. Сделать свайпом
+2. Сделать точки, вместо картинок
+3. Точки + стрелки
+*/
 .search-field {
   width: 479px;
   height: 63px;
@@ -1232,6 +1310,7 @@
   border-radius: 112px;
   background: var(--txt_color_second, #fff);
   transition: border 0.3s ease;
+  margin-right: 128px;
 }
 .search-field__search--error {
   transition: border 0.3s ease;
@@ -1327,9 +1406,13 @@
   justify-content: space-between;
   align-items: center;
   padding: 50px 0;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.95);
+  width: 100vw;
+  left: 0;
 }
 .header-info__image {
-  padding: 32px 0 144px;
+  padding: 132px 0 144px;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -3,6 +3,7 @@ let popupWindow = $("#popupWindow");
 function hangePhotoButtonClick(event) {
   if (popupWindow.css("display") == "none") {
     document.getElementById("overlay").style.display = "block";
+    document.getElementById("header__nav").style.display = "none";
     popupWindow.css("display", "flex");
   } else {
     document.getElementById("overlay").style.display = "none";
@@ -11,6 +12,7 @@ function hangePhotoButtonClick(event) {
 }
 $(".popup__slider-close").on("click", function (e) {
   document.getElementById("overlay").style.display = "none";
+  document.getElementById("header__nav").style.display = "flex";
   popupWindow.css("display", "none");
 });
 $(document).on("click", function (e) {
