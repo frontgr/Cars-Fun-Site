@@ -12,16 +12,18 @@ inputField.addEventListener("keypress", function (event) {
         event.preventDefault();
     }
 });
-
-// Ограничение на вставку только латинских букв
+// Вставка только латинских букв и пробелов + удаление первых и последних пробелов
 inputField.addEventListener("paste", function (event) {
     event.preventDefault();
     var paste = (event.clipboardData || window.clipboardData).getData('text');
     var filteredPaste = paste.replace(/[^a-zA-Z ]/g, '');
+    filteredPaste = filteredPaste.trim();
+    filteredPaste = filteredPaste.replace(/\s{2,}/g, ' ');
     var selectionStart = inputField.selectionStart;
-    var selectionEnd = inputField.selectionEnd;    
+    var selectionEnd = inputField.selectionEnd;
     inputField.setRangeText(filteredPaste, selectionStart, selectionEnd, 'end');
 });
+
 
 
 window.search = function search(isCarInfoPage) {
