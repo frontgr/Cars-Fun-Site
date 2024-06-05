@@ -153,6 +153,9 @@
         &__content {
             display: grid;
             grid-template-columns: repeat(1, auto);
+            width: 72.8vw;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
     .show-more-btns {
@@ -168,13 +171,13 @@
         &__showmore {            
             height: 10vh;
             width: 40vw;
-            font-size: 3vw;
+            font-size: 5vw;
             margin: 10px 0 0 0;
         }
         &__hide {
             height: 10vh;
             width: 40vw;
-            font-size: 3.4vw;
+            font-size: 5vw;
             margin: 0;
         }
         &__up {
@@ -201,6 +204,9 @@
         &__content {
             display: grid;
             grid-template-columns: repeat(1, auto);
+            width: 90vw;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
     .show-more-btns {
@@ -216,13 +222,13 @@
         &__showmore {            
             height: 10vh;
             width: 40vw;
-            font-size: 3vw;
+            font-size: 18px;
             margin: 10px 0 0 0;
         }
         &__hide {
             height: 10vh;
             width: 40vw;
-            font-size: 3.4vw;
+            font-size: 18px;
             margin: 0;
         }
         &__up {
