@@ -93,48 +93,48 @@
     }
 }
 @media (min-width: 991px) and (max-width: 1600px) {
-.main {
-    padding: 110px 0 123px 0;
-    background: var(--txt_color_second, #fff);
-    &__filter {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 95vw;
-        gap: 23px;
-        margin: 0 auto 70px auto;
+    .main {
+        padding: 110px 0 123px 0;
+        background: var(--txt_color_second, #fff);
+        &__filter {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 95vw;
+            gap: 23px;
+            margin: 0 auto 70px auto;
+        }
+        &__content {
+            border-top: 1px solid #aaaaaa;
+            grid-template-columns: repeat(3, auto);
+            align-items: center;
+            justify-items: center;
+            padding: 70px 0 97px 0;
+            gap: 20px 22px;
+            width: 95vw;
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
-    &__content {
-        border-top: 1px solid #aaaaaa;
-        grid-template-columns: repeat(3, auto);
-        align-items: center;
-        justify-items: center;
-        padding: 70px 0 97px 0;
-        gap: 20px 22px;
+    .show-more-btns {
         width: 95vw;
         margin-left: auto;
         margin-right: auto;
+        &__showmore,
+        &__hide {
+            cursor: pointer;
+            color: var(--txt_color_second, #fff);
+            text-align: center;
+            font-family: "Fugaz One";
+            font-size: 32px;
+            border-radius: 10px;
+            width: 22vw;
+            padding: 23px 0;
+            border: none;
+            outline: none;
+            transition: all 0.3s ease;
+        }
     }
-}
-.show-more-btns {
-    width: 95vw;
-    margin-left: auto;
-    margin-right: auto;
-    &__showmore,
-    &__hide {
-        cursor: pointer;
-        color: var(--txt_color_second, #fff);
-        text-align: center;
-        font-family: "Fugaz One";
-        font-size: 32px;
-        border-radius: 10px;
-        width: 22vw;
-        padding: 23px 0;
-        border: none;
-        outline: none;
-        transition: all 0.3s ease;
-    }
-}
 }
 
 @media (min-width: 480px) and (max-width: 990px) {
@@ -168,11 +168,12 @@
             margin: 0;
             padding: 0;
         }
-        &__showmore {            
+        &__showmore {
             height: 10vh;
             width: 40vw;
             font-size: 5vw;
             margin: 10px 0 0 0;
+            padding: 14px 0;
         }
         &__hide {
             height: 10vh;
@@ -181,11 +182,10 @@
             margin: 0;
         }
         &__up {
-           margin: 0;
+            margin: 0;
         }
     }
 }
-
 
 @media (min-width: 320px) and (max-width: 479px) {
     .main {
@@ -219,21 +219,21 @@
             margin: 0;
             padding: 0;
         }
-        &__showmore {            
+        &__showmore {
             height: 10vh;
             width: 40vw;
-            font-size: 18px;
+            font-size: 24px;
             margin: 10px 0 0 0;
+            padding: 14px 0;
         }
         &__hide {
             height: 10vh;
             width: 40vw;
-            font-size: 18px;
+            font-size: 32px;
             margin: 0;
         }
         &__up {
-           margin: 0;
+            margin: 0;
         }
     }
 }
-
