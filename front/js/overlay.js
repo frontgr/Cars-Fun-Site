@@ -105,7 +105,7 @@ $(document).ready(function() {
         if (!isDragging) return;
         e.preventDefault();
         const x = e.touches[0].pageX - iconsContainer.offsetLeft;
-        const walk = (x - startX) * 10; // Ускорьте прокрутку
+        const walk = (x - startX) * 10; // Ускорение прокрутки
         iconsContainer.scrollLeft = scrollLeft - walk;
 
         const now = Date.now();
