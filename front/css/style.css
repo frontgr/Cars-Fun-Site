@@ -1318,6 +1318,13 @@
     transform: rotate(180deg);
     margin-top: 7px;
   }
+  .popup-menu__right img:hover {
+    transform: rotate(180deg) translateX(-10px);
+    transition: all 0.5s ease;
+  }
+  .popup-menu__right:hover {
+    transform: none;
+  }
   .popup-menu__icon {
     height: 10.5vh;
     width: 10.5vw;
@@ -1362,16 +1369,9 @@
   }
   .popup-menu__left {
     display: none;
-    margin-right: 20px;
   }
   .popup-menu__right {
     display: none;
-    margin-left: 20px;
-    transform: none;
-  }
-  .popup-menu__right img {
-    transform: rotate(180deg);
-    margin-top: 7px;
   }
   .popup-menu__icon {
     flex: 0 0 auto;
@@ -1626,4 +1626,4 @@ body {
 body .container {
   margin: 0 auto;
   padding-top: 70px;
-}/*# sourceMappingURL=style.css.map */
+}
