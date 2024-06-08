@@ -1,5 +1,8 @@
 .main-info {
     padding: 120px 0;
+    & .container{
+        padding-top: 30px;
+    }
     &__info {
         display: flex;
         justify-content: space-between;
@@ -115,6 +118,7 @@
         }
     }
 }
+
 @media (max-width: 1700px) {
     .info-page{
         & .container{

@@ -1543,6 +1543,9 @@
 .main-info {
   padding: 120px 0;
 }
+.main-info .container {
+  padding-top: 30px;
+}
 .main-info__info {
   display: flex;
   justify-content: space-between;
