@@ -6,10 +6,10 @@ import os
 from ..config import storage
 
 
-def convert(filename, index, file):
-    w_dir = create_storage(filename, index)
+def convert(folder_id, index, file):
+    create_storage(folder_id)
 
-    photo_path = f'{w_dir}/{index}.webp'
+    photo_path = f'{folder_id}/{index}.webp'
 
     image = Image.open(file)
     image = image.convert('RGB')
@@ -18,17 +18,11 @@ def convert(filename, index, file):
     return photo_path
 
 
-def delete_storage(dir_name):
-    shutil.rmtree(dir_name)
+def delete_storage(folder_id):
+    shutil.rmtree(f'{storage}/{folder_id}')
 
 
-def create_storage(name, index):
-    w_dir = f'{storage}/{name}/'
-    if os.path.isdir(w_dir) is not True:
-        os.mkdir(w_dir)
-
-    w_dir += index
-    if os.path.isdir(w_dir) is not True:
-        os.mkdir(w_dir)
-
-    return w_dir
+def create_storage(folder_id):
+    os.chdir(storage)
+    if os.path.isdir(folder_id) is not True:
+        os.mkdir(folder_id)

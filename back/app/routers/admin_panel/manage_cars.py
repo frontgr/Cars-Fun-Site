@@ -18,33 +18,32 @@ def panel_get_cars():
 @jwt_required()
 @check_admin_permission(current_user, 'add_cars')
 def add_car():
-    values_dict = {i: request.form.get(i) for i in request.form}
-    photos = {i: request.files.get(i) for i in request.files}
+    CarOperations.add_new_car(
+        values_dict={i: request.form.get(i) for i in request.form}, 
+        photos={i: request.files.get(i) for i in request.files})
 
-    CarOperations.add_new_car(values_dict=values_dict, photos=photos)
-    return '', 201
+    response = jsonify({"msg": "The record was successfully added"})
+    return response, 201
 
 
 @cars_panel.route('/panel/car', methods=['DELETE'])
 @jwt_required()
 @check_admin_permission(current_user, 'delete_cars')
 def delete_car():
-    _id = request.args.get('_id')
+    CarOperations.delete_car(_id=request.args.get('_id'))
 
-    CarOperations.delete_car(_id)
-    return '', 204
+    response = jsonify({"msg": "The record was successfully deleted"})
+    return response, 204
 
 
 @cars_panel.route('/panel/car', methods=['PUT'])
 @jwt_required()
 @check_admin_permission(current_user, 'edit_cars')
 def update_car():
-    _id = request.args.get('_id')
-    values_dict = {i: request.form.get(i) for i in request.form if i != 'name'}
-    photos = {i: request.files.get(i) for i in request.files}
-
-    CarOperations.update_car(photos=photos,
-                             _id=_id,
-                             values_dict=values_dict)
-
-    return '', 200
+    CarOperations.update_car(
+        _id=request.args.get('_id'),
+        values_dict= {i: request.form.get(i) for i in request.form},
+        photos={i: request.files.get(i) for i in request.files})
+    
+    response = jsonify({"msg": "The record data was successfully updated"})
+    return response, 200
