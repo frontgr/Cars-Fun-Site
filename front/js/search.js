@@ -24,11 +24,6 @@ inputField.addEventListener("input", function (event) {
     }
 });
 
-
-
-
-
-
 window.search = function search(isCarInfoPage) {
     $(".search-field").removeClass("search-field__search--error");
     let inputField = document.getElementById("searchInput");
