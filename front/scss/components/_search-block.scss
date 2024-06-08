@@ -123,6 +123,11 @@
             font-size: 1.6em;
         }
         }
+        &__not-found {
+            font-size: 32px;
+            display: none;
+            margin: 0;
+        }
         &__close-button {
             position: absolute;
             top: -50px;
@@ -167,7 +172,7 @@
         width: 72.8vw;
         margin-left: auto;
         margin-right: auto;
-        margin-bottom: 0;
+        margin-bottom: 50px;
         &__container {
             display: block;
             width: 72.8vw;
@@ -177,6 +182,10 @@
             height: auto;
             border-radius: 5px;
         }
+        }
+        &__not-found {
+            font-size: 20px;
+            display: none;
         }
         &__item {
             margin-bottom: 70px;
@@ -189,7 +198,7 @@
             width: 90vw;
             margin-left: auto;
             margin-right: auto;
-        padding: 0;
+            padding: 0;
         &__container {
             display: block;
             gap: 10px;
@@ -198,6 +207,10 @@
         }
         &__item {
             margin-bottom: 70px;
+        }
+        &__not-found {
+            font-size: 18px;
+            display: none;
         }
         &__close-button {
             position: absolute;
