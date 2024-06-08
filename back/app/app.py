@@ -14,7 +14,7 @@ from .routers import public, auth
 from .routers.admin_panel import admins_panel, cars_panel
 
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": "*"}})
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 app.secret_key = secret_key
 app.config['JWT_SECRET_KEY'] = jwt_secret_key
