@@ -2,12 +2,21 @@ import logging
 from pymongo import MongoClient
 from werkzeug.security import generate_password_hash
 
-from app.config import db_uri, add_admin_fields
+from app.config import db_uri
 
 logging.basicConfig(level=logging.INFO)
 
 client = MongoClient(db_uri)
 db = client.cars_fun_site
+
+add_admin_fields = {'login',
+                    'password',
+                    'add_users',
+                    'edit_users',
+                    'delete_users',
+                    'add_cars',
+                    'edit_cars',
+                    'delete_cars'}
 
 
 logging.info('Скрипт запущен')
