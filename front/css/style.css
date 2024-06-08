@@ -1235,6 +1235,9 @@
   .info-page .container {
     max-width: 636px;
   }
+  .main-info {
+    padding: 110px 0;
+  }
   .main-info__box-img {
     width: 280px;
     height: 164px;
@@ -1273,6 +1276,9 @@
     width: 39px;
     height: 39px;
   }
+  .main-info {
+    padding: 80px 0;
+  }
   .main-info__description-title {
     font-size: 30px;
     margin-bottom: 40px;
@@ -1290,6 +1296,9 @@
   }
   .main-info__speed-number:first-child::after {
     right: -30px;
+  }
+  .main-info__desc {
+    padding: 80px 0;
   }
   .main-info__desc-title {
     font-size: 28px;
@@ -1354,6 +1363,9 @@
   .info-page .logo {
     font-size: 28px;
   }
+  .main-info {
+    padding: 50px 0;
+  }
   .main-info__description-title {
     font-size: 22px;
   }
@@ -1365,6 +1377,9 @@
   }
   .main-info__speed-number:first-child::after {
     right: -20px;
+  }
+  .main-info__desc {
+    padding: 50px 0;
   }
   .main-info__desc-title {
     font-size: 18px;
