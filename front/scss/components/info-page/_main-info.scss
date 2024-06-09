@@ -118,11 +118,29 @@
         }
     }
 }
-
+@media (max-width: 1744px) {
+    .info-page{
+        & .car-item{
+            width: 504px;
+        }
+        & .search-block__close-button{
+            right: -30px;
+        }
+    }
+}
 @media (max-width: 1700px) {
     .info-page{
         & .container{
             max-width: 1300px;
+        }
+        & .car-item__img{
+            width: 424px;
+        }
+        & .car-item{
+            width: 424px;
+        }
+        & .search-block__close-button{
+            right: -64px;
         }
     }
     .main-info{
@@ -174,10 +192,59 @@
         }
     }
 }
+@media (max-width: 1600px) {
+    .info-page{
+        & .search-block__container{
+            gap: 20px;
+        }
+        & .car-item{
+            width: 420px;
+        }
+        & .search-block__close-button{
+            right: -60px;
+            top: 66px;
+        }
+        & .car-item__img{
+            width: 420px;
+        }
+        & .footer__content{
+            width: 80vw;
+        }
+        & .search-block{
+            width: 81vw;
+        }
+    }
+}
+@media (max-width: 1580px) {
+    .info-page{
+        & .car-item__img{
+            width: 392px;
+        }
+        & .car-item{
+            width: 392px;
+        }
+    }
+}
+@media (max-width: 1470px) {
+    .info-page{
+        & .car-item__img{
+            width: 370px;
+        }
+        & .car-item{
+            width: 370px;
+        }
+    }
+}
 @media (max-width: 1400px) {
     .info-page{
         & .container{
             max-width: 1024px;
+        }
+        & .car-item__img{
+            width: 350px;
+        }
+        & .car-item{
+            width: 350px;
         }
     }
     .main-info{
@@ -237,10 +304,55 @@
         }
     }
 }
+@media (max-width: 1322px) {
+    .info-page{
+        & .car-item__img{
+            width: 330px;
+        }
+        & .car-item{
+            width: 330px;
+        }
+    }
+}
+@media (max-width: 1278px) {
+    .info-page{
+        & .car-item__img{
+            width: 320px;
+        }
+        & .car-item{
+            width: 320px;
+        }
+        & .search-block__close-button{
+            top: 0;
+        }
+    }
+}
+@media (max-width: 1210px) {
+    .info-page{
+        & .car-item__img{
+            width: 300px;
+        }
+        & .car-item{
+            width: 300px;
+        }
+        & .search-block__close-button{
+            top: 0;
+        }
+    }
+}
 @media (max-width: 1140px) {
     .info-page{
         & .container{
             max-width: 800px;
+        }
+        & .car-item__img{
+            width: 250px;
+        }
+        & .car-item{
+            width: 250px;
+        }
+        & .search-block__close-button{
+            right: 0;
         }
     }
     .main-info{
@@ -295,6 +407,24 @@
                     }
                 }
             }
+        }
+    }
+}
+@media (max-width: 1020px) {
+    .info-page .search-block__close-button {
+        right: -30px;
+    }
+}
+@media (max-width: 990px) {
+    .info-page{
+        & .car-item {
+        width: 100%;
+        }
+        & .car-item__img{
+            width: 100%;
+        }
+        & .search-block__close-button{
+            right: 0;
         }
     }
 }
@@ -354,6 +484,9 @@
     .info-page{
         & .container{
             max-width: 476px;
+        }
+        & .search-block{
+            width: 80vw;
         }
     }
     .main-info{
@@ -429,6 +562,12 @@
         & .container{
             max-width: 368px;
         }
+        & .search-block__close-button{
+            top: -50px;
+        }
+        & .search-block{
+            margin-top: 25px;
+        }
     }
     .main-info{
         &__description{
@@ -459,6 +598,16 @@
                     height: 210px;
                 }
             }
+        }
+    }
+}
+@media (max-width: 478px) {
+    .info-page{
+        & .search-block__container{
+        width: 74vw;
+        }
+        & .search-block__close-button{
+            right: -15px;
         }
     }
 }
@@ -512,6 +661,15 @@
         & .logo{
             font-size: 24px;
         }
+        & .search-block{
+            width: 74vw;
+        }
+        & .search-block__close-button{
+            right: -32px;
+        }
+        & .car-item__title{
+            font-size: 24px;
+        }
     }
     .main-info{
         &__description{
@@ -544,4 +702,3 @@
         }
     }
 }
-
