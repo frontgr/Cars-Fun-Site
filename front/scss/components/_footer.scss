@@ -59,10 +59,15 @@
             grid-template-columns: repeat(1, auto);
             justify-content: center;
         }
+        &__logos {
+            &-logo {
+                font-size: 25px;
+            }
+        }
         &__company,
         &__admin {
             text-align: center;
-            margin-top: 10px;
+            margin-top: 30px;
     }        
     }
 }
@@ -88,9 +93,9 @@
                 padding: 0;
             }
         }
-        &__company 
+        &__company, 
         &__admin {
-            margin-top: 20px;
+            margin-top: 10px;
             margin-bottom: 10px;
             font-size: 15px;
     }        

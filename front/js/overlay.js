@@ -12,7 +12,7 @@ function hangePhotoButtonClick(event) {
 }
 
 $(".popup__slider-close").on("click", function (e) {
-  if (window.matchMedia("(min-width: 768px)").matches) {
+  if (window.matchMedia("(min-width: 769px)").matches) {
     document.getElementById("overlay").style.display = "none";
     document.getElementById("header__nav").style.display = "flex";
     popupWindow.css("display", "none");
@@ -38,7 +38,7 @@ $(document).on("click", function (e) {
 // Переключение выделения картинок в слайдере + замена главной картинки
 
 $(document).ready(function() {
-  if (window.matchMedia("(min-width: 768px)").matches) {
+  if (window.matchMedia("(min-width: 769px)").matches) {
     // Пролистывание вправо
     $(".popup-menu__right").click(function() {
       let currentImage = $('.popup-menu__icons .popup-menu__icon--selected');

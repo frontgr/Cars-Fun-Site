@@ -713,7 +713,7 @@
   }
   .car-item__img {
     width: 72.8vw;
-    height: auto;
+    height: 26.3vh;
     border-radius: 5px;
   }
 }
@@ -727,7 +727,7 @@
   }
   .car-item__img {
     width: 90vw;
-    height: auto;
+    height: 20.5vh;
     border-radius: 5px;
   }
   .car-item__title {
@@ -1064,14 +1064,14 @@
   .show-more-btns__showmore {
     height: 10vh;
     width: 40vw;
-    font-size: 24px;
+    font-size: 18px;
     margin: 10px 0 0 0;
     padding: 14px 0;
   }
   .show-more-btns__hide {
     height: 10vh;
     width: 40vw;
-    font-size: 32px;
+    font-size: 24px;
     margin: 0;
   }
   .show-more-btns__up {
@@ -1130,9 +1130,12 @@
     grid-template-columns: repeat(1, auto);
     justify-content: center;
   }
+  .footer__logos-logo {
+    font-size: 25px;
+  }
   .footer__company, .footer__admin {
     text-align: center;
-    margin-top: 10px;
+    margin-top: 30px;
   }
 }
 @media (min-width: 320px) and (max-width: 479px) {
@@ -1156,8 +1159,8 @@
     margin: 0;
     padding: 0;
   }
-  .footer__company .footer__admin {
-    margin-top: 20px;
+  .footer__company, .footer__admin {
+    margin-top: 10px;
     margin-bottom: 10px;
     font-size: 15px;
   }
