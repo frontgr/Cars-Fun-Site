@@ -1200,7 +1200,7 @@
 .search-block__close-button {
   position: absolute;
   top: -2px;
-  right: -58px;
+  right: -56px;
   background: none;
   border: none;
   cursor: pointer;
@@ -2360,4 +2360,4 @@ body {
 body .container {
   margin: 0 auto;
   padding-top: 70px;
-}
+}/*# sourceMappingURL=style.css.map */
