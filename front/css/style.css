@@ -1846,9 +1846,26 @@
   width: 687px;
 }
 
+.info-page .search-block {
+  width: 100%;
+}
+.info-page .search-block__not-found {
+  display: none;
+}
+.info-page .search-block__container {
+  position: relative;
+  width: 100%;
+  height: unset;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 23px;
+}
+
 @media (max-width: 1744px) {
   .info-page .car-item {
     width: 504px;
+    height: unset;
+    margin-bottom: 0;
   }
   .info-page .search-block__close-button {
     right: -30px;
@@ -1858,14 +1875,15 @@
   .info-page .container {
     max-width: 1300px;
   }
-  .info-page .car-item__img {
-    width: 424px;
-  }
-  .info-page .car-item {
-    width: 424px;
-  }
   .info-page .search-block__close-button {
     right: -64px;
+  }
+  .info-page .car-item {
+    width: 400px;
+  }
+  .info-page .car-item__img {
+    width: 400px;
+    height: unset;
   }
   .main-info__description-title {
     font-size: 48px;
@@ -1915,7 +1933,7 @@
     width: 80vw;
   }
   .info-page .search-block {
-    width: 81vw;
+    width: 100%;
   }
 }
 @media (max-width: 1580px) {
@@ -2016,6 +2034,10 @@
   }
   .info-page .search-block__close-button {
     top: 0;
+    right: -30px;
+  }
+  .info-page .car-item__title {
+    font-size: 20px;
   }
 }
 @media (max-width: 1140px) {
@@ -2027,9 +2049,6 @@
   }
   .info-page .car-item {
     width: 250px;
-  }
-  .info-page .search-block__close-button {
-    right: 0;
   }
   .main-info__info {
     flex-direction: column-reverse;
@@ -2088,7 +2107,7 @@
     width: 100%;
   }
   .info-page .search-block__close-button {
-    right: 0;
+    right: -50px;
   }
 }
 @media (max-width: 950px) {
@@ -2122,6 +2141,9 @@
   .info-page .header-info__nav {
     flex-direction: column;
   }
+  .info-page .search-block__close-button {
+    right: -40px;
+  }
   .main-info {
     padding-top: 180px;
   }
@@ -2131,7 +2153,10 @@
     max-width: 476px;
   }
   .info-page .search-block {
-    width: 80vw;
+    width: 100%;
+  }
+  .info-page .search-block__container {
+    gap: 20px;
   }
   .main-info {
     padding-top: 180px;
@@ -2190,12 +2215,14 @@
     width: 100%;
   }
 }
+@media (max-width: 590px) {
+  .info-page .search-block {
+    width: 95%;
+  }
+}
 @media (max-width: 550px) {
   .info-page .container {
     max-width: 368px;
-  }
-  .info-page .search-block__close-button {
-    top: -50px;
   }
   .info-page .search-block {
     margin-top: 25px;
@@ -2222,10 +2249,10 @@
 }
 @media (max-width: 478px) {
   .info-page .search-block__container {
-    width: 74vw;
+    width: 95%;
   }
   .info-page .search-block__close-button {
-    right: -15px;
+    right: -30px;
   }
 }
 @media (max-width: 440px) {
@@ -2275,7 +2302,7 @@
     right: -32px;
   }
   .info-page .car-item__title {
-    font-size: 24px;
+    font-size: 18px;
   }
   .main-info__description-title {
     font-size: 20px;
