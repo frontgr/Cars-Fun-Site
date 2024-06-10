@@ -8,12 +8,12 @@
         gap: 23px;
         width: 518px;
         height: auto;
-        
+
         &__img {
             width: 518px;
             height: 312px;
             border-radius: 5px;
-    }
+        }
     }
     &__not-found {
         font-size: 32px;
@@ -22,7 +22,7 @@
     &__close-button {
         position: absolute;
         top: -2px;
-        right: -58px;
+        right: -56px;
         background: none;
         border: none;
         cursor: pointer;
@@ -35,95 +35,95 @@
 
 @media (min-width: 1450px) and (max-width: 1600px) {
     .search-block {
-            grid-template-columns: repeat(3, auto);
-            align-items: center;
-            padding: 70px 0 0 0;
-            gap: 20px 22px;
-            width: 95vw;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 0;
-        &__container{
+        grid-template-columns: repeat(3, auto);
+        align-items: center;
+        padding: 70px 0 0 0;
+        gap: 20px 22px;
+        width: 95vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0;
+        &__container {
             display: grid;
             grid-template-columns: repeat(3, auto);
             gap: 40px;
             width: 30vw;
             height: auto;
             margin-bottom: 50px;
-        &__img {
-            width: 30vw;
-            height: 27.3vh;
-            border-radius: 5px;
+            &__img {
+                width: 30vw;
+                height: 27.3vh;
+                border-radius: 5px;
+            }
+        }
+        &__close-button {
+            position: absolute;
+            top: -50px;
+            right: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            &:hover {
+                transform: scale(1.15);
+            }
         }
     }
-    &__close-button {
-        position: absolute;
-        top: -50px;
-        right: 5px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        transition: transform 0.3s ease;
-        &:hover {
-            transform: scale(1.15);
-        }
-    }
-}
 }
 
 @media (min-width: 1280px) and (max-width: 1450px) {
     .search-block {
-            grid-template-columns: repeat(3, auto);
-            padding: 70px 0 0 0;
-            gap: 20px 22px;
-            width: 95vw;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 0;
-        &__container{
+        grid-template-columns: repeat(3, auto);
+        padding: 70px 0 0 0;
+        gap: 20px 22px;
+        width: 95vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0;
+        &__container {
             display: grid;
             grid-template-columns: repeat(3, auto);
             gap: 33px;
             width: 30vw;
             height: auto;
             margin-bottom: 50px;
-            
-        &__img {
-            width: 30vw;
-            height: 27.3vh;
-            border-radius: 5px;
+
+            &__img {
+                width: 30vw;
+                height: 27.3vh;
+                border-radius: 5px;
+            }
+        }
+        &__close-button {
+            position: absolute;
+            top: -50px;
+            right: 5px;
+            background: none;
+            border: none;
         }
     }
-    &__close-button {
-        position: absolute;
-        top: -50px;
-        right: 5px;
-        background: none;
-        border: none;
-    }
-}
 }
 
 @media (min-width: 1024px) and (max-width: 1279px) {
     .search-block {
-            gap: 20px 22px;
-            width: 95vw;
-            margin-left: auto;
-            margin-right: auto;
+        gap: 20px 22px;
+        width: 95vw;
+        margin-left: auto;
+        margin-right: auto;
         &__container {
             display: grid;
             grid-template-columns: repeat(3, auto);
             gap: 25px;
             width: 30vw;
             height: auto;
-        &__img {
-            width: 30vw;
-            height: 23.9vh;
-            border-radius: 5px;
-        }
-        &__title {
-            font-size: 1.6em;
-        }
+            &__img {
+                width: 30vw;
+                height: 23.9vh;
+                border-radius: 5px;
+            }
+            &__title {
+                font-size: 1.6em;
+            }
         }
         &__not-found {
             font-size: 32px;
@@ -142,25 +142,25 @@
 
 @media (min-width: 991px) and (max-width: 1023px) {
     .search-block {
-            width: 95vw;
-            margin-left: auto;
-            margin-right: auto;
-        &__container {    
+        width: 95vw;
+        margin-left: auto;
+        margin-right: auto;
+        &__container {
             display: grid;
             grid-template-columns: repeat(3, auto);
             gap: 23px;
             width: 30vw;
             height: auto;
             margin-bottom: 15px;
-        &__img {
-            width: 30vw;
-            height: 21.9vh;
-            border-radius: 5px;
+            &__img {
+                width: 30vw;
+                height: 21.9vh;
+                border-radius: 5px;
+            }
+            &__title {
+                font-size: 1.6em;
+            }
         }
-        &__title {
-            font-size: 1.6em;
-        }
-    }
         &__close-button {
             position: absolute;
             top: -50px;
@@ -171,7 +171,7 @@
     }
 }
 @media (min-width: 480px) and (max-width: 990px) {
-    .search-block {     
+    .search-block {
         width: 72.8vw;
         margin-left: auto;
         margin-right: auto;
@@ -180,11 +180,11 @@
             display: block;
             width: 72.8vw;
             height: auto;
-        &__img {
-            width: 72.8vw;
-            height: auto;
-            border-radius: 5px;
-        }
+            &__img {
+                width: 72.8vw;
+                height: auto;
+                border-radius: 5px;
+            }
         }
         &__not-found {
             font-size: 20px;
@@ -198,10 +198,10 @@
 
 @media (min-width: 320px) and (max-width: 479px) {
     .search-block {
-            width: 90vw;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 0;
+        width: 90vw;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
         &__container {
             display: block;
             gap: 10px;
