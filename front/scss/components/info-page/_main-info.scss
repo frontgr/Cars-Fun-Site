@@ -118,14 +118,34 @@
         }
     }
 }
+.info-page{
+    & .search-block{
+        width: 100%;
+        &__not-found{
+            display: none;
+        }
+        &__container{
+        position: relative;
+            width: 100%;
+            height: unset;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 23px;
+        }
+    }
+}
+
 @media (max-width: 1744px) {
     .info-page{
         & .car-item{
             width: 504px;
+            height: unset;
+            margin-bottom: 0;
         }
         & .search-block__close-button{
             right: -30px;
         }
+       
     }
 }
 @media (max-width: 1700px) {
@@ -133,15 +153,17 @@
         & .container{
             max-width: 1300px;
         }
-        & .car-item__img{
-            width: 424px;
-        }
-        & .car-item{
-            width: 424px;
-        }
         & .search-block__close-button{
             right: -64px;
         }
+        & .car-item{
+            width: 400px;
+        }
+        & .car-item__img{
+            width: 400px;
+            height: unset;
+        }
+
     }
     .main-info{
         &__description{
@@ -211,7 +233,7 @@
             width: 80vw;
         }
         & .search-block{
-            width: 81vw;
+            width: 100%;
         }
     }
 }
@@ -337,6 +359,10 @@
         }
         & .search-block__close-button{
             top: 0;
+            right: -30px;
+        }
+        & .car-item__title{
+            font-size: 20px;
         }
     }
 }
@@ -352,7 +378,6 @@
             width: 250px;
         }
         & .search-block__close-button{
-            right: 0;
         }
     }
     .main-info{
@@ -424,7 +449,7 @@
             width: 100%;
         }
         & .search-block__close-button{
-            right: 0;
+            right: -50px;
         }
     }
 }
@@ -475,6 +500,9 @@
         & .header-info__nav{
             flex-direction: column;
         }
+        & .search-block__close-button{
+            right: -40px;
+        }
     }
     .main-info{
         padding-top: 180px;
@@ -486,7 +514,10 @@
             max-width: 476px;
         }
         & .search-block{
-            width: 80vw;
+            width: 100%;
+        }
+        & .search-block__container{
+            gap: 20px;
         }
     }
     .main-info{
@@ -557,14 +588,19 @@
     }
 
 }
+@media (max-width: 590px) {
+    .info-page{
+        & .search-block{
+            width: 95%;
+        }
+    }
+}
 @media (max-width: 550px) {
     .info-page{
         & .container{
             max-width: 368px;
         }
-        & .search-block__close-button{
-            top: -50px;
-        }
+        
         & .search-block{
             margin-top: 25px;
         }
@@ -604,10 +640,10 @@
 @media (max-width: 478px) {
     .info-page{
         & .search-block__container{
-        width: 74vw;
+        width: 95%;
         }
         & .search-block__close-button{
-            right: -15px;
+            right: -30px;
         }
     }
 }
@@ -668,7 +704,7 @@
             right: -32px;
         }
         & .car-item__title{
-            font-size: 24px;
+            font-size: 18px;
         }
     }
     .main-info{
