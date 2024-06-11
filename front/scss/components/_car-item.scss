@@ -99,7 +99,7 @@
         }
     }
 }
-@media (min-width: 480px) and (max-width: 990px) {
+@media (min-width: 768px) and (max-width: 990px) {
     .car-item {
         display: flex;
         flex-direction: column;
@@ -108,7 +108,21 @@
         height: auto;
         &__img {
             width: 72.8vw;
-            height: 26.3vh;
+            height: 39.8vh;
+            border-radius: 5px;
+        }
+    }
+}
+@media (min-width: 480px) and (max-width: 767px) {
+    .car-item {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 72.8vw;
+        height: auto;
+        &__img {
+            width: 72.8vw;
+            height: 26.2vh;
             border-radius: 5px;
         }
     }
