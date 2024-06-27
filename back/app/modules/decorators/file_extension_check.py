@@ -3,7 +3,7 @@ from app.config import extensions
 
 def check_file_extension(func):
     def wrapper_allowed_file(*args, **kwargs):
-        filename_list = kwargs['photos'] if 'photos' in kwargs else args[1]['photos']
+        filename_list = kwargs.get('photos', args[1].get('photos', None) if len(args) > 1 else None)
         if not filename_list:
             return func(*args, **kwargs)
 
