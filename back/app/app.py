@@ -4,9 +4,9 @@ from flask import Flask
 from flask_jwt_extended import JWTManager
 from flask_jwt_extended import get_jwt, create_access_token, get_jwt_identity, set_access_cookies
 
-from .config import secret_key, jwt_secret_key
+from .config import secret_key, jwt_secret_key, root_admin_login, root_admin_password
 
-from .db import CurrentAdmin
+from .db import CurrentAdmin, AdminOperations
 
 from .routers import public, auth
 from .routers.admin_panel import admins_panel, cars_panel
@@ -19,6 +19,11 @@ app.config["JWT_COOKIE_SECURE"] = False
 app.config["JWT_TOKEN_LOCATION"] = ["cookies"]
 
 jwt = JWTManager(app)
+
+
+# Если база данных пустая то создаст root админа
+AdminOperations.create_root_admin(root_admin_login, root_admin_password)
+
 
 
 @app.after_request
@@ -38,7 +43,7 @@ def refresh_expiring_jwts(response):
 @jwt.user_lookup_loader
 def user_lookup_callback(_jwt_header, jwt_data):
     identity = jwt_data["sub"]
-    return CurrentAdmin(_id=identity)
+    return CurrentAdmin(id=identity)
 
 
 app.register_blueprint(public)
