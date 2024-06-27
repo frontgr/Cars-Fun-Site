@@ -1,5 +1,3 @@
-from bson.objectid import ObjectId
-
 from werkzeug.security import check_password_hash
 
 from .models import Admin
@@ -11,7 +9,7 @@ class CurrentAdmin:
     def __init__(self, login=None, id=None):
         # Determining based on which criteria we will conduct the search
         if id:
-            self.admin = Admin.objects(id=ObjectId(id)).first()
+            self.admin = Admin.objects(id=id).first()
         else:
             self.admin = Admin.objects(login=login).first()
 
