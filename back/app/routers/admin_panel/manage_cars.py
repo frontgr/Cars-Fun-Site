@@ -2,7 +2,7 @@ from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, current_user
 
 from ...db import CarOperations
-from ...modules.decorators import check_admin_permission
+from ...modules.decorators import check_admin_permission, unavailable_fields_exception
 
 
 cars_panel = Blueprint('panel', __name__)
@@ -17,6 +17,7 @@ def panel_get_cars():
 @cars_panel.route('/panel/car', methods=['POST'])
 @jwt_required()
 @check_admin_permission(current_user, 'add_cars')
+@unavailable_fields_exception
 def add_car():
     CarOperations.add_new_car(
         values_dict={i: request.form.get(i) for i in request.form}, 
@@ -30,7 +31,7 @@ def add_car():
 @jwt_required()
 @check_admin_permission(current_user, 'delete_cars')
 def delete_car():
-    CarOperations.delete_car(_id=request.args.get('_id'))
+    CarOperations.delete_car(id=request.args.get('_id'))
 
     response = jsonify({"msg": "The record was successfully deleted"})
     return response, 204
@@ -39,9 +40,10 @@ def delete_car():
 @cars_panel.route('/panel/car', methods=['PUT'])
 @jwt_required()
 @check_admin_permission(current_user, 'edit_cars')
+@unavailable_fields_exception
 def update_car():
     CarOperations.update_car(
-        _id=request.args.get('_id'),
+        id=request.args.get('_id'),
         values_dict= {i: request.form.get(i) for i in request.form},
         photos={i: request.files.get(i) for i in request.files})
     
