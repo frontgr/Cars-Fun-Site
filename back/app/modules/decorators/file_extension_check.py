@@ -9,8 +9,7 @@ def check_file_extension(func):
 
         for file in filename_list.values():
             if file.filename.rsplit('.')[1] not in extensions:
-                return {'status': 'Error',
-                        'message': 'Invalid photos extension'}
+                return {'message': 'Invalid photos extension'}
             return func(*args, **kwargs)
 
     return wrapper_allowed_file
