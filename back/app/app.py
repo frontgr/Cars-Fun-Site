@@ -1,6 +1,8 @@
 from datetime import datetime, timedelta, timezone
 
 from flask import Flask
+from flask_cors import CORS
+
 from flask_jwt_extended import JWTManager
 from flask_jwt_extended import get_jwt, create_access_token, get_jwt_identity, set_access_cookies
 
@@ -12,6 +14,8 @@ from .routers import public, auth
 from .routers.admin_panel import admins_panel, cars_panel
 
 app = Flask(__name__)
+CORS(app, resources={r"/*": {"origins": "*"}})
+
 app.secret_key = secret_key
 app.config['JWT_SECRET_KEY'] = jwt_secret_key
 app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(hours=1)

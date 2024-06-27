@@ -16,6 +16,8 @@
 // Second page imports
 @import "./components/info-page/header-info";
 @import "./components/info-page/main-info";
+
+// Adaptive import
 * {
     margin: 0;
     padding: 0;
@@ -45,4 +47,5 @@ body {
 }
 body .container {
     margin: 0 auto;
+    padding-top: 70px;
 }

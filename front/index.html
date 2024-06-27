@@ -63,7 +63,7 @@
                     <img
                         src="./images/main_photo_1.webp"
                         alt="icon"
-                        class="popup-menu__icon popup-menu__icon--selected"
+                        class="popup-menu__icon popup-menu__icon--selected itemActive"
                     />
                     <img
                         src="./images/main_photo_2.webp"
@@ -98,7 +98,7 @@
         </div>
         <header class="header">
             <div class="container">
-                <nav class="header__nav">
+                <nav class="header__nav" id="header__nav">
                     <a href="./" class="header__nav-logo logo">
                         Cars. <span>Fan site</span>
                     </a>
@@ -131,13 +131,14 @@
                 <div class="header__image">
                     <img
                         src="./images/header_McQueen.webp"
+                        class="header__image-main"
                         alt="McQueen image"
                     />
                 </div>
             </div>
         </header>
 
-        <main class="main">
+       <main class="main">
             <div class="container">
                 <div class="search-block main__search-block">
                     <button class="search-block__close-button">
@@ -166,12 +167,14 @@
                 <div class="main__content"></div>
 
                 <div class="show-more-btns">
-                    <button class="show-more-btns__hide" id="btn-hide">
-                        Hide
-                    </button>
-                    <button class="show-more-btns__showmore" id="btn-show-more">
-                        Show more...
-                    </button>
+                    <div class="show-more-btns__addaptive">    
+                        <button class="show-more-btns__hide" id="btn-hide">
+                            Hide
+                        </button>
+                        <button class="show-more-btns__showmore" id="btn-show-more">
+                            Show more...
+                        </button>
+                    </div>
                     <button class="show-more-btns__up" id="btn-up">
                         <img src="./images/up.svg" alt="arrow up" />
                     </button>
