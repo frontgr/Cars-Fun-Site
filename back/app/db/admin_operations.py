@@ -5,6 +5,21 @@ from .models import Admin
 
 class AdminOperations:
     @staticmethod
+    def create_root_admin(root_login, root_password):
+        if not Admin.objects.first():
+            root_admin = Admin(
+                            login=root_login,
+                            password=root_password,
+                            add_users = True,
+                            edit_users = True,
+                            delete_users = True,
+                            add_cars = True,
+                            edit_cars = True,
+                            delete_cars = True,
+                        )
+            root_admin.save()
+
+    @staticmethod
     def get_admins():
         admins = {}
 
