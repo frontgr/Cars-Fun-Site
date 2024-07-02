@@ -18,6 +18,8 @@ services:
       SECRET_KEY: "bb62c9e98f31a614b1e93d04be8c21d4"
       JWT_SECRET_KEY: "6af6f102384506266aee8e043dae115d3f5de3caf22fa692"
       DB_URI: "mongodb://root:root@mongo:27017"
+      ROOT_LOGIN: "RootAdmin"
+      ROOT_PASSWORD: "RootPassword"
     ports:
       - "5000:5000"
     volumes:
