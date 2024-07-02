@@ -9,7 +9,7 @@ class AdminOperations:
         if not Admin.objects.first():
             root_admin = Admin(
                             login=root_login,
-                            password=root_password,
+                            password=generate_password_hash(root_password),
                             add_users = True,
                             edit_users = True,
                             delete_users = True,
