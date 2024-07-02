@@ -14,13 +14,15 @@ from .routers import public, auth
 from .routers.admin_panel import admins_panel, cars_panel
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "*"}})
+CORS(app, supports_credentials=True)
 
 app.secret_key = secret_key
 app.config['JWT_SECRET_KEY'] = jwt_secret_key
 app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(hours=1)
 app.config["JWT_COOKIE_SECURE"] = False
 app.config["JWT_TOKEN_LOCATION"] = ["cookies"]
+app.config['JWT_COOKIE_SAMESITE'] = 'Lax'
+app.config['JWT_ACCESS_COOKIE_PATH'] = '/'
 
 jwt = JWTManager(app)
 
