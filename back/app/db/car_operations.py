@@ -9,7 +9,14 @@ from ..modules.decorators import check_file_extension
 
 class CarOperations:
     @staticmethod
-    def get_cars():
+    def get_public_cars():
+        cars = {}
+        for index, item in enumerate(Cars.objects(is_hidden=False)):
+            cars[index] = item.to_mongo()
+        return cars
+
+    @staticmethod
+    def get_panel_cars():
         cars = {}
         for index, item in enumerate(Cars.objects()):
             cars[index] = item.to_mongo()
