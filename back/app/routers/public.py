@@ -8,7 +8,7 @@ public = Blueprint('main', __name__)
 
 @public.route('/cars', methods=['GET'])
 def get_cars():
-    return jsonify(CarOperations.get_cars()), 200
+    return jsonify(CarOperations.get_public_cars()), 200
 
 
 @public.route('/car', methods=['GET'])

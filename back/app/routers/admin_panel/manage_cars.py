@@ -11,7 +11,7 @@ cars_panel = Blueprint('panel', __name__)
 @cars_panel.route('/panel/cars', methods=['GET'])
 @jwt_required()
 def panel_get_cars():
-    return jsonify(CarOperations.get_cars()), 200
+    return jsonify(CarOperations.get_panel_cars()), 200
 
 
 @cars_panel.route('/panel/car', methods=['POST'])
@@ -19,11 +19,11 @@ def panel_get_cars():
 @check_admin_permission(current_user, 'add_cars')
 @unavailable_fields_exception
 def add_car():
-    CarOperations.add_new_car(
-        values_dict={i: request.form.get(i) for i in request.form}, 
-        photos={i: request.files.get(i) for i in request.files})
+    values_dict={i: request.form.get(i) for i in request.form}
+    photos={i: request.files.get(i) for i in request.files}
+    CarOperations.add_new_car(values_dict, photos)
 
-    response = jsonify({"msg": "The record was successfully added"})
+    response = jsonify({"msg": "The record was successfully added", "values": str(values_dict), "photos": str(photos)})
     return response, 201
 
 
