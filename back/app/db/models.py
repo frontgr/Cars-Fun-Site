@@ -25,6 +25,7 @@ class Admin(Document):
 class Cars(Document):
     id = StringField(default=str(uuid.uuid4()), primary_key=True)
     name = StringField()
+    is_hidden= BooleanField(default=False)
     number = IntField()
     type = StringField()
     speed_up = IntField(default=0)
