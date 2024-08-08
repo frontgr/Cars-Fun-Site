@@ -9,6 +9,10 @@
         <title>Cars. Fan site</title>
     </head>
     <body>
+        <div class="login-error">
+            <p>Login error. Please, login again.</p>
+            <button>Go to login</button>
+        </div>
         <div class="admin">
             <aside class="aside">
                 <div class="aside__title">
@@ -743,7 +747,9 @@
                             <button class="popup__photo-btn">+</button>
                         </div>
                     </div>
-                    <button class="popup__form-btn">Add car</button>
+                    <button class="popup__form-btn" id="add-car">
+                        Add car
+                    </button>
                 </form>
                 <button class="popup__close">
                     <svg
@@ -833,7 +839,9 @@
                             <button class="popup__photo-btn">+</button>
                         </div>
                     </div>
-                    <button class="popup__form-btn">Update car</button>
+                    <button class="popup__form-btn" id="update-car">
+                        Update car
+                    </button>
                 </form>
                 <button class="popup__close">
                     <svg
@@ -907,7 +915,9 @@
                             </div>
                         </div>
                     </div>
-                    <button class="popup__form-btn">Add user</button>
+                    <button class="popup__form-btn" id="add-user">
+                        Add user
+                    </button>
                 </form>
                 <button class="popup__close">
                     <svg

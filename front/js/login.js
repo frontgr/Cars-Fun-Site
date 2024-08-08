@@ -13,7 +13,6 @@ async function sendLoginRequest(formData) {
         $("input").on("focus", function () {
             $(this).css("border", "");
         });
-        $("input");
         throw new Error(`${errorMessage}`);
     } else {
         window.location.href = "./admin.html";

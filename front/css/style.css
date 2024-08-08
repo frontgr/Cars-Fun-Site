@@ -80,9 +80,16 @@
   height: 100vh;
   position: relative;
 }
+.admin button {
+  cursor: pointer;
+}
 .admin__box {
   background: #f2f2f2;
   padding-left: 36px;
+}
+.admin--error {
+  filter: blur(5px);
+  pointer-events: none;
 }
 .admin .admin__container {
   max-width: 1008px;
@@ -94,6 +101,9 @@
   padding: 60px 36px 0 240px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   z-index: 12;
+}
+.aside button {
+  cursor: pointer;
 }
 .aside__title {
   margin-bottom: 60px;
@@ -152,6 +162,10 @@
   align-items: flex-end;
   gap: 48px;
 }
+.content button,
+.users button {
+  cursor: pointer;
+}
 .content__btn,
 .users__btn {
   padding: 17px 70px;
@@ -186,6 +200,9 @@
   padding: 16px 36px;
   border-radius: 6px;
   background: #fff;
+}
+.item button {
+  cursor: pointer;
 }
 .item__title {
   color: #000;
@@ -224,6 +241,9 @@
   flex-direction: column;
   gap: 60px;
   position: relative;
+}
+.analytics button {
+  cursor: pointer;
 }
 .analytics__popup {
   position: absolute;
@@ -280,6 +300,9 @@
   align-items: center;
   justify-content: center;
 }
+.admin-popup button {
+  cursor: pointer;
+}
 .admin-popup__box {
   border-radius: 5px;
   background: var(--txt_color_second, #fff);
@@ -287,6 +310,10 @@
   position: relative;
 }
 
+.add-car-popup button,
+.edit-car-popup button {
+  cursor: pointer;
+}
 .add-car-popup__title,
 .edit-car-popup__title {
   color: var(--txt_color, #000);
@@ -357,6 +384,9 @@
   color: #eee;
 }
 
+.popup button {
+  cursor: pointer;
+}
 .popup__input {
   width: 100%;
   padding: 13px 8px;
@@ -499,6 +529,9 @@
   font-weight: 700;
 }
 
+.user-popup button {
+  cursor: pointer;
+}
 .user-popup__title {
   color: var(--txt_color, #000);
   font-family: "Montserrat";
@@ -527,6 +560,9 @@
   align-items: center;
   gap: 20px;
   margin-bottom: 54px;
+}
+.permision button {
+  cursor: pointer;
 }
 .permision__title {
   color: #ff0b0b;
@@ -568,6 +604,9 @@
   background: #75e0ff;
 }
 
+.delete-popup button {
+  cursor: pointer;
+}
 .delete-popup__box {
   width: 600px;
   height: 340px;
@@ -610,6 +649,9 @@
   background: #cecece;
 }
 
+.eye button {
+  cursor: pointer;
+}
 .eye__close {
   display: none;
 }
@@ -626,6 +668,31 @@
 .edit-user-popup,
 .delete-popup {
   display: none;
+}
+
+.login-error {
+  z-index: 10;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 130px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  filter: none; /* No blur applied to this div */
+  display: none;
+  flex-direction: column;
+  padding: 20px;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 24px;
+  transform: translateX(-50%) translateY(-50%);
+}
+.login-error button {
+  cursor: pointer;
 }
 
 .car-item {
