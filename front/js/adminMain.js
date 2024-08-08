@@ -1,9 +1,9 @@
 let cookies = {};
 
 // Buttons for adding something
-const addCarBtn = document.getElementById("add-car");
-const updateCarBtn = document.getElementById("update-car");
-const addUserBtn = document.getElementById("add-user");
+const addCarBtn = $("#add-car");
+const updateCarBtn = $("#update-car");
+const addUserBtn = $("#add-user");
 
 $(".popup__form-btn").on("click", (event) => {
     event.preventDefault();
@@ -30,17 +30,53 @@ document.cookie.split(";").forEach(function (cookieItem) {
 
 /*
 TODO:
-1. Create function for add cars
-2. Create function for render cars
-3. Create function for add users
-4. Create function for render users
+1. Create function for adding cars
+2. Create function for rendering cars
+3. Create function for adding users
+4. Create function for rendering users
 */
 
-// Add cars
+// ADD CARS SECTION
+
+// Remove a photo from the list
+function removePhoto() {
+    $(".add-car-popup__form .popup__photo-item").each((index, carPhoto) => {
+        $(carPhoto).on("click", () => {
+            $(carPhoto).remove();
+        });
+    });
+}
+
+// Add new photo
+$(".add-car-popup__form .popup__photo-btn").on("click", () => {
+    $("#addCarPhotoInput").click();
+});
+
+$("#addCarPhotoInput").change(function () {
+    console.log(this.files[0]);
+    if (this.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function () {
+            console.log(reader.result);
+            $(".add-car-popup__form .popup__photo-btn").before(
+                `<div class="popup__photo-item">
+                    <img src="${reader.result}" alt="" />
+                    <div class="popup__photo-item_delete">+</div>
+                </div>`,
+            );
+            removePhoto();
+        };
+        reader.readAsDataURL(this.files[0]);
+    }
+});
+
+// Add car function
 $(addCarBtn).on("click", addCar);
 function addCar() {
     console.log("log");
 }
+
+// SHOW CARS LIST SECTION
 
 // Get list of cars
 async function getCarsList() {
