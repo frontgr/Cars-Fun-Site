@@ -48,16 +48,15 @@ function removePhoto() {
 }
 
 // Add new photo
-$(".add-car-popup__form .popup__photo-btn").on("click", () => {
+$(".add-car-popup__form .popup__photo-btn").on("click", (event) => {
+    event.preventDefault();
     $("#addCarPhotoInput").click();
 });
 
 $("#addCarPhotoInput").change(function () {
-    console.log(this.files[0]);
     if (this.files[0]) {
         const reader = new FileReader();
         reader.onload = function () {
-            console.log(reader.result);
             $(".add-car-popup__form .popup__photo-btn").before(
                 `<div class="popup__photo-item">
                     <img src="${reader.result}" alt="" />
@@ -73,7 +72,45 @@ $("#addCarPhotoInput").change(function () {
 // Add car function
 $(addCarBtn).on("click", addCar);
 function addCar() {
-    console.log("log");
+    let name = $(
+        ".add-car-popup__form input[placeholder='Name of a car...']",
+    ).val();
+    let number = $(
+        ".add-car-popup__form input[placeholder='Number, if available...']",
+    ).val();
+    let type = $(".add-car-popup__btns-btn.active").text().trim().toLowerCase();
+    let speed_up = $(".add-car-popup__form .popup__input_speed").val();
+    let max_speed = $(".add-car-popup__form .popup__input_acceleration").val();
+    let description = $(
+        ".add-car-popup__form textarea[placeholder='Description...']",
+    ).val();
+
+    // List of photos
+    let photos = $(".add-car-popup__form .popup__photo-item");
+
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("number", number);
+    formData.append("type", type);
+    formData.append("speed_up", speed_up);
+    formData.append("max_speed", max_speed);
+    formData.append("description", description);
+    const requestOptions = {
+        method: "POST",
+        body: formData,
+        redirect: "follow",
+    };
+
+    // Console.log data from the form
+    formData.forEach((k, v) => {
+        console.log(k, "-", v);
+    });
+
+    // TODO: Send data
+    // fetch("http://127.0.0.1:5000/panel/car", requestOptions)
+    //     .then((response) => response.text())
+    //     .then((result) => console.log(result))
+    //     .catch((error) => console.error(error));
 }
 
 // SHOW CARS LIST SECTION

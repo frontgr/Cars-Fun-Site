@@ -72,3 +72,9 @@ eyeBtns.each((index, value) => {
     });
 });
 /* eye change */
+
+$(".add-car-popup__btns-btn").on("click", function changeActiveButton(event) {
+    event.preventDefault();
+    $(".add-car-popup__btns-btn").removeClass("active");
+    $(this).addClass("active");
+});
