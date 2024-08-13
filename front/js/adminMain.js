@@ -71,40 +71,79 @@ $("#addCarPhotoInput").change(function () {
 
 // Add car function
 $(addCarBtn).on("click", addCar);
-function addCar() {
-    let name = $(
-        ".add-car-popup__form input[placeholder='Name of a car...']",
-    ).val();
-    let number = $(
-        ".add-car-popup__form input[placeholder='Number, if available...']",
-    ).val();
-    let type = $(".add-car-popup__btns-btn.active").text().trim().toLowerCase();
-    let speed_up = $(".add-car-popup__form .popup__input_speed").val();
-    let max_speed = $(".add-car-popup__form .popup__input_acceleration").val();
-    let description = $(
-        ".add-car-popup__form textarea[placeholder='Description...']",
-    ).val();
-
-    // List of photos
-    let photos = $(".add-car-popup__form .popup__photo-item");
-
-    const formData = new FormData();
-    formData.append("name", name);
-    formData.append("number", number);
-    formData.append("type", type);
-    formData.append("speed_up", speed_up);
-    formData.append("max_speed", max_speed);
-    formData.append("description", description);
-    const requestOptions = {
-        method: "POST",
-        body: formData,
-        redirect: "follow",
+async function addCar() {
+    let myHeaders = {
+        csrf_access_token: cookies.csrf_access_token, // If this isn't HttpOnly
     };
 
-    // Console.log data from the form
-    formData.forEach((k, v) => {
-        console.log(k, "-", v);
-    });
+    const formdata = new FormData();
+    formdata.append("name", "test");
+    formdata.append("number", "1");
+    formdata.append("type", "racer");
+    formdata.append("speed_up", "1");
+    formdata.append("max_speed", "111");
+    formdata.append("description", "test");
+    formdata.append(
+        "cover_photo",
+        "/C:/Users/nibezo/Documents/ShareX/Screenshots/2024-08/chrome_7DdPxE4GPr.png",
+    );
+
+    const requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        redirect: "follow",
+        body: formdata,
+    };
+
+    fetch("http://127.0.0.1:5000/panel/car", requestOptions)
+        .then((response) => response.text())
+        .then((result) => console.log(result))
+        .catch((error) => console.error(error));
+    // let name = $(
+    //     ".add-car-popup__form input[placeholder='Name of a car...']",
+    // ).val();
+    // let number = $(
+    //     ".add-car-popup__form input[placeholder='Number, if available...']",
+    // ).val();
+    // let type = $(".add-car-popup__btns-btn.active").text().trim().toLowerCase();
+    // let speed_up = $(".add-car-popup__form .popup__input_speed").val();
+    // let max_speed = $(".add-car-popup__form .popup__input_acceleration").val();
+    // let description = $(
+    //     ".add-car-popup__form textarea[placeholder='Description...']",
+    // ).val();
+
+    // // List of photos
+    // let photos = $(".add-car-popup__form .popup__photo-item img");
+    // let cover_photo = $(photos[0])
+    //     .attr("src")
+    //     .replace(/^data:image\/(png|jpg);base64,/, "");
+
+    // const formData = new FormData();
+    // formData.append("name", name);
+    // formData.append("number", number);
+    // formData.append("type", type);
+    // formData.append("speed_up", speed_up);
+    // formData.append("max_speed", max_speed);
+    // formData.append("description", description);
+    // formData.append("cover_photo", cover_photo);
+    // const myHeaders = new Headers();
+    // myHeaders.append("X-CSRF-TOKEN", "c13a27ba-1383-40c1-9384-b5d9ae24d376");
+    // myHeaders.append(
+    //     "Cookie",
+    //     "access_token_cookie=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyMzU1NjQzNCwianRpIjoiZTA1YWRhMmYtZWU4NS00NmQzLTljOWYtYzg5MTJmNzY3NThlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImMxMWVjM2JmLTVmY2UtNDliNS05M2FiLTA1MmVmNzAxNWEzOCIsIm5iZiI6MTcyMzU1NjQzNCwiY3NyZiI6ImMxM2EyN2JhLTEzODMtNDBjMS05Mzg0LWI1ZDlhZTI0ZDM3NiIsImV4cCI6MTcyMzU2MDAzNH0.jnhSWheMtojFp6EP4kiLf-6MOnLqcGoMz1OhwD7Tbuo; csrf_access_token=c13a27ba-1383-40c1-9384-b5d9ae24d376",
+    // );
+
+    // const requestOptions = {
+    //     method: "POST",
+    //     headers: myHeaders,
+    //     body: formData,
+    //     redirect: "follow",
+    // };
+
+    // fetch("http://127.0.0.1:5000/panel/car", requestOptions)
+    //     .then((response) => response.text())
+    //     .then((result) => console.log(result))
+    //     .catch((error) => console.error(error));
 
     // TODO: Send data
     // fetch("http://127.0.0.1:5000/panel/car", requestOptions)
