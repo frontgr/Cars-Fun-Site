@@ -1,0 +1,103 @@
+.footer {
+    background: #010b0f;
+    padding: 88px 0;
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__logos {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        &-logo {
+            padding-left: 30px;
+            border-left: 1px solid #ffffff;
+            margin: 0;
+        }
+    }
+    &__company,
+    &__admin {
+        color: var(--txt_color_second, #fff);
+        font-family: "Montserrat";
+        font-size: 20px;
+        font-weight: 700;
+    }
+    &__admin {
+        color: var(--color_second);
+    }
+}
+
+@media (min-width: 991px) and (max-width: 1600px) {
+    .footer {
+        &__content {
+            width: 95vw;
+            margin-left: auto;
+            margin-right: auto;
+    }
+}
+}
+
+@media (min-width: 768px) and (max-width: 990px) {
+    .footer {
+        &__content {
+            width: 72.7vw;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        &__company,
+        &__admin {
+            font-size: 15px;
+        }
+    }
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+    .footer {
+        &__content {
+            display: grid;
+            grid-template-columns: repeat(1, auto);
+            justify-content: center;
+        }
+        &__logos {
+            &-logo {
+                font-size: 25px;
+            }
+        }
+        &__company,
+        &__admin {
+            text-align: center;
+            margin-top: 30px;
+    }        
+    }
+}
+@media (min-width: 320px) and (max-width: 479px) {
+    .footer {
+        &__content {
+            display: grid;
+            grid-template-columns: repeat(1, auto);
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            margin: 0;
+        }
+        &__logos {
+            display: grid;
+            margin: 0;
+            text-align: center;
+            &-logo {
+                width: auto;
+                font-size: 25px;
+                border: none;
+                margin: 0;
+                padding: 0;
+            }
+        }
+        &__company, 
+        &__admin {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 15px;
+    }        
+    }
+}

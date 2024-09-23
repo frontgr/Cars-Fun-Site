@@ -1,0 +1,27 @@
+$txt_color_second: #ffffff;
+$color_second: #e11e18;
+$txt_color_main: #000;
+$color_main: #2ca7cb;
+$txt_color-on-btn: #666;
+$stroke_mini_photo: #2ca7cb;
+$black: #020f14;
+
+:root {
+    --txt_color_second: #ffffff;
+    --color_second: #e11e18;
+    --txt_color_main: #000;
+    --color_main: #2ca7cb;
+    --txt_color-on-btn: #666;
+    --stroke_mini_photo: #2ca7cb;
+    --black: #020f14;
+}
+
+// Mixins
+@mixin grid-template {
+    grid-template-columns: repeat(3, auto);
+    align-items: center;
+    justify-items: center;
+    gap: 50px 57px;
+    padding: 70px 0 97px 0;
+    margin: 0 145px;
+}

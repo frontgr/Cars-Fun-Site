@@ -1,0 +1,117 @@
+@mixin header {
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.95);
+        width: 100vw;
+        left: 0;
+        top: 0;
+        z-index: 200;
+    }
+    &__image {
+        padding: 140px 0 110px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.header {
+    background: url("../images/header_background.webp"), #03070a 50%;
+    @include header;
+}
+
+.logo {
+    color: var(--txt_color_second, #fff);
+    font-size: 32px;
+    margin-left: 128px;
+    & span {
+        transition: color 0.4s ease-in-out;
+        color: var(--color_second, #e11e18);
+    }
+    &:hover span {
+        color: var(--txt_color_second, #fff) !important;
+    }
+}
+
+
+
+@media (min-width: 1281px) and (max-width: 1600px) {
+    .header {
+        &__image {
+            & img {
+                width: 1000px;
+                padding-top: 10px;  
+            }
+        }
+    }
+    
+}
+
+@media (min-width: 769px) and (max-width: 1280px) {
+    .header {
+        
+        &__image {
+            margin: 0 145px;
+            & img {
+                width: 700px;
+            }
+        }
+    }
+    .logo {
+        color: var(--txt_color_second, #fff);
+        font-size: 32px;
+        & span {
+            color: var(--color_second, #e11e18);
+        }
+    }
+    
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+    .header {
+        &__nav {            
+            display: block;
+            text-align: center;
+        }
+        &__image {
+            margin: 0 145px;
+            & img {
+                width: 90vw;
+                padding-top: 75px;
+            }
+        }
+        
+    }
+    .logo {
+            margin: 0;
+        }
+}
+
+@media (min-width: 280px) and (max-width: 480px) {
+    .header {
+        &.container {
+            height: 400px;
+        }
+        &__nav {            
+            display: block;
+            text-align: center;
+            padding: 15px 0;
+        }
+        &__image {
+            margin: 0 145px;
+            & img {
+                width: 90vw;
+                padding-top: 80px;
+            }
+        }
+    }
+    .logo {
+        margin: 0;
+    }
+}

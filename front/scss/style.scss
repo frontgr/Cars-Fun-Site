@@ -1,43 +1,51 @@
-@import "./components/header.scss";
-@import "./components/main.scss";
-@import "./components/footer.scss";
-@import "./components/logo.scss";
-@import "./variables.scss";
-@import "./components/popup.scss";
-@import "./components/admin.scss";
-@import "./components/login.scss";
 @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 
+@import "./_variables";
+@import "./components/login";
+@import "./components/_admin";
+@import "./components/_car-item";
+@import "./components/_header";
+@import "./components/_main";
+@import "./components/_footer";
+@import "./components/_overlay";
+@import "./components/_search-block";
+@import "./components/_popup";
+@import "./components/search-field";
+
+// Second page imports
+@import "./components/info-page/header-info";
+@import "./components/info-page/main-info";
+
+// Adaptive import
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 input,
 textarea,
 button,
 select,
 a {
-  -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
 }
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 li {
-  list-style: none;
+    list-style: none;
 }
 body {
-  font-family: "Fugaz One";
-  font-weight: 400;
+    font-family: "Fugaz One";
+    font-weight: 400;
 }
+
 .container {
-  max-width: 1600px;
-  width: 100%;
-  margin: 0 auto;
+    width: 100%;
+    max-width: 1600px;
 }
-
-@import "popup-adaptive.scss";
-@import "car_info-adaptive.scss";
-
-@import "main-adaptive.scss";
+body .container {
+    margin: 0 auto;
+    padding-top: 70px;
+}

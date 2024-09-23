@@ -1,0 +1,19 @@
+  name: CI/CD Pipeline
+
+  on:
+    push:
+      branches:
+        - main
+
+  jobs:
+    build:
+      runs-on: self-hosted
+
+      steps:
+        - name: Checkout repository
+          uses: actions/checkout@v2
+
+        - name: Update docker containers
+          run: |
+            docker compose up --build -d
+

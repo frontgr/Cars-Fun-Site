@@ -1,4 +1,4 @@
-from flask import Blueprint, request
+from flask import Blueprint, request, jsonify
 
 from ..db import CarOperations
 
@@ -8,16 +8,14 @@ public = Blueprint('main', __name__)
 
 @public.route('/cars', methods=['GET'])
 def get_cars():
-    return CarOperations.get_cars(), 200
+    return jsonify(CarOperations.get_public_cars()), 200
 
 
 @public.route('/car', methods=['GET'])
 def get_car():
-    _id = request.args.get('_id')
+    id = request.args.get('id')
 
     try:
-        response = CarOperations.get_car(_id)
+        return jsonify(CarOperations.get_car(id)), 200
     except AttributeError:
-        return '', 400
-
-    return response, 200
+        return {"msg": "Record not found"}, 400
