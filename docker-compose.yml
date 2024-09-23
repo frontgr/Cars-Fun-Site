@@ -15,11 +15,11 @@ services:
     build: ./back
     container_name: backend
     environment:
-      SECRET_KEY: "bb62c9e98f31a614b1e93d04be8c21d4"
-      JWT_SECRET_KEY: "6af6f102384506266aee8e043dae115d3f5de3caf22fa692"
-      DB_URI: "mongodb://root:root@mongo:27017"
-      ROOT_LOGIN: "RootAdmin"
-      ROOT_PASSWORD: "RootPassword"
+      SECRET_KEY: ${SECRET_KEY}
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY}
+      DB_URI: ${DB_URI}
+      ROOT_LOGIN: ${ROOT_LOGIN}
+      ROOT_PASSWORD: ${ROOT_PASSWORD}
     ports:
       - "5000:5000"
     volumes:
@@ -30,8 +30,8 @@ services:
     image: "mongo:latest"
     container_name: mongodb
     environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: root
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
     ports:
       - "27017:27017"
     volumes:
