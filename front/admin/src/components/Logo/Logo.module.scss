@@ -1,0 +1,12 @@
+@import "../../styles/variables.scss";
+
+.logo {
+    font-family: "Fugaz One", sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 24px;
+    user-select: none;
+    & span {
+        color: $color-highlight;
+    }
+}

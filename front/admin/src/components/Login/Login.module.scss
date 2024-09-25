@@ -1,0 +1,41 @@
+@import "../../styles/variables.scss";
+
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    gap: 40px;
+    background-color: $background-color;
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        row-gap: 40px;
+        &-input {
+            width: 426px;
+            height: 57.6px;
+            font-size: 22px;
+            font-weight: bold;
+            color: $color-non-active;
+            padding-left: 9px;
+        }
+        &-submit {
+            width: 228px;
+            height: 60px;
+            font-size: 22px;
+            font-weight: bold;
+            color: $color-light;
+            background-color: $color-success;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            &:hover {
+                background-color: rgba($color-success, 0.9);
+            }
+        }
+    }
+}

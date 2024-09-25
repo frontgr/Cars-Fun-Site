@@ -1,0 +1,26 @@
+@import "../../styles/variables.scss";
+
+.error {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__text {
+        font-size: 50px;
+        font-weight: bold;
+        color: $color-highlight;
+    }
+    &__btn {
+        font-size: 40px;
+        font-weight: bold;
+        color: $color-highlight;
+        cursor: pointer;
+        text-decoration: none;
+        transition: 0.3s;
+        &:hover {
+            color: rgba($color-highlight, 0.5);
+        }
+    }
+}
