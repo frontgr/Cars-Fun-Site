@@ -8,6 +8,11 @@ import Login from "./components/Login/Login";
 import Main from "./components/Main/Main.tsx";
 import ErrorPage from "./components/ErrorPage/ErrorPage.tsx";
 
+// Pages
+import Content from "./components/Pages/Content/Content";
+import Analytics from "./components/Pages/Analytics/Analytics";
+import Users from "./components/Pages/Users/Users";
+
 const router = createBrowserRouter([
     {
         path: "/",
@@ -17,12 +22,15 @@ const router = createBrowserRouter([
     { path: "/main/*", element: <Main /> },
     {
         path: "/Content",
+        element: <Content />,
     },
     {
         path: "/Analytics",
+        element: <Analytics />,
     },
     {
         path: "/Users",
+        element: <Users />,
     },
 ]);
 

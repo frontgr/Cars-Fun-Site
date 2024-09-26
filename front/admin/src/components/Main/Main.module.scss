@@ -1,1 +1,62 @@
 @import "../../styles/variables.scss";
+
+.main {
+    background-color: $background-color;
+    display: flex;
+    height: 100vh;
+    &__nav {
+        width: 566px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 100px;
+        &-logo {
+            margin-top: 60px;
+        }
+        &-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 60px;
+            &-underline {
+                width: 36px;
+                height: 1px;
+                background-color: $color-dark;
+            }
+            &-item {
+                &-button {
+                    cursor: pointer;
+                    border: none;
+                    box-sizing: border-box;
+                    background-color: transparent;
+                    height: 60px;
+                    width: 360px;
+                    display: block;
+                    font-size: 22px;
+                    text-decoration: none;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 0px 36px;
+                    border-radius: 6px;
+                    transition: 0.3s;
+                    &:hover {
+                        background-color: rgba($background-color-neutral, 0.8);
+                    }
+                    &--active {
+                        border: none;
+                        border-radius: 6px;
+                        background-color: $color-active-neutral;
+                        &:hover {
+                            background-color: $color-active-neutral;
+                        }
+                    }
+                    &--logout {
+                        margin-top: 20px;
+                        color: $color-highlight;
+                        transition: 0.3s;
+                    }
+                }
+            }
+        }
+    }
+}

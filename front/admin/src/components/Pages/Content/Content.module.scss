@@ -1,0 +1,7 @@
+@import "../../../styles/variables.scss";
+
+.content {
+    font-family: "Fugaz One", sans-serif;
+    font-size: 48px;
+    @include page-settings();
+}
