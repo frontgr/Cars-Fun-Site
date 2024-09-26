@@ -35,10 +35,13 @@ class CarOperations:
         values_dict['folder_id'] = folder_id
 
         for key, value in photos.items():
-            if re.fullmatch(rf'{key}', r'photo\d'):
-                values_dict['photos'] = {key: convert(folder_id=folder_id, index=key, file=value)}
-            else:
-                values_dict[key] = convert(folder_id=folder_id, index=key, file=value)
+            if key == 'cover_photo':
+                values_dict['cover_photo'] = convert(folder_id=folder_id, index=key, file=value)
+            if key == 'photos':
+                converted_photos = []
+                for photo in value:
+                    converted_photos.append(convert(folder_id=folder_id, index=key, file=photo))
+                values_dict['photos'] = converted_photos
 
         car = Cars(**values_dict)
         car.save()

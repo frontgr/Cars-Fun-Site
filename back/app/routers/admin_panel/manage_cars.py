@@ -20,10 +20,14 @@ def panel_get_cars():
 @unavailable_fields_exception
 def add_car():
     values_dict={i: request.form.get(i) for i in request.form}
-    photos={i: request.files.get(i) for i in request.files}
+    photos = {
+        'cover_photo': request.files.get('cover_photo', None),
+        'photos': request.files.getlist('photos')
+    }
+
     CarOperations.add_new_car(values_dict, photos)
 
-    response = jsonify({"msg": "The record was successfully added", "values": str(values_dict), "photos": str(photos)})
+    response = jsonify({"msg": "The record was successfully added", "values": str(values_dict)})
     return response, 201
 
 
