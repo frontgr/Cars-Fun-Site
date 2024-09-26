@@ -31,7 +31,7 @@ def add_car():
 @jwt_required()
 @check_admin_permission(current_user, 'delete_cars')
 def delete_car():
-    CarOperations.delete_car(id=request.args.get('_id'))
+    CarOperations.delete_car(id=request.args.get('id'))
 
     response = jsonify({"msg": "The record was successfully deleted"})
     return response, 204
@@ -43,7 +43,7 @@ def delete_car():
 @unavailable_fields_exception
 def update_car():
     CarOperations.update_car(
-        id=request.args.get('_id'),
+        id=request.args.get('id'),
         values_dict= {i: request.form.get(i) for i in request.form},
         photos={i: request.files.get(i) for i in request.files})
     

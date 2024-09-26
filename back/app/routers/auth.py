@@ -17,8 +17,7 @@ def login_post():
     if admin.data_validation(password) is False:
         return jsonify({"msg": "An admin with these credentials does not exist or the data did not pass validation"}), 400
 
-    response = jsonify({"msg": "Login successful"})
     access_token = create_access_token(identity=admin.get_id())
-    set_access_cookies(response, access_token)
+    response = jsonify({"msg": "Login successful", "access_token": access_token})
 
     return response
