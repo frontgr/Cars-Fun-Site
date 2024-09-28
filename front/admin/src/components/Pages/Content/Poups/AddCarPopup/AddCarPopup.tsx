@@ -81,11 +81,6 @@ export default function AddCarPopup({ setIsPopupAddCarVisible }: any) {
                 formData.append("photos", photo);
             });
 
-            // Debugging: Log the FormData content
-            formData.forEach((value, key) => {
-                console.log(`${key}:`, value);
-            });
-
             // Send the request
             axios
                 .post("http://127.0.0.1:5000/panel/car", formData, {
@@ -113,7 +108,6 @@ export default function AddCarPopup({ setIsPopupAddCarVisible }: any) {
         }
     }
 
-    // Function to convert base64 to File
     function base64ToFile(base64String: string, filename: string): File {
         const arr: string[] = base64String.split(",");
         const match: RegExpMatchArray | null = arr[0].match(/:(.*?);/);

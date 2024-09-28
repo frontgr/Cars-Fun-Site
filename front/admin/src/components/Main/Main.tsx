@@ -1,6 +1,6 @@
 import styles from "./Main.module.scss";
 import Logo from "../Logo/Logo";
-import { Link, Routes, Route, Navigate, useNavigate } from "react-router-dom";
+import { Link, Routes, Route, Navigate } from "react-router-dom";
 import { useState } from "react";
 
 import Content from "../Pages/Content/Content";
@@ -8,7 +8,6 @@ import Analytics from "../Pages/Analytics/Analytics";
 import Users from "../Pages/Users/Users";
 
 export default function Main() {
-    const navigate = useNavigate();
     const [page, setPage] = useState("Content");
 
     return (
