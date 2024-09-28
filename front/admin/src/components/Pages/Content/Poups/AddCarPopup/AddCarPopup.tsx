@@ -1,11 +1,13 @@
 import styles from "./AddCarPopup.module.scss";
 import Close from "../../../../Assets/Delete.svg";
+import Modal from "../../../../Modal/Modal";
+
 import { useState } from "react";
 import axios from "axios";
 
 export default function AddCarPopup({ setIsPopupAddCarVisible }: any) {
     const [photosArray, setPhotosArray] = useState<any[]>([]);
-
+    const [isModal, setIsModal] = useState(false);
     const [formValues, setFormValues] = useState({
         name: "",
         number: "",
@@ -93,6 +95,7 @@ export default function AddCarPopup({ setIsPopupAddCarVisible }: any) {
                 })
                 .then((res) => {
                     console.log("Success:", res.data);
+                    setIsModal(true);
                 })
                 .catch((err) => {
                     if (err.response) {
@@ -254,6 +257,9 @@ export default function AddCarPopup({ setIsPopupAddCarVisible }: any) {
                     />
                 </form>
             </div>
+            {isModal ? (
+                <Modal type="addCarDone" setIsModal={setIsModal} />
+            ) : null}
         </>
     );
 }
