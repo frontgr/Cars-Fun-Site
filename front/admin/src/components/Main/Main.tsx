@@ -8,12 +8,16 @@ import Analytics from "../Pages/Analytics/Analytics";
 import Users from "../Pages/Users/Users";
 
 export default function Main() {
-    const [page, setPage] = useState("Content");
     const navigate = useNavigate();
+    const [page, setPage] = useState("Content");
+
     return (
         <div className={styles.main}>
             <nav className={styles.main__nav}>
-                <div className={styles["main__nav-logo"]}>
+                <div
+                    className={styles["main__nav-logo"]}
+                    onClick={() => setPage("Content")}
+                >
                     <Logo location={"main"} />
                 </div>
                 <ul className={styles["main__nav-list"]}>
