@@ -16,7 +16,7 @@ export default function Modal(props: any) {
                 {(props.type === "addCarDone" ||
                     props.type === "addCarFail") && (
                     <button
-                        onClick={() => props.setIsModal(false)}
+                        onClick={() => props.setIsModal(["", false])}
                         className={styles.modal__button}
                     >
                         Close

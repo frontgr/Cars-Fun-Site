@@ -5,9 +5,17 @@ import Modal from "../../../../Modal/Modal";
 import { useState } from "react";
 import axios from "axios";
 
-export default function AddCarPopup({ setIsPopupAddCarVisible }: any) {
+interface AddCarPopupProps {
+    setIsPopupAddCarVisible: (visible: boolean) => void;
+    getCarsData: () => void;
+}
+
+export default function AddCarPopup({
+    setIsPopupAddCarVisible,
+    getCarsData,
+}: AddCarPopupProps) {
     const [photosArray, setPhotosArray] = useState<any[]>([]);
-    const [isModal, setIsModal] = useState(false);
+    const [isModal, setIsModal] = useState(["", false]);
     const [formValues, setFormValues] = useState({
         name: "",
         number: "",
@@ -95,10 +103,21 @@ export default function AddCarPopup({ setIsPopupAddCarVisible }: any) {
                 })
                 .then((res) => {
                     console.log("Success:", res.data);
-                    setIsModal(true);
+                    setIsModal(["addCarDone", true]);
+                    setFormValues({
+                        name: "",
+                        number: "",
+                        type: "racer",
+                        speed_up: "",
+                        max_speed: "",
+                        description: "",
+                    });
+                    setPhotosArray([]);
+                    getCarsData();
                 })
                 .catch((err) => {
                     if (err.response) {
+                        setIsModal(["addCarFail", true]);
                         console.error("Error Response:", err.response.data);
                         console.error("Status:", err.response.status);
                         console.error("Headers:", err.response.headers);
@@ -107,6 +126,7 @@ export default function AddCarPopup({ setIsPopupAddCarVisible }: any) {
                     }
                 });
         } else {
+            setIsModal(["addCarFail", true]);
             console.error("Form validation failed. Please check all fields.");
         }
     }
@@ -257,8 +277,11 @@ export default function AddCarPopup({ setIsPopupAddCarVisible }: any) {
                     />
                 </form>
             </div>
-            {isModal ? (
+            {isModal[1] && isModal[0] === "addCarDone" ? (
                 <Modal type="addCarDone" setIsModal={setIsModal} />
+            ) : null}
+            {isModal[1] && isModal[0] === "addCarFail" ? (
+                <Modal type="addCarFail" setIsModal={setIsModal} />
             ) : null}
         </>
     );

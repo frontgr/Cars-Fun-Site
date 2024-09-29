@@ -29,7 +29,9 @@ export default function Login() {
             navigate("/main");
         } catch (error) {
             console.error("Login failed:", error);
-            alert("Login failed! Please check your credentials.");
+            alert(
+                `Login failed! Please check your credentials (or internet connection). Error: ${error}`,
+            );
         }
     }
 
