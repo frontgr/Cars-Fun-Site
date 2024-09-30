@@ -100,7 +100,7 @@ export default function Content() {
                                                 JSON.stringify(cars),
                                             );
 
-                                            carsNew[index].is_hidden ===
+                                            carsNew[index].is_hidden =
                                                 !carsNew[index].is_hidden;
                                             setCars(carsNew);
                                         }}
