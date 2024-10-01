@@ -16,7 +16,7 @@ services:
     container_name: admin
     build: ./front/admin
     ports:
-      - "81:80"
+      - "81:81"
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
       - ./front:/usr/share/nginx/html

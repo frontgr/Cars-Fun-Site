@@ -1,36 +1,71 @@
 import styles from "./Content.module.scss";
 
-import EditButton from "../../Assets/Edit.svg";
-import OpenEye from "../../Assets/Open_Eye.svg";
-import OpenEyeClose from "../../Assets/Open_Eye-close.svg";
-import DeleteButton from "../../Assets/Delete.svg";
 import AddCarPopup from "./Poups/AddCarPopup/AddCarPopup";
+import CarItem from "./CarItem/CarItem";
 
 import { useState, useEffect } from "react";
 import axios from "axios";
+
+interface ICar {
+    _id: string;
+    cover_photo: string;
+    description: string;
+    folder_id: string;
+    is_hidden: boolean;
+    max_speed: number;
+    name: string;
+    number: number;
+    photos: string[];
+    speed_up: number;
+    type: "racer" | "other";
+}
+
 export default function Content() {
     const [isPopupAddCarVisible, setIsPopupAddCarVisible] = useState(false);
-    const [cars, setCars] = useState([]);
-    function getCarsData() {
-        axios
-            .get("http://127.0.0.1:5000/panel/cars", {
-                headers: {
-                    Authorization: `Bearer ${localStorage.getItem(
-                        "access_token",
-                    )}`,
+    const [cars, setCars] = useState<ICar[] | undefined>(undefined);
+    const getCarsData: () => Promise<ICar[] | undefined> = async () => {
+        try {
+            const response = await axios.get(
+                "http://127.0.0.1:5000/panel/cars",
+                {
+                    headers: {
+                        Authorization: `Bearer ${localStorage.getItem(
+                            "access_token",
+                        )}`,
+                    },
                 },
-            })
-            .then((response) => {
-                console.log(Object.values(response.data));
-                setCars(Object.values(response.data));
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    }
+            );
+
+            return Object.values(response.data);
+        } catch (e) {
+            console.error(e);
+        }
+    };
     useEffect(() => {
-        getCarsData();
+        async function getCars() {
+            const cars = await getCarsData();
+
+            return cars;
+        }
+
+        getCars().then((data) => setCars(data));
     }, []);
+
+    const clickOnEye = (id: string) => {
+        const carsCopy = cars && [...cars];
+        const newCars =
+            carsCopy &&
+            carsCopy.map((car) => {
+                if (car._id === id) {
+                    return { ...car, is_hidden: !car.is_hidden };
+                }
+                return car;
+            });
+
+        setCars(newCars);
+    };
+
+    console.log(cars);
     return (
         <>
             {isPopupAddCarVisible && (
@@ -48,95 +83,17 @@ export default function Content() {
                         Add car
                     </button>
                     <ul className={styles.content__list}>
-                        {cars.map((car: any) => (
-                            <li
-                                key={car.id}
-                                className={styles["content__list-item"]}
-                            >
-                                <span
-                                    className={
-                                        styles["content__list-item-name"]
-                                    }
-                                >
-                                    {car.name}
-                                    <span
-                                        className={
-                                            styles["content__list-item-number"]
-                                        }
-                                    >
-                                        {" "}
-                                        {car.number}
-                                    </span>
-                                </span>
-                                <div
-                                    className={
-                                        styles["content__list-item-buttons"]
-                                    }
-                                >
-                                    <button
-                                        className={
-                                            styles["content__list-item-button"]
-                                        }
-                                    >
-                                        <img
-                                            src={EditButton}
-                                            alt="edit"
-                                            className={
-                                                styles[
-                                                    "content__list-item-button-icon"
-                                                ]
-                                            }
-                                        />
-                                    </button>
-                                    <button
-                                        className={
-                                            styles["content__list-item-button"]
-                                        }
-                                        onClick={() => {
-                                            const index = cars.findIndex(
-                                                (c) => c === car,
-                                            );
-                                            const carsNew = JSON.parse(
-                                                JSON.stringify(cars),
-                                            );
-
-                                            carsNew[index].is_hidden =
-                                                !carsNew[index].is_hidden;
-                                            setCars(carsNew);
-                                        }}
-                                    >
-                                        <img
-                                            src={
-                                                car.is_hidden
-                                                    ? OpenEyeClose
-                                                    : OpenEye
-                                            }
-                                            alt="edit"
-                                            className={
-                                                styles[
-                                                    "content__list-item-button-icon"
-                                                ]
-                                            }
-                                        />
-                                    </button>
-                                    <button
-                                        className={
-                                            styles["content__list-item-button"]
-                                        }
-                                    >
-                                        <img
-                                            src={DeleteButton}
-                                            alt="edit"
-                                            className={
-                                                styles[
-                                                    "content__list-item-button-icon"
-                                                ]
-                                            }
-                                        />
-                                    </button>
-                                </div>
-                            </li>
-                        ))}
+                        {cars &&
+                            cars.map((car: ICar) => (
+                                <CarItem
+                                    key={car._id}
+                                    id={car._id}
+                                    name={car.name}
+                                    number={car.number}
+                                    is_hidden={car.is_hidden}
+                                    clickOnEye={clickOnEye}
+                                />
+                            ))}
                     </ul>
                 </div>
             </div>
