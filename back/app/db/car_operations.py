@@ -35,14 +35,16 @@ class CarOperations:
         values_dict['folder_id'] = folder_id
 
         for key, value in photos.items():
+            counter = 0
             if key == 'cover_photo':
                 values_dict['cover_photo'] = convert(folder_id=folder_id, index=key, file=value)
             if key == 'photos':
                 converted_photos = []
                 for photo in value:
-                    converted_photos.append(convert(folder_id=folder_id, index=key, file=photo))
+                    converted_photos.append(convert(folder_id=folder_id, index='photo_' + str(counter), file=photo))
+                    counter += 1
                 values_dict['photos'] = converted_photos
-
+                
         car = Cars(**values_dict)
         car.save()
 
