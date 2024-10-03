@@ -11,7 +11,6 @@ mongoengine.connect(host=db_uri, db='Cars-Funs-Site')
 
 
 class Admin(Document):
-    id = StringField(default=str(uuid.uuid4()), primary_key=True)
     login = StringField(max_length=50, required=True, unique=True)
     password = StringField(required=True)
     add_users = BooleanField(default=False)
@@ -23,7 +22,6 @@ class Admin(Document):
     
 
 class Cars(Document):
-    id = StringField(default=str(uuid.uuid4()), primary_key=True)
     name = StringField()
     is_hidden= BooleanField(default=False)
     number = IntField()

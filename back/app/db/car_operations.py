@@ -11,7 +11,7 @@ class CarOperations:
     @staticmethod
     def get_public_cars():
         cars = {}
-        for index, item in enumerate(Cars.objects(is_hidden=False)):
+        for index, item in enumerate(Cars.objects(is_hidden=False).exclude('id')):
             cars[index] = item.to_mongo()
         return cars
 
@@ -19,13 +19,20 @@ class CarOperations:
     def get_panel_cars():
         cars = {}
         for index, item in enumerate(Cars.objects()):
-            cars[index] = item.to_mongo()
+            car = {}
+            for key, value in item.to_mongo().items():
+                if key == '_id':
+                    car['id'] = str(value)
+                    continue
+                car[key] = value
+            cars[index] = car
         return cars
 
     @staticmethod
     def get_car(id):
-        car = Cars.objects(id=id).first()
-        return car.to_mongo()
+        car = Cars.objects(id=id).first().to_mongo()
+        car['id'] = str(car.pop('_id'))
+        return car
 
     @staticmethod
     @check_file_extension
