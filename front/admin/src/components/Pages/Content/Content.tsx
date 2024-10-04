@@ -44,7 +44,6 @@ export default function Content() {
     useEffect(() => {
         async function getCars() {
             const cars = await getCarsData();
-
             return cars;
         }
 

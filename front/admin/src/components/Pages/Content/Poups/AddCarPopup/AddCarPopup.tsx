@@ -2,6 +2,8 @@ import styles from "./AddCarPopup.module.scss";
 import Close from "../../../../Assets/Delete.svg";
 import Modal from "../../../../Modal/Modal";
 
+import base64ToFile from "../../../../../utils/base64ToFile.tsx";
+
 import { useState } from "react";
 import axios from "axios";
 
@@ -43,7 +45,7 @@ export default function AddCarPopup({
         const { name, value } = event.target;
         setFormValues((prevValues) => ({
             ...prevValues,
-            [name]: value, // Update the state for the corresponding input
+            [name]: value,
         }));
     }
     function handdleInputTypeChange(newType: string) {
@@ -66,10 +68,8 @@ export default function AddCarPopup({
             formValues.description.length > 0;
 
         if (isFormValid) {
-            // Prepare FormData
             const formData = new FormData();
 
-            // Convert base64 strings to File objects
             const coverPhoto = base64ToFile(photosArray[0], "cover_photo.jpg");
             const additionalPhotos = photosArray
                 .slice(1)
@@ -77,7 +77,6 @@ export default function AddCarPopup({
                     base64ToFile(base64, `additional_photo_${index + 1}.jpg`),
                 );
 
-            // Append text fields
             formData.append("name", formValues.name);
             formData.append("number", formValues.number);
             formData.append("type", formValues.type);
@@ -85,13 +84,11 @@ export default function AddCarPopup({
             formData.append("max_speed", formValues.max_speed);
             formData.append("description", formValues.description);
 
-            // Append photos
             formData.append("cover_photo", coverPhoto);
             additionalPhotos.forEach((photo: File) => {
                 formData.append("photos", photo);
             });
 
-            // Send the request
             axios
                 .post("http://127.0.0.1:5000/panel/car", formData, {
                     headers: {
@@ -129,22 +126,6 @@ export default function AddCarPopup({
             setIsModal(["addCarFail", true]);
             console.error("Form validation failed. Please check all fields.");
         }
-    }
-
-    function base64ToFile(base64String: string, filename: string): File {
-        const arr: string[] = base64String.split(",");
-        const match: RegExpMatchArray | null = arr[0].match(/:(.*?);/);
-        if (!match) {
-            throw new Error("Invalid base64 string");
-        }
-        const mime: string = match[1];
-        const bstr: string = atob(arr[1]);
-        const n: number = bstr.length;
-        const u8arr: Uint8Array = new Uint8Array(n);
-        for (let i: number = 0; i < n; i++) {
-            u8arr[i] = bstr.charCodeAt(i);
-        }
-        return new File([u8arr], filename, { type: mime });
     }
 
     return (

@@ -10,7 +10,7 @@ import ErrorPage from "./components/ErrorPage/ErrorPage.tsx";
 // Pages
 import Content from "./components/Pages/Content/Content";
 import Analytics from "./components/Pages/Analytics/Analytics";
-import Users from "./components/Pages/Users/Users";
+import Admins from "./components/Pages/Admins/Admins.tsx";
 
 const router = createBrowserRouter([
     {
@@ -28,8 +28,8 @@ const router = createBrowserRouter([
         element: <Analytics />,
     },
     {
-        path: "/Users",
-        element: <Users />,
+        path: "/Admins",
+        element: <Admins />,
     },
 ]);
 

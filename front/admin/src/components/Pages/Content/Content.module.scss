@@ -7,12 +7,7 @@
     align-items: flex-end;
     @include page-settings();
     &__wrapper {
-        margin-top: 50px;
-        display: flex;
-        flex-direction: column;
-        align-items: end;
-        width: 1000px;
-        margin-left: 36px;
+        @include wrapper-styles();
     }
     &__add-car {
         @include button-styles();

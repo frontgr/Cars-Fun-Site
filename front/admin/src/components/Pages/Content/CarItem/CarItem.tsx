@@ -39,14 +39,14 @@ const CarItem: React.FC<CarItemProps> = (car) => {
                 >
                     <img
                         src={is_hidden ? OpenEyeClose : OpenEye}
-                        alt="edit"
+                        alt="is hidden"
                         className={styles["content__list-item-button-icon"]}
                     />
                 </button>
                 <button className={styles["content__list-item-button"]}>
                     <img
                         src={DeleteButton}
-                        alt="edit"
+                        alt="delete"
                         className={styles["content__list-item-button-icon"]}
                     />
                 </button>

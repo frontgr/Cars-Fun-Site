@@ -5,7 +5,7 @@ import { useState } from "react";
 
 import Content from "../Pages/Content/Content";
 import Analytics from "../Pages/Analytics/Analytics";
-import Users from "../Pages/Users/Users";
+import Admins from "../Pages/Admins/Admins";
 
 export default function Main() {
     const [page, setPage] = useState("Content");
@@ -66,18 +66,18 @@ export default function Main() {
                     </li>
                     <li className={styles["main__nav-list-item"]}>
                         <Link
-                            to="Users"
+                            to="Admins"
                             className={`
                                 ${styles["main__nav-list-item-button"]}
                                 ${
-                                    page === "Users" &&
+                                    page === "Admins" &&
                                     styles["main__nav-list-item-button--active"]
                                 }
                             `}
-                            onClick={() => setPage("Users")}
+                            onClick={() => setPage("Admins")}
                         >
-                            <span>Users</span>
-                            {page === "Users" && (
+                            <span>Admins</span>
+                            {page === "Admins" && (
                                 <div
                                     className={
                                         styles["main__nav-list-underline"]
@@ -111,7 +111,7 @@ export default function Main() {
                 {/* Routes */}
                 <Route path="Content" element={<Content />} />
                 <Route path="Analytics" element={<Analytics />} />
-                <Route path="Users" element={<Users />} />
+                <Route path="Admins" element={<Admins />} />
             </Routes>
         </div>
     );

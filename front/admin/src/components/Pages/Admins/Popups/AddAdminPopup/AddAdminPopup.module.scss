@@ -1,0 +1,102 @@
+@import "../../../../../styles/variables.scss";
+
+.add-admin-popup {
+    &__overlay {
+        @include overlay-styles();
+    }
+    &__close {
+        @include close-styles();
+    }
+    &__content {
+        @include popup-styles(10, 570px, 580px);
+        justify-content: flex-start;
+        &-heading {
+            font-size: 18px;
+            width: 100%;
+        }
+        &-form {
+            width: 100%;
+
+            &-login {
+                display: flex;
+                justify-content: space-between;
+                & input {
+                    @include input-styles();
+                    font-size: 15px;
+                    width: 240px;
+                }
+            }
+            &-checkboxes {
+                display: flex;
+                flex-direction: column;
+                &-heading {
+                    font-size: 18px;
+                    color: $color-highlight;
+                    text-align: center;
+                    width: 100%;
+                    margin-top: 36px;
+                    margin-bottom: 21px;
+                }
+                &-container {
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin-bottom: 30px;
+                    column-gap: 36px;
+                    row-gap: 24px;
+                    &-label {
+                        display: flex;
+                        width: 232px;
+                        justify-content: space-between;
+                        position: relative;
+                        cursor: pointer;
+                        font-size: 22px;
+                        -webkit-user-select: none;
+                        -moz-user-select: none;
+                        -ms-user-select: none;
+                        user-select: none;
+                        &:last-child,
+                        &:nth-child(3) {
+                            color: $background-color-neutral;
+                            user-select: none;
+                            pointer-events: none;
+                            position: relative;
+                        }
+                        &:hover
+                            input
+                            ~ .add-admin-popup__content-form-checkboxes-container-label-checkmark {
+                            background-color: $background-color-neutral;
+                        }
+                        input {
+                            position: absolute;
+                            opacity: 0;
+                            cursor: pointer;
+                            height: 0;
+                            width: 0;
+                            &:checked
+                                ~ .add-admin-popup__content-form-checkboxes-container-label-checkmark {
+                                background-color: $color-active;
+                            }
+                        }
+                        &-checkmark {
+                            display: block;
+                            top: 0;
+                            left: 0;
+                            height: 36px;
+                            width: 36px;
+                            border-radius: 5px;
+                            background-color: $background-color-neutral;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__add-button {
+        @include button-styles();
+        &-wrapper {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+        }
+    }
+}
