@@ -11,7 +11,7 @@ class CarOperations:
     @staticmethod
     def get_public_cars():
         cars = {}
-        for index, item in enumerate(Cars.objects(is_hidden=False)):
+        for index, item in enumerate(Cars.objects(is_hidden=False).exclude('id')):
             cars[index] = item.to_mongo()
         return cars
 
@@ -19,13 +19,20 @@ class CarOperations:
     def get_panel_cars():
         cars = {}
         for index, item in enumerate(Cars.objects()):
-            cars[index] = item.to_mongo()
+            car = {}
+            for key, value in item.to_mongo().items():
+                if key == '_id':
+                    car['id'] = str(value)
+                    continue
+                car[key] = value
+            cars[index] = car
         return cars
 
     @staticmethod
     def get_car(id):
-        car = Cars.objects(id=id).first()
-        return car.to_mongo()
+        car = Cars.objects(id=id).first().to_mongo()
+        car['id'] = str(car.pop('_id'))
+        return car
 
     @staticmethod
     @check_file_extension
@@ -35,14 +42,16 @@ class CarOperations:
         values_dict['folder_id'] = folder_id
 
         for key, value in photos.items():
+            counter = 0
             if key == 'cover_photo':
                 values_dict['cover_photo'] = convert(folder_id=folder_id, index=key, file=value)
             if key == 'photos':
                 converted_photos = []
                 for photo in value:
-                    converted_photos.append(convert(folder_id=folder_id, index=key, file=photo))
+                    converted_photos.append(convert(folder_id=folder_id, index='photo_' + str(counter), file=photo))
+                    counter += 1
                 values_dict['photos'] = converted_photos
-
+                
         car = Cars(**values_dict)
         car.save()
 

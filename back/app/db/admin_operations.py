@@ -24,7 +24,13 @@ class AdminOperations:
         admins = {}
 
         for index, item in enumerate(Admin.objects.exclude('password')):
-            admins[index] = item.to_mongo()
+            admin = {}
+            for key, value in item.to_mongo().items():
+                if key == '_id':
+                    admin['id'] = str(value)
+                    continue
+                admin[key] = value
+            admins[index] = admin
             
         return admins
 
