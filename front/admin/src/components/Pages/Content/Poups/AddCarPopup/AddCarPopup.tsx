@@ -148,6 +148,7 @@ export default function AddCarPopup({
                             type="text"
                             name="name"
                             value={formValues.name}
+                            autoComplete="off"
                             onChange={handdleInputChange}
                             placeholder={"Name of a car..."}
                             className={styles["add-car-popup__form-info-input"]}
@@ -156,6 +157,7 @@ export default function AddCarPopup({
                             type="number"
                             name="number"
                             value={formValues.number}
+                            autoComplete="off"
                             onChange={handdleInputChange}
                             placeholder={"Number, if available..."}
                             className={`${styles["add-car-popup__form-info-input"]} 
@@ -227,6 +229,7 @@ export default function AddCarPopup({
                                     styles["add-car-popup__form-photos-img"]
                                 }
                                 onClick={handleFileRemove}
+                                key={photo}
                             >
                                 <img src={photo} alt="Car photo" />
                             </div>

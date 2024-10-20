@@ -25,6 +25,7 @@ export default function Login() {
                     withCredentials: true, // Ensure cookies are sent
                 },
             );
+            localStorage.setItem("cars_login", login);
             localStorage.setItem("access_token", response.data.access_token);
             navigate("/main");
         } catch (error) {
