@@ -51,6 +51,6 @@ def delete_admin():
 @unavailable_fields_exception
 def update_admin():
     AdminOperations.update_admin(id=request.args.get('id'), 
-                                values_dict={i: request.form.get(i) for i in request.form})
+                                values_dict={key: value == 'True' if not 'login' or 'password' else value for key, value in request.form.items()})
     response = jsonify({"msg": "The admin's data was successfully updated"})
     return response, 200
