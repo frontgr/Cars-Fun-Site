@@ -19,7 +19,7 @@ def panel_get_cars():
 @check_admin_permission(current_user, 'add_cars')
 @unavailable_fields_exception
 def add_car():
-    values_dict={i: request.form.get(i) for i in request.form}
+    values_dict={key: value == 'True' if 'is_hidden' else value for key, value in request.form.items()}
     photos = {
         'cover_photo': request.files.get('cover_photo', None),
         'photos': request.files.getlist('photos')
@@ -48,7 +48,7 @@ def delete_car():
 def update_car():
     CarOperations.update_car(
         id=request.args.get('id'),
-        values_dict= {i: request.form.get(i) for i in request.form},
+        values_dict= {key: value == 'True' if 'is_hidden' else value for key, value in request.form.items()},
         photos={i: request.files.get(i) for i in request.files})
     
     response = jsonify({"msg": "The record data was successfully updated"})

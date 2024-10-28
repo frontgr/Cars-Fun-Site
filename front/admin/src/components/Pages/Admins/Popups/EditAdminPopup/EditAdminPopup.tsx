@@ -1,32 +1,29 @@
-import { useState } from "react";
+import styles from "./EditAdminPopup.module.scss";
+import { IAdmin } from "../../../../../utils/getAdmins";
+import { useEffect, useState } from "react";
+
 import Close from "../../../../Assets/Delete.svg";
-import styles from "./AddAdminPopup.module.scss";
-import handleAddAdmin from "../../../../../utils/handleAddAdmin";
-import Modal from "../../../../Modal/Modal";
+import getAdmins from "../../../../../utils/getAdmins";
+import { IForm } from "../AddAdminPopup/AddAdminPopup";
 
-interface AddAdminPopupProps {
-    setIsAddAdminPopupVisible: (visible: boolean) => void;
+interface EditAdminPopupProps {
+    id: string;
+    name: string;
+    setEditAdminPopup: (value: [boolean, string]) => void;
 }
-
-export interface IForm {
-    login: string;
-    password: string;
-    add_users: boolean;
-    edit_users: boolean;
-    delete_users: boolean;
-    add_cars: boolean;
-    edit_cars: boolean;
-    delete_cars: boolean;
-}
-
 interface ILogin {
     event: React.ChangeEvent<HTMLInputElement>;
     type: string;
 }
-
-const AddAdminPopup: React.FC<AddAdminPopupProps> = ({
-    setIsAddAdminPopupVisible,
-}: AddAdminPopupProps) => {
+const EditAdminPopup = ({
+    id,
+    name,
+    setEditAdminPopup,
+}: EditAdminPopupProps) => {
+    const [admin, setAdmin] = useState<object | undefined>({});
+    const findSeletedAdmin = (admin: any) => {
+        return admin.login === name;
+    };
     const [formValues, setFormValues] = useState<IForm>({
         login: "",
         password: "",
@@ -37,9 +34,6 @@ const AddAdminPopup: React.FC<AddAdminPopupProps> = ({
         edit_cars: false,
         delete_cars: false,
     });
-
-    const [isModalVisible, setIsModalVisible] = useState(["", false]);
-
     const handdleInputChange = (value: string, checked: boolean) => {
         const newFormValues = JSON.parse(JSON.stringify(formValues));
         newFormValues[value] = checked;
@@ -53,34 +47,45 @@ const AddAdminPopup: React.FC<AddAdminPopupProps> = ({
         setFormValues(newFormValues);
         console.log(formValues);
     };
+    useEffect(() => {
+        const fetchAdmins = async () => {
+            const admins = await getAdmins();
+            const admin: IAdmin | undefined = admins?.find(findSeletedAdmin);
+
+            setAdmin(admin!);
+        };
+        fetchAdmins();
+    }, []);
     return (
-        <div className={styles["add-admin-popup"]}>
-            <div className={styles["add-admin-popup__content"]}>
+        <div className={styles["edit-admin-popup"]}>
+            <div className={styles["edit-admin-popup__content"]}>
                 <button
-                    className={styles["add-admin-popup__close"]}
-                    onClick={() => setIsAddAdminPopupVisible(false)}
+                    className={styles["edit-admin-popup__close"]}
+                    onClick={() => {
+                        setEditAdminPopup([false, ""]);
+                    }}
                 >
                     <img src={Close} alt="Close" />
                 </button>
-                <h2 className={styles["add-admin-popup__content-heading"]}>
-                    Add an admin
-                </h2>
+                <h2 className={styles["edit-admin-popup__content-heading"]}>
+                    Edit admin: {name}
+                </h2>{" "}
                 <form
                     action=""
-                    className={styles["add-admin-popup__content-form"]}
+                    className={styles["edit-admin-popup__content-form"]}
                 >
                     <div
                         className={
-                            styles["add-admin-popup__content-form-login"]
+                            styles["edit-admin-popup__content-form-login"]
                         }
                     >
                         <input
                             type="text"
-                            placeholder="Login of a new admin..."
+                            placeholder="New login..."
                             value={formValues.login}
                             className={
                                 styles[
-                                    "add-admin-popup__content-form-login-input"
+                                    "edit-admin-popup__content-form-login-input"
                                 ]
                             }
                             onChange={(event) =>
@@ -89,11 +94,11 @@ const AddAdminPopup: React.FC<AddAdminPopupProps> = ({
                         />
                         <input
                             type="text"
-                            placeholder="Password of a new admin..."
+                            placeholder="New password..."
                             value={formValues.password}
                             className={
                                 styles[
-                                    "add-admin-popup__content-form-login-input"
+                                    "edit-admin-popup__content-form-login-input"
                                 ]
                             }
                             onChange={(event) =>
@@ -103,29 +108,29 @@ const AddAdminPopup: React.FC<AddAdminPopupProps> = ({
                     </div>
                     <div
                         className={
-                            styles["add-admin-popup__content-form-checkboxes"]
+                            styles["edit-admin-popup__content-form-checkboxes"]
                         }
                     >
                         <h2
                             className={
                                 styles[
-                                    "add-admin-popup__content-form-checkboxes-heading"
+                                    "edit-admin-popup__content-form-checkboxes-heading"
                                 ]
                             }
                         >
-                            New admin can
+                            Admin can:
                         </h2>
                         <div
                             className={
                                 styles[
-                                    "add-admin-popup__content-form-checkboxes-container"
+                                    "edit-admin-popup__content-form-checkboxes-container"
                                 ]
                             }
                         >
                             <label
                                 className={
                                     styles[
-                                        "add-admin-popup__content-form-checkboxes-container-label"
+                                        "edit-admin-popup__content-form-checkboxes-container-label"
                                     ]
                                 }
                             >
@@ -133,7 +138,7 @@ const AddAdminPopup: React.FC<AddAdminPopupProps> = ({
                                 <input
                                     className={
                                         styles[
-                                            "add-admin-popup__content-form-checkboxes-container-label-checkbox"
+                                            "edit-admin-popup__content-form-checkboxes-container-label-checkbox"
                                         ]
                                     }
                                     checked={formValues.add_cars}
@@ -149,7 +154,7 @@ const AddAdminPopup: React.FC<AddAdminPopupProps> = ({
                                 <span
                                     className={
                                         styles[
-                                            "add-admin-popup__content-form-checkboxes-container-label-checkmark"
+                                            "edit-admin-popup__content-form-checkboxes-container-label-checkmark"
                                         ]
                                     }
                                 ></span>
@@ -157,7 +162,7 @@ const AddAdminPopup: React.FC<AddAdminPopupProps> = ({
                             <label
                                 className={
                                     styles[
-                                        "add-admin-popup__content-form-checkboxes-container-label"
+                                        "edit-admin-popup__content-form-checkboxes-container-label"
                                     ]
                                 }
                             >
@@ -165,7 +170,7 @@ const AddAdminPopup: React.FC<AddAdminPopupProps> = ({
                                 <input
                                     className={
                                         styles[
-                                            "add-admin-popup__content-form-checkboxes-container-label-checkbox"
+                                            "edit-admin-popup__content-form-checkboxes-container-label-checkbox"
                                         ]
                                     }
                                     checked={formValues.add_users}
@@ -181,7 +186,7 @@ const AddAdminPopup: React.FC<AddAdminPopupProps> = ({
                                 <span
                                     className={
                                         styles[
-                                            "add-admin-popup__content-form-checkboxes-container-label-checkmark"
+                                            "edit-admin-popup__content-form-checkboxes-container-label-checkmark"
                                         ]
                                     }
                                 ></span>
@@ -189,7 +194,7 @@ const AddAdminPopup: React.FC<AddAdminPopupProps> = ({
                             <label
                                 className={
                                     styles[
-                                        "add-admin-popup__content-form-checkboxes-container-label"
+                                        "edit-admin-popup__content-form-checkboxes-container-label"
                                     ]
                                 }
                             >
@@ -197,7 +202,7 @@ const AddAdminPopup: React.FC<AddAdminPopupProps> = ({
                                 <input
                                     className={
                                         styles[
-                                            "add-admin-popup__content-form-checkboxes-container-label-checkbox"
+                                            "edit-admin-popup__content-form-checkboxes-container-label-checkbox"
                                         ]
                                     }
                                     type="checkbox"
@@ -205,7 +210,7 @@ const AddAdminPopup: React.FC<AddAdminPopupProps> = ({
                                 <span
                                     className={
                                         styles[
-                                            "add-admin-popup__content-form-checkboxes-container-label-checkmark"
+                                            "edit-admin-popup__content-form-checkboxes-container-label-checkmark"
                                         ]
                                     }
                                 ></span>
@@ -213,7 +218,7 @@ const AddAdminPopup: React.FC<AddAdminPopupProps> = ({
                             <label
                                 className={
                                     styles[
-                                        "add-admin-popup__content-form-checkboxes-container-label"
+                                        "edit-admin-popup__content-form-checkboxes-container-label"
                                     ]
                                 }
                             >
@@ -221,7 +226,7 @@ const AddAdminPopup: React.FC<AddAdminPopupProps> = ({
                                 <input
                                     className={
                                         styles[
-                                            "add-admin-popup__content-form-checkboxes-container-label-checkbox"
+                                            "edit-admin-popup__content-form-checkboxes-container-label-checkbox"
                                         ]
                                     }
                                     checked={formValues.edit_users}
@@ -237,7 +242,7 @@ const AddAdminPopup: React.FC<AddAdminPopupProps> = ({
                                 <span
                                     className={
                                         styles[
-                                            "add-admin-popup__content-form-checkboxes-container-label-checkmark"
+                                            "edit-admin-popup__content-form-checkboxes-container-label-checkmark"
                                         ]
                                     }
                                 ></span>
@@ -245,7 +250,7 @@ const AddAdminPopup: React.FC<AddAdminPopupProps> = ({
                             <label
                                 className={
                                     styles[
-                                        "add-admin-popup__content-form-checkboxes-container-label"
+                                        "edit-admin-popup__content-form-checkboxes-container-label"
                                     ]
                                 }
                             >
@@ -253,7 +258,7 @@ const AddAdminPopup: React.FC<AddAdminPopupProps> = ({
                                 <input
                                     className={
                                         styles[
-                                            "add-admin-popup__content-form-checkboxes-container-label-checkbox"
+                                            "edit-admin-popup__content-form-checkboxes-container-label-checkbox"
                                         ]
                                     }
                                     checked={formValues.edit_cars}
@@ -269,7 +274,7 @@ const AddAdminPopup: React.FC<AddAdminPopupProps> = ({
                                 <span
                                     className={
                                         styles[
-                                            "add-admin-popup__content-form-checkboxes-container-label-checkmark"
+                                            "edit-admin-popup__content-form-checkboxes-container-label-checkmark"
                                         ]
                                     }
                                 ></span>
@@ -277,7 +282,7 @@ const AddAdminPopup: React.FC<AddAdminPopupProps> = ({
                             <label
                                 className={
                                     styles[
-                                        "add-admin-popup__content-form-checkboxes-container-label"
+                                        "edit-admin-popup__content-form-checkboxes-container-label"
                                     ]
                                 }
                             >
@@ -285,7 +290,7 @@ const AddAdminPopup: React.FC<AddAdminPopupProps> = ({
                                 <input
                                     className={
                                         styles[
-                                            "add-admin-popup__content-form-checkboxes-container-label-checkbox"
+                                            "edit-admin-popup__content-form-checkboxes-container-label-checkbox"
                                         ]
                                     }
                                     checked={formValues.delete_users}
@@ -301,7 +306,7 @@ const AddAdminPopup: React.FC<AddAdminPopupProps> = ({
                                 <span
                                     className={
                                         styles[
-                                            "add-admin-popup__content-form-checkboxes-container-label-checkmark"
+                                            "edit-admin-popup__content-form-checkboxes-container-label-checkmark"
                                         ]
                                     }
                                 ></span>
@@ -309,7 +314,7 @@ const AddAdminPopup: React.FC<AddAdminPopupProps> = ({
                             <label
                                 className={
                                     styles[
-                                        "add-admin-popup__content-form-checkboxes-container-label"
+                                        "edit-admin-popup__content-form-checkboxes-container-label"
                                     ]
                                 }
                             >
@@ -317,7 +322,7 @@ const AddAdminPopup: React.FC<AddAdminPopupProps> = ({
                                 <input
                                     className={
                                         styles[
-                                            "add-admin-popup__content-form-checkboxes-container-label-checkbox"
+                                            "edit-admin-popup__content-form-checkboxes-container-label-checkbox"
                                         ]
                                     }
                                     checked={formValues.delete_cars}
@@ -333,7 +338,7 @@ const AddAdminPopup: React.FC<AddAdminPopupProps> = ({
                                 <span
                                     className={
                                         styles[
-                                            "add-admin-popup__content-form-checkboxes-container-label-checkmark"
+                                            "edit-admin-popup__content-form-checkboxes-container-label-checkmark"
                                         ]
                                     }
                                 ></span>
@@ -341,7 +346,7 @@ const AddAdminPopup: React.FC<AddAdminPopupProps> = ({
                             <label
                                 className={
                                     styles[
-                                        "add-admin-popup__content-form-checkboxes-container-label"
+                                        "edit-admin-popup__content-form-checkboxes-container-label"
                                     ]
                                 }
                             >
@@ -349,7 +354,7 @@ const AddAdminPopup: React.FC<AddAdminPopupProps> = ({
                                 <input
                                     className={
                                         styles[
-                                            "add-admin-popup__content-form-checkboxes-container-label-checkbox"
+                                            "edit-admin-popup__content-form-checkboxes-container-label-checkbox"
                                         ]
                                     }
                                     type="checkbox"
@@ -357,7 +362,7 @@ const AddAdminPopup: React.FC<AddAdminPopupProps> = ({
                                 <span
                                     className={
                                         styles[
-                                            "add-admin-popup__content-form-checkboxes-container-label-checkmark"
+                                            "edit-admin-popup__content-form-checkboxes-container-label-checkmark"
                                         ]
                                     }
                                 ></span>
@@ -366,55 +371,48 @@ const AddAdminPopup: React.FC<AddAdminPopupProps> = ({
                     </div>
                     <div
                         className={
-                            styles["add-admin-popup__add-button-wrapper"]
+                            styles["edit-admin-popup__add-button-wrapper"]
                         }
                     >
                         <input
                             type="submit"
-                            className={styles["add-admin-popup__add-button"]}
+                            className={styles["edit-admin-popup__add-button"]}
                             value="Add admin"
                             onClick={(event) => {
                                 event.preventDefault();
-                                handleAddAdmin(formValues).then((res) => {
-                                    if (res) {
-                                        console.log(res);
-                                        setFormValues({
-                                            login: "",
-                                            password: "",
-                                            add_users: false,
-                                            edit_users: false,
-                                            delete_users: false,
-                                            add_cars: false,
-                                            edit_cars: false,
-                                            delete_cars: false,
-                                        });
-                                        setIsModalVisible([
-                                            "addAdminDone",
-                                            true,
-                                        ]);
-                                    } else {
-                                        console.log("error");
-                                        setIsModalVisible([
-                                            "addAdminFail",
-                                            true,
-                                        ]);
-                                    }
-                                });
+                                // handleEditAdmin(formValues).then((res) => {
+                                //     if (res) {
+                                //         console.log(res);
+                                //         setFormValues({
+                                //             login: "",
+                                //             password: "",
+                                //             add_users: false,
+                                //             edit_users: false,
+                                //             delete_users: false,
+                                //             add_cars: false,
+                                //             edit_cars: false,
+                                //             delete_cars: false,
+                                //         });
+                                //         setIsModalVisible([
+                                //             "addAdminDone",
+                                //             true,
+                                //         ]);
+                                //     } else {
+                                //         console.log("error");
+                                //         setIsModalVisible([
+                                //             "addAdminFail",
+                                //             true,
+                                //         ]);
+                                //     }
+                                // });
                             }}
                         />
                     </div>
                 </form>
             </div>
-
-            <div className={styles["add-admin-popup__overlay"]}></div>
-            {isModalVisible[1] && isModalVisible[0] === "addAdminDone" ? (
-                <Modal type="addAdminDone" setIsModal={setIsModalVisible} />
-            ) : null}
-            {isModalVisible[1] && isModalVisible[0] === "addCarFail" ? (
-                <Modal type="addAdminFail" setIsModal={setIsModalVisible} />
-            ) : null}
+            <div className={styles["edit-admin-popup__overlay"]}></div>
         </div>
     );
 };
 
-export default AddAdminPopup;
+export default EditAdminPopup;

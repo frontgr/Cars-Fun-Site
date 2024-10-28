@@ -19,6 +19,10 @@ export default function Main() {
                 >
                     <Logo location={"main"} />
                 </div>
+                <span className={styles["main__nav-logo-login"]}>
+                    You logged as:{" "}
+                    <span>{localStorage.getItem("cars_login")}</span>
+                </span>
                 <ul className={styles["main__nav-list"]}>
                     <li className={styles["main__nav-list-item"]}>
                         <Link

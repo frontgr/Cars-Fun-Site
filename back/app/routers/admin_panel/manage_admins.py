@@ -23,7 +23,8 @@ def get_admins():
 @unavailable_fields_exception
 def add_admin():
     try:
-        AdminOperations.add_admin(values={i: request.form.get(i) for i in request.form})
+        AdminOperations.add_admin(values={key: value == 'True' if not 'login' or 'password' else value 
+                                          for key, value in request.form.items()})
         
         response = jsonify({"msg": "The admin was successfully created"})
         return response, 201
@@ -51,6 +52,7 @@ def delete_admin():
 @unavailable_fields_exception
 def update_admin():
     AdminOperations.update_admin(id=request.args.get('id'), 
-                                values_dict={key: value == 'True' if not 'login' or 'password' else value for key, value in request.form.items()})
+                                values_dict={key: value == 'True' if not 'login' or 'password' else value 
+                                             for key, value in request.form.items()})
     response = jsonify({"msg": "The admin's data was successfully updated"})
     return response, 200
