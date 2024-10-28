@@ -10,6 +10,14 @@
     background-color: $color-light;
     font-size: 22px;
     padding-left: 36px;
+    font-family: "Montserrat";
+    font-weight: 600;
+    &__name {
+        & span > span {
+            color: $color-highlight;
+            filter: brightness(10);
+        }
+    }
     &--root-admin {
         color: $color-light;
         background-color: rgba($color-dark, 0.7);

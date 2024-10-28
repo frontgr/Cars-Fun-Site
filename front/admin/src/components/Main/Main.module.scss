@@ -3,15 +3,23 @@
 .main {
     background-color: $background-color;
     display: flex;
-    height: 100vh;
+    height: max-content;
     &__nav {
         width: 566px;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         padding-left: 100px;
+        height: 100vh;
         &-logo {
             margin-top: 60px;
+            &-login {
+                font-size: 12px;
+                & span {
+                    font-weight: bold;
+                    cursor: pointer;
+                }
+            }
         }
         &-list {
             list-style: none;

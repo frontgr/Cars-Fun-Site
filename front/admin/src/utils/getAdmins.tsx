@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export interface IAdmin {
-    _id: string;
+    id: string;
     add_cars: boolean;
     add_users: boolean;
     delete_cars: boolean;

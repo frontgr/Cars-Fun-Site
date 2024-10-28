@@ -16,14 +16,26 @@ const handleAddAdmin = async (
 ): Promise<string | undefined> => {
     try {
         const formData = new FormData();
-        formData.append("login", admin.login);
-        formData.append("password", admin.password);
-        formData.append("add_users", String(admin.add_users));
-        formData.append("edit_users", String(admin.edit_users));
-        formData.append("delete_users", String(admin.delete_users));
-        formData.append("add_cars", String(admin.add_cars));
-        formData.append("edit_cars", String(admin.edit_cars));
-        formData.append("delete_cars", String(admin.delete_cars));
+        admin.login ? formData.append("login", admin.login) : null;
+        admin.password ? formData.append("password", admin.password) : null;
+        admin.add_users
+            ? formData.append("add_users", String(admin.add_users))
+            : null;
+        admin.edit_users
+            ? formData.append("edit_users", String(admin.edit_users))
+            : null;
+        admin.delete_users
+            ? formData.append("delete_users", String(admin.delete_users))
+            : null;
+        admin.add_cars
+            ? formData.append("add_cars", String(admin.add_cars))
+            : null;
+        admin.edit_cars
+            ? formData.append("edit_cars", String(admin.edit_cars))
+            : null;
+        admin.delete_cars
+            ? formData.append("delete_cars", String(admin.delete_cars))
+            : null;
 
         const response = await axios.post(
             "http://127.0.0.1:5000/panel/admin",
