@@ -13,6 +13,7 @@
     font-family: "Montserrat";
     font-weight: 600;
     &__name {
+        order: -1 !important;
         & span > span {
             color: $color-highlight;
             filter: brightness(10);

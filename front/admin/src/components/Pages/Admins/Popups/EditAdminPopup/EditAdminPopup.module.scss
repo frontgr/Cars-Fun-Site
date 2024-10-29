@@ -8,6 +8,14 @@
     &__close {
         @include close-styles();
     }
+    &__edit-button {
+        @include button-styles();
+        &-wrapper {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+        }
+    }
     &__content {
         @include popup-styles(13, 570px, 580px);
         &-form {
@@ -59,7 +67,7 @@
                         }
                         &:hover
                             input
-                            ~ .add-admin-popup__content-form-checkboxes-container-label-checkmark {
+                            ~ .edit-admin-popup__content-form-checkboxes-container-label-checkmark {
                             background-color: $background-color-neutral;
                         }
                         input {
@@ -69,7 +77,7 @@
                             height: 0;
                             width: 0;
                             &:checked
-                                ~ .add-admin-popup__content-form-checkboxes-container-label-checkmark {
+                                ~ .edit-admin-popup__content-form-checkboxes-container-label-checkmark {
                                 background-color: $color-active;
                             }
                         }

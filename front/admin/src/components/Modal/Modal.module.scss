@@ -11,6 +11,7 @@
 }
 .modal {
     @include popup-styles(100, 600px, 340px);
+    position: fixed;
     &__button {
         @include button-styles();
         background-color: $color-active;

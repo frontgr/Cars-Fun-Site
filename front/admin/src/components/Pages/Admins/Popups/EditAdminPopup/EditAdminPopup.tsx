@@ -51,11 +51,25 @@ const EditAdminPopup = ({
         const fetchAdmins = async () => {
             const admins = await getAdmins();
             const admin: IAdmin | undefined = admins?.find(findSeletedAdmin);
-
+            admins?.forEach((admin) => {
+                if (admin.id === id) {
+                    setFormValues({
+                        login: admin.login,
+                        password: "",
+                        add_users: admin.add_users,
+                        edit_users: admin.edit_users,
+                        delete_users: admin.delete_users,
+                        add_cars: admin.add_cars,
+                        edit_cars: admin.edit_cars,
+                        delete_cars: admin.delete_cars,
+                    });
+                }
+            });
             setAdmin(admin!);
         };
         fetchAdmins();
     }, []);
+
     return (
         <div className={styles["edit-admin-popup"]}>
             <div className={styles["edit-admin-popup__content"]}>
@@ -118,7 +132,7 @@ const EditAdminPopup = ({
                                 ]
                             }
                         >
-                            Admin can:
+                            After editing, the admin can:
                         </h2>
                         <div
                             className={
@@ -371,15 +385,18 @@ const EditAdminPopup = ({
                     </div>
                     <div
                         className={
-                            styles["edit-admin-popup__add-button-wrapper"]
+                            styles["edit-admin-popup__edit-button-wrapper"]
                         }
                     >
                         <input
                             type="submit"
-                            className={styles["edit-admin-popup__add-button"]}
-                            value="Add admin"
+                            className={styles["edit-admin-popup__edit-button"]}
+                            value="Edit admin"
                             onClick={(event) => {
                                 event.preventDefault();
+                                console.log(formValues);
+                                console.log(id);
+
                                 // handleEditAdmin(formValues).then((res) => {
                                 //     if (res) {
                                 //         console.log(res);
