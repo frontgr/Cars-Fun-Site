@@ -38,4 +38,3 @@ app.register_blueprint(public)
 app.register_blueprint(auth)
 app.register_blueprint(admins_panel)
 app.register_blueprint(cars_panel)
-

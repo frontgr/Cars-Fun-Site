@@ -1,4 +1,4 @@
-import { cars } from "./cars_list.js";
+// import { cars } from "./cars_list.js";
 var inputField = document.getElementById("searchInput");
 
 // Add event listener for keypress event
@@ -15,10 +15,10 @@ inputField.addEventListener("keypress", function (event) {
 // Вставка только латинских букв и пробелов + удаление первых и последних пробелов
 inputField.addEventListener("input", function (event) {
     var input = inputField.value;
-    var filteredInput = input.replace(/[^a-zA-Z ]/g, '');
-    filteredInput = filteredInput.replace(/\s{2,}/g, ' ');
-    if (filteredInput.trim() === '') {
-        inputField.value = '';
+    var filteredInput = input.replace(/[^a-zA-Z ]/g, "");
+    filteredInput = filteredInput.replace(/\s{2,}/g, " ");
+    if (filteredInput.trim() === "") {
+        inputField.value = "";
     } else {
         inputField.value = filteredInput;
     }

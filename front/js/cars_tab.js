@@ -1,4 +1,33 @@
-import { cars } from "./cars_list.js";
+const cars = [];
+
+let data = {};
+let filter = "btn-racers";
+let showMoreBtn = $("#btn-show-more");
+let btnBox = $(".show-more-btns");
+let hideBtn = $("#btn-hide");
+let upBtn = $("#btn-up");
+let countCars = 6;
+
+async function fetchCars() {
+    let response = await fetch("http://127.0.0.1:5000/cars");
+    data = await response.json();
+    showData(data);
+}
+
+function showData(data) {
+    // Clear `cars` array before adding new data to avoid duplication
+    cars.length = 0;
+    for (let key in data) {
+        cars.push({
+            name: data[key].name,
+            type: data[key].type,
+            photo: "http://localhost/photo/" + data[key].cover_photo,
+        });
+    }
+    console.log(cars); // Shows the updated `cars` array in the console
+    changeTab(filter);
+}
+
 function changeTab(filter, countCars = 6) {
     let content__cars = "";
     let filterType = filter.slice(4);
@@ -34,9 +63,8 @@ function changeTab(filter, countCars = 6) {
 
     $(".main__content").html(content__cars);
 }
+fetchCars();
 
-let filter = "btn-racers";
-changeTab(filter);
 $(".main__filter-btn").each(function (index, el) {
     $(el).on("click", function () {
         $(".main__filter-btn").each(function (index, el) {
@@ -64,11 +92,6 @@ $(".main__filter-btn").each(function (index, el) {
     });
 });
 
-let showMoreBtn = $("#btn-show-more");
-let btnBox = $(".show-more-btns");
-let hideBtn = $("#btn-hide");
-let upBtn = $("#btn-up");
-let countCars = 6;
 showMoreBtn.on("click", function () {
     changeTab(filter, (countCars += 6));
     let filterType = filter.slice(4);
